@@ -8,4 +8,11 @@ The contribution is system architecture and empirical evaluation, not a new ML a
 
 Shariah functionality is decision support, not certification.
 
-No experiments have been executed yet.
+## Authors
+
+* Aitsam Ul Hassan (aitsamulhassan.awan@gmail.com)
+* Muhammad Haseeb Ramzan (haseebramzan536@gmail.com)
+
+## Contributors
+
+* Haseeb Ramzan (haseebramzan536@gmail.com)
