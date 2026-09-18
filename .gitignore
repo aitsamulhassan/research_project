@@ -18,10 +18,12 @@ secrets*
 Thumbs.db
 .DS_Store
 .vscode/
+.idea/
 
-# LaTeX build artifacts
-*.aux
+# Temporary / local files
 *.log
+*.tmp
+*.aux
 *.out
 *.toc
 *.lof
@@ -31,15 +33,13 @@ Thumbs.db
 *.synctex.gz
 texput.log
 
-# Local PDF/visual QA/build directories
-docs/paper/build_ieee/
-docs/paper/qa_pages/
+# Raw / bulk data extensions (already-tracked files remain tracked)
+*.csv
+*.xlsx
+*.zip
+*.parquet
 
-# Intermediate paper PDFs
-docs/paper/IEEE_ACCESS_FINAL_REVIEW_READY.prev.pdf
-docs/paper/IEEE_ACCESS_READY_MANUSCRIPT.pdf
-
-# Raw datasets
+# Explicit raw dataset directory
 data/raw/
 
 # Oversized audit dumps
@@ -51,12 +51,50 @@ results/calibration/test/
 results/calibration/validation/
 results/calibration/raw/
 results/tables/lendingclub_split_assignments.csv
+results/uci_generalization/**/predictions/
 
-# Compile copies inside the Access template directory (keep FINAL_REVIEW_READY.pdf only)
-docs/paper/ieee_access_official_templates/**/IEEE_ACCESS_READY_MANUSCRIPT.pdf
-docs/paper/ieee_access_official_templates/**/access.pdf
+# Local-only model / explainability dumps excluded from first commit
+results/artifacts/final_random_forest_seed42.joblib
+results/explainability/artifacts/ebm_train_only_seed123.joblib
+results/explainability/artifacts/ebm_train_only_seed2024.joblib
+results/explainability/artifacts/ebm_train_only_seed3407.joblib
+results/explainability/artifacts/ebm_train_only_seed9999.joblib
+results/explainability/artifacts/seed42_attributions.npz
+results/explainability/sample/
+results/figures/decision/figure6_evidence_separated_architecture.png
+
+# Cached third-party source downloads / metadata (keep tracked README + helper script)
+audit/source_downloads/*
+!audit/source_downloads/README.md
+!audit/source_downloads/_extract_pdfs.py
+audit/source_metadata/
+
+# Local-only author/process notes (not for remote)
+docs/paper/IEEE_ACCESS_AUTHOR_METADATA_CHECKLIST.md
+docs/paper/M9_4_AE_HUMAN_REVIEW.md
+
+# Local PDF/visual QA/build directories
+docs/paper/build_ieee/
+docs/paper/qa_pages/
+
+# Intermediate paper PDFs (do NOT ignore IEEE_ACCESS_FINAL_REVIEW_READY.pdf)
+docs/paper/IEEE_ACCESS_FINAL_REVIEW_READY.prev.pdf
+docs/paper/IEEE_ACCESS_READY_MANUSCRIPT.pdf
 docs/paper/IEEE_ACCESS_REVIEW_READY.pdf
+
+# Vendor/sample Access template extras kept local (fonts/cls remain tracked)
+docs/paper/ieee_access_official_templates/*.zip
+docs/paper/ieee_access_official_templates/*.docx
+docs/paper/ieee_access_official_templates/**/IEEE_ACCESS_READY_MANUSCRIPT.pdf
+docs/paper/ieee_access_official_templates/**/IEEE_ACCESS_READY_MANUSCRIPT.tex
+docs/paper/ieee_access_official_templates/**/access.pdf
+docs/paper/ieee_access_official_templates/**/access.tex
+docs/paper/ieee_access_official_templates/**/author1.png
+docs/paper/ieee_access_official_templates/**/author2.png
+docs/paper/ieee_access_official_templates/**/author3.png
+docs/paper/ieee_access_official_templates/**/equation3.png
+docs/paper/ieee_access_official_templates/**/fig1.png
+docs/paper/ieee_access_official_templates/**/figures/
 
 # Local staging review helper
 STAGED_FILE_LIST_FOR_REVIEW.txt
-
