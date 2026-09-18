@@ -1,0 +1,7 @@
+{
+  "explainability_experiment_not_used": true,
+  "shariah_experiment_id": "stage7-shariah-gov-v1",
+  "engine_version": "stage7-shariah-engine-v1",
+  "catalog_version": "stage7-shariah-catalog-v1",
+  "note": "Credit, calibration, and SHAP outputs are not inputs to this layer."
+}

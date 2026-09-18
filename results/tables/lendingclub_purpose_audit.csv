@@ -1,0 +1,5 @@
+column,availability,missingness,unique_count,top_values,example_values,apparent_semantic_role,application_time_status
+purpose,PRESENT,0.0,14,debt_consolidation=781206 | credit_card=295551 | home_improvement=87684 | other=78263 | major_purchase=29543 | medical=15606 | small_business=15575 | car=14647 | moving=9520 | vacation=9083 | house=7294 | wedding=2350 | renewable_energy=936 | educational=423,debt_consolidation | small_business | home_improvement | major_purchase | credit_card | other | house | vacation,Credit purpose category for the loan request (Zenodo).,SAFE_APPLICATION_TIME
+title,PRESENT,1.235975,61451,REDACTED_FREE_TEXT,REDACTED_FREE_TEXT,Title of the credit request description provided by the borrower (Zenodo).,SAFE_APPLICATION_TIME
+desc,PRESENT,91.162671,109539,REDACTED_FREE_TEXT,REDACTED_FREE_TEXT,Description of the credit request provided by the borrower (Zenodo).,SAFE_APPLICATION_TIME
+_similar_purpose_like_fields_other_than_purpose_title_desc,NONE,,0,,,Scan for additional purpose-like columns.,NOT_APPLICABLE

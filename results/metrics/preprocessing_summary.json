@@ -1,0 +1,75 @@
+{
+  "fitted_on": "LendingClub TRAIN only",
+  "fitted_on_n_rows": 941267,
+  "n_features_out": 1023,
+  "train_rows_transformed": 941267,
+  "validation_rows_transformed": 197528,
+  "test_rows_transformed": 208886,
+  "numeric_features": [
+    "revenue",
+    "dti_n",
+    "loan_amnt",
+    "fico_n"
+  ],
+  "categorical_features": [
+    "emp_length",
+    "purpose",
+    "home_ownership_n",
+    "addr_state",
+    "zip_code"
+  ],
+  "category_counts_from_train": {
+    "emp_length": 12,
+    "purpose": 14,
+    "home_ownership_n": 4,
+    "addr_state": 51,
+    "zip_code": 938
+  },
+  "numeric_medians_from_train": {
+    "revenue": 65000.0,
+    "dti_n": 17.6,
+    "loan_amnt": 12000.0,
+    "fico_n": 692.0
+  },
+  "train_missing_counts": {
+    "revenue": 0,
+    "dti_n": 0,
+    "loan_amnt": 0,
+    "fico_n": 0,
+    "emp_length": 0,
+    "purpose": 0,
+    "home_ownership_n": 0,
+    "addr_state": 0,
+    "zip_code": 0
+  },
+  "unseen_category_handling": "OneHotEncoder handle_unknown='ignore' (all-zero dummy group)",
+  "scaling": "NONE",
+  "clipping": "NONE",
+  "winsorizing": "NONE",
+  "special_values": {
+    "original_value": 999.0,
+    "interpretation": "UNCERTAIN",
+    "evidence": "Stage 2 noted dti_n==999 as a possible sentinel in some LendingClub extracts. Zenodo documentation for this granting-model release does not define 999 as missing. Research-owner freeze: preserve original dti_n values; do not alter or recalculate.",
+    "transformation": "NONE",
+    "justification": "Interpretation remains uncertain, so the value is preserved. It is not deleted, not recoded to NA, and not clipped. TRAIN count of exact 999 is recorded only as an audit statistic.",
+    "train_count_exact_999": 1
+  },
+  "forbidden_columns_rejected": [
+    "Default",
+    "desc",
+    "experience_c",
+    "id",
+    "issue_d",
+    "title"
+  ],
+  "modeling_started": false,
+  "uci_merged": false,
+  "raw_modified": false,
+  "transformed_matrices_saved_to_results": false,
+  "preprocessor_path": "results\\artifacts\\lendingclub_preprocessor.joblib",
+  "leakage_tests": {
+    "module": "tests/test_preprocessing_leakage.py",
+    "passed": 14,
+    "failed": 0
+  }
+}

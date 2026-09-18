@@ -1,0 +1,5 @@
+case,row_ref,p_raw,p_calibrated,top_positive,top_negative,local_rank_spearman,y_true_descriptive_only,experiment_id
+high_risk,d0179a8a5a2b76b0,0.5186777326308969,0.6812198983158844,dti_n; fico_n; zip_code,loan_amnt,1.0,0,stage6-lc-ebm-explain-v1
+low_risk,773b6c4766fba9b4,0.023737166764542704,0.022185326280049197,addr_state,fico_n; loan_amnt; revenue,1.0,0,stage6-lc-ebm-explain-v1
+median_risk,12fc7fd557a986ab,0.16161389915891483,0.21352389325615775,fico_n; emp_length; purpose,loan_amnt; home_ownership_n; zip_code,1.0,0,stage6-lc-ebm-explain-v1
+disagreement,001549eaf95c9c9e,0.32965541016923583,0.45485248282814866,loan_amnt; dti_n; zip_code,revenue; purpose; home_ownership_n,1.0,0,stage6-lc-ebm-explain-v1

@@ -1,0 +1,6 @@
+metric,value,ci_lower,ci_upper,shared_by,source
+roc_auc,0.6776693941139847,0.6749564127778213,0.6805015152089869,"A0,A1,A3/A4",results/decision/v2/metrics/predictive_test_stage5.json
+pr_auc,0.35096314719303284,0.34673702510152055,0.3553104318096633,"A0,A1,A3/A4",results/decision/v2/metrics/predictive_test_stage5.json
+brier,0.15616920271522994,0.15535197480486465,0.1571269612775135,"A0,A1,A3/A4",results/decision/v2/metrics/predictive_test_stage5.json
+log_loss,0.48357015583149326,0.4815670470845632,0.4858242140257353,"A0,A1,A3/A4",results/decision/v2/metrics/predictive_test_stage5.json
+ece,0.020267295489117824,0.018602080465562932,0.021865990817951562,"A0,A1,A3/A4",results/decision/v2/metrics/predictive_test_stage5.json

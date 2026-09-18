@@ -1,0 +1,106 @@
+{
+  "experiment_id": "stage9_1_ablation_lc_v1",
+  "systems": {
+    "A0": {
+      "label": "credit-only three-way",
+      "credit_policy": "t_low=0.06, t_high=0.69",
+      "governance": "none",
+      "notes": "credit-only; HUMAN_REVIEW is the MEDIUM credit band",
+      "n": 208886,
+      "APPROVE": 5232,
+      "HUMAN_REVIEW": 203627,
+      "REJECT": 27,
+      "n_default_total": 44240,
+      "approval_rate": 0.025047154907461486,
+      "review_rate": 0.9748235879857913,
+      "rejection_rate": 0.00012925710674722098,
+      "review_burden": 0.9748235879857913
+    },
+    "A1": {
+      "label": "evidence-separated (proposed)",
+      "credit_policy": "t_low=0.06, t_high=0.69",
+      "governance": "G0 / L2 INSUFFICIENT_INFORMATION",
+      "notes": "proposed architecture; HUMAN_REVIEW retained",
+      "n": 208886,
+      "APPROVE": 0,
+      "HUMAN_REVIEW": 208859,
+      "REJECT": 27,
+      "n_default_total": 44240,
+      "approval_rate": 0.0,
+      "review_rate": 0.9998707428932527,
+      "rejection_rate": 0.00012925710674722098,
+      "review_burden": 0.9998707428932527
+    },
+    "A3_A4": {
+      "label": "binary monolithic comparator",
+      "credit_policy": "t*=0.16",
+      "governance": "none",
+      "notes": "A3 and A4 collapse to the same frozen binary comparator",
+      "n": 208886,
+      "APPROVE": 61855,
+      "HUMAN_REVIEW": 0,
+      "REJECT": 147031,
+      "n_default_total": 44240,
+      "approval_rate": 0.2961184569573835,
+      "review_rate": 0.0,
+      "rejection_rate": 0.7038815430426165,
+      "review_burden": 0.0
+    }
+  },
+  "a3_identical_to_a4": true,
+  "consistency": {
+    "label": "descriptive_reanalysis_of_previously_exposed_test_outputs",
+    "used_for_selection": false,
+    "test_cal_sha256": "e15ddd2f85a6c3fc9d0a79eecb578f7a94ded8a7efc63d9d114212728b2469eb",
+    "a0_match": true,
+    "a3_match": true,
+    "n": 208886
+  },
+  "predictive": {
+    "method": "platt",
+    "split": "test",
+    "seed": 42,
+    "brier": 0.15616920271522994,
+    "log_loss": 0.48357015583149326,
+    "ece": 0.020267295489117824,
+    "mce": 0.1869468566677409,
+    "roc_auc": 0.6776693941139847,
+    "pr_auc": 0.35096314719303284,
+    "n": 208886.0,
+    "n_positive": 44240.0,
+    "prevalence": 0.2117901630554465,
+    "brier_ci_lower": 0.15535197480486465,
+    "brier_ci_upper": 0.1571269612775135,
+    "log_loss_ci_lower": 0.4815670470845632,
+    "log_loss_ci_upper": 0.4858242140257353,
+    "ece_ci_lower": 0.018602080465562932,
+    "ece_ci_upper": 0.021865990817951562,
+    "mce_ci_lower": 0.04442739025353118,
+    "mce_ci_upper": 0.4077225035258621,
+    "roc_auc_ci_lower": 0.6749564127778213,
+    "roc_auc_ci_upper": 0.6805015152089869,
+    "pr_auc_ci_lower": 0.34673702510152055,
+    "pr_auc_ci_upper": 0.3553104318096633
+  },
+  "a1_governance": {
+    "INSUFFICIENT_INFORMATION": 208886
+  },
+  "a1_band_counts": {
+    "HIGH": 27,
+    "LOW": 5232,
+    "MEDIUM": 203627
+  },
+  "integrity": {
+    "v1_freeze_sha256": "4d3da6a9e5bac2b38b546c7a5a60e870bf83f30adcadf67f067f99951e32f0c4",
+    "v2_freeze_sha256": "b874782326a8f20ed9bb7df1aa5ed1c75f883d8b6cba76b68991181d50b1604b",
+    "platt_record_sha256": "9ca39188c961e5d1222346a7fba14902cb58dc24b78a0de2136b6437de01f44c",
+    "ebm_joblib_sha256": "8d373df1b576ca74f498d2bfcc54653cbf43d37b0af69400a26e20ab98a3a0c4",
+    "platt_joblib_sha256": "7f05d116676fcf5160e91b46bf2c587a974a9489360bae140c49c5ff40ed1a12",
+    "t_low": 0.06,
+    "t_high": 0.69,
+    "t_star": 0.16,
+    "platt_a": 1.1988263209549705,
+    "platt_b": 0.6697765046966161,
+    "test_cal_sha256": "e15ddd2f85a6c3fc9d0a79eecb578f7a94ded8a7efc63d9d114212728b2469eb"
+  }
+}

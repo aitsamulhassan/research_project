@@ -1,0 +1,315 @@
+{
+  "experiment_id": "s10_a1_gap_v1",
+  "classification": "ANALYSIS-ONLY / DESCRIPTIVE",
+  "status": "COMPLETED \u2014 analysis-only descriptive decomposition",
+  "confirmatory_experiment": false,
+  "issues": [],
+  "documentation_limitations": [
+    "Stage 8 v2 per-row audit records have no row_ref; band \u00d7 L2 identity uses stored Stage 8 columns, not a keyed join to p_selected.",
+    "LendingClub schema does not contain contractual Shariah evidence; this analysis does not invent it.",
+    "S10-A1-GAP is analysis-only / descriptive. It does not independently validate the governance layer.",
+    "Stage 8 v2 recorded n_unique_evidence_hashes=1 and n_unique_record_hashes=208886: per-row record hashes are unique, but the governance evidence object is identical across TEST rows.",
+    "git_commit is null (no usable .git / git). Recorded, not fabricated. Stage 10 protocol \u00a714: not by itself a scientific abort."
+  ],
+  "prior_gates": {
+    "i1_status": "PASS WITH DOCUMENTATION LIMITATION",
+    "r1_status": "COMPLETED \u2014 exploratory/descriptive post-hoc reanalysis"
+  },
+  "n": 208886,
+  "thresholds": {
+    "t_low": 0.06,
+    "t_high": 0.69,
+    "unchanged": true
+  },
+  "credit_bands": [
+    {
+      "credit_band": "LOW",
+      "count": 5232,
+      "percentage_of_test": 2.5047154907461486,
+      "rule": "p_selected < 0.06"
+    },
+    {
+      "credit_band": "MEDIUM",
+      "count": 203627,
+      "percentage_of_test": 97.48235879857913,
+      "rule": "0.06 <= p_selected < 0.69"
+    },
+    {
+      "credit_band": "HIGH",
+      "count": 27,
+      "percentage_of_test": 0.012925710674722098,
+      "rule": "p_selected >= 0.69"
+    }
+  ],
+  "l2_governance_states": [
+    {
+      "l2_governance_status": "PASS",
+      "count": 0,
+      "percentage_of_test": 0.0,
+      "observed_on_lc_test": false
+    },
+    {
+      "l2_governance_status": "REVIEW",
+      "count": 0,
+      "percentage_of_test": 0.0,
+      "observed_on_lc_test": false
+    },
+    {
+      "l2_governance_status": "NOT_STRUCTURABLE_WITHOUT_REDESIGN",
+      "count": 0,
+      "percentage_of_test": 0.0,
+      "observed_on_lc_test": false
+    },
+    {
+      "l2_governance_status": "INSUFFICIENT_INFORMATION",
+      "count": 208886,
+      "percentage_of_test": 100.0,
+      "observed_on_lc_test": true
+    }
+  ],
+  "l1": {
+    "status": "INSUFFICIENT_SCHEMA_FOR_APPLICANT_DETERMINATION",
+    "is_applicant_level_ruling": false,
+    "count": 208886,
+    "note": "L1 is dataset/schema readiness, not an applicant-level Shariah ruling, and is not the G0 matrix input."
+  },
+  "crosstab": [
+    {
+      "credit_band": "LOW",
+      "l2_governance_status": "PASS",
+      "n": 0,
+      "percentage_of_test": 0.0,
+      "g0_decision": "APPROVE",
+      "populated": false
+    },
+    {
+      "credit_band": "LOW",
+      "l2_governance_status": "REVIEW",
+      "n": 0,
+      "percentage_of_test": 0.0,
+      "g0_decision": "HUMAN_REVIEW",
+      "populated": false
+    },
+    {
+      "credit_band": "LOW",
+      "l2_governance_status": "NOT_STRUCTURABLE_WITHOUT_REDESIGN",
+      "n": 0,
+      "percentage_of_test": 0.0,
+      "g0_decision": "REJECT",
+      "populated": false
+    },
+    {
+      "credit_band": "LOW",
+      "l2_governance_status": "INSUFFICIENT_INFORMATION",
+      "n": 5232,
+      "percentage_of_test": 2.5047154907461486,
+      "g0_decision": "HUMAN_REVIEW",
+      "populated": true
+    },
+    {
+      "credit_band": "MEDIUM",
+      "l2_governance_status": "PASS",
+      "n": 0,
+      "percentage_of_test": 0.0,
+      "g0_decision": "HUMAN_REVIEW",
+      "populated": false
+    },
+    {
+      "credit_band": "MEDIUM",
+      "l2_governance_status": "REVIEW",
+      "n": 0,
+      "percentage_of_test": 0.0,
+      "g0_decision": "HUMAN_REVIEW",
+      "populated": false
+    },
+    {
+      "credit_band": "MEDIUM",
+      "l2_governance_status": "NOT_STRUCTURABLE_WITHOUT_REDESIGN",
+      "n": 0,
+      "percentage_of_test": 0.0,
+      "g0_decision": "REJECT",
+      "populated": false
+    },
+    {
+      "credit_band": "MEDIUM",
+      "l2_governance_status": "INSUFFICIENT_INFORMATION",
+      "n": 203627,
+      "percentage_of_test": 97.48235879857913,
+      "g0_decision": "HUMAN_REVIEW",
+      "populated": true
+    },
+    {
+      "credit_band": "HIGH",
+      "l2_governance_status": "PASS",
+      "n": 0,
+      "percentage_of_test": 0.0,
+      "g0_decision": "REJECT",
+      "populated": false
+    },
+    {
+      "credit_band": "HIGH",
+      "l2_governance_status": "REVIEW",
+      "n": 0,
+      "percentage_of_test": 0.0,
+      "g0_decision": "REJECT",
+      "populated": false
+    },
+    {
+      "credit_band": "HIGH",
+      "l2_governance_status": "NOT_STRUCTURABLE_WITHOUT_REDESIGN",
+      "n": 0,
+      "percentage_of_test": 0.0,
+      "g0_decision": "REJECT",
+      "populated": false
+    },
+    {
+      "credit_band": "HIGH",
+      "l2_governance_status": "INSUFFICIENT_INFORMATION",
+      "n": 27,
+      "percentage_of_test": 0.012925710674722098,
+      "g0_decision": "REJECT",
+      "populated": true
+    }
+  ],
+  "policy_trace": [
+    {
+      "p_selected_rule": "p_selected < 0.06",
+      "credit_band": "LOW",
+      "l2_governance_status": "INSUFFICIENT_INFORMATION",
+      "g0_mapping": "G0[INSUFFICIENT_INFORMATION, LOW] = HUMAN_REVIEW",
+      "final_a1_decision": "HUMAN_REVIEW",
+      "n": 5232
+    },
+    {
+      "p_selected_rule": "0.06 <= p_selected < 0.69",
+      "credit_band": "MEDIUM",
+      "l2_governance_status": "INSUFFICIENT_INFORMATION",
+      "g0_mapping": "G0[INSUFFICIENT_INFORMATION, MEDIUM] = HUMAN_REVIEW",
+      "final_a1_decision": "HUMAN_REVIEW",
+      "n": 203627
+    },
+    {
+      "p_selected_rule": "p_selected >= 0.69",
+      "credit_band": "HIGH",
+      "l2_governance_status": "INSUFFICIENT_INFORMATION",
+      "g0_mapping": "G0[INSUFFICIENT_INFORMATION, HIGH] = REJECT",
+      "final_a1_decision": "REJECT",
+      "n": 27
+    }
+  ],
+  "decomposition": {
+    "n": 208886,
+    "a1_approve": 0,
+    "a1_review": 208859,
+    "a1_reject": 27,
+    "review_rate": 0.9998707428932527,
+    "low_to_review": {
+      "n": 5232,
+      "share_of_test": 0.025047154907461486,
+      "share_of_a1_review": 0.025050392848763998,
+      "stage8_review_cause": "governance_insufficiency",
+      "meaning": "LOW would be A0 APPROVE; G0 + INSUFFICIENT_INFORMATION maps LOW to HUMAN_REVIEW."
+    },
+    "medium_to_review": {
+      "n": 203627,
+      "share_of_test": 0.9748235879857913,
+      "share_of_a1_review": 0.974949607151236,
+      "stage8_review_cause": "governance_insufficiency_and_credit_uncertainty",
+      "meaning": "MEDIUM is already HUMAN_REVIEW on credit; G0 keeps HUMAN_REVIEW."
+    },
+    "high_to_review": {
+      "n": 0,
+      "share_of_test": 0.0,
+      "share_of_a1_review": 0.0,
+      "meaning": "HIGH does not contribute to A1 HUMAN_REVIEW."
+    },
+    "high_to_reject": {
+      "n": 27,
+      "share_of_test": 0.00012925710674722098,
+      "share_of_a1_reject": 1.0,
+      "meaning": "HIGH + INSUFFICIENT_INFORMATION maps to REJECT under G0 (same REJECT count as A0)."
+    },
+    "approve_identity": "A1 APPROVE requires G0(PASS, LOW). Observed PASS n=0, so A1 APPROVE=0. Algebra: A1 APPROVE - A0 APPROVE = -LOW = -5232.",
+    "review_identity": "A1 HUMAN_REVIEW = LOW + MEDIUM = 5232 + 203627 = 208859.",
+    "reject_identity": "A1 REJECT = HIGH = 27."
+  },
+  "g1_g3_treated_as_observed": false,
+  "shariah_score_created": false,
+  "contracts_fabricated": false,
+  "halal_haram_inferred": false,
+  "p_selected_source": "C:/Users/User/research-project/results/calibration/test/ebm_seed42_calibrated.csv",
+  "p_selected_rescored": false,
+  "year_derivation": null,
+  "hashes": {
+    "v1_freeze_sha256": "4d3da6a9e5bac2b38b546c7a5a60e870bf83f30adcadf67f067f99951e32f0c4",
+    "v2_freeze_sha256": "b874782326a8f20ed9bb7df1aa5ed1c75f883d8b6cba76b68991181d50b1604b",
+    "table3_sha256": "90759eb72f1173b40b5b9363c21b0ef3d6f1cde5042748eb57871d49fb73d5ee",
+    "test_cal_sha256": "e15ddd2f85a6c3fc9d0a79eecb578f7a94ded8a7efc63d9d114212728b2469eb",
+    "stage8_policy_yaml_sha256": "d1f20fd8a0fd2ffde1ba93db36b4029af0f11a0c38215c9aba0a09a58087dfaf",
+    "expected_v1": "4d3da6a9e5bac2b38b546c7a5a60e870bf83f30adcadf67f067f99951e32f0c4",
+    "expected_v2": "b874782326a8f20ed9bb7df1aa5ed1c75f883d8b6cba76b68991181d50b1604b",
+    "expected_table3": "90759eb72f1173b40b5b9363c21b0ef3d6f1cde5042748eb57871d49fb73d5ee",
+    "expected_test_cal": "e15ddd2f85a6c3fc9d0a79eecb578f7a94ded8a7efc63d9d114212728b2469eb"
+  },
+  "source_artifacts": [
+    "C:/Users/User/research-project/audit/stage8_v2_decision_fusion_run.json",
+    "C:/Users/User/research-project/results/decision/v2/tables/table3_test_decision_outcomes.csv",
+    "C:/Users/User/research-project/results/decision/v2/audit/test_audit_records.csv",
+    "C:/Users/User/research-project/configs/stage8_decision_policy.yaml",
+    "C:/Users/User/research-project/results/decision/frozen_policy.json",
+    "C:/Users/User/research-project/results/decision/v2/frozen_policy.json",
+    "C:/Users/User/research-project/results/calibration/test/ebm_seed42_calibrated.csv",
+    "C:/Users/User/research-project/docs/STAGE_7_SHARIAH_GOVERNANCE_REPORT_V2.md",
+    "C:/Users/User/research-project/docs/STAGE_8_DECISION_FUSION_REPORT_V2.md",
+    "C:/Users/User/research-project/results/stage10/v1/metrics/s10_i1_identity.json",
+    "C:/Users/User/research-project/results/stage10/v1/metrics/s10_r1_year.json"
+  ],
+  "published": {
+    "n": 208886,
+    "band_counts": {
+      "HIGH": 27,
+      "LOW": 5232,
+      "MEDIUM": 203627
+    },
+    "gov_counts": {
+      "INSUFFICIENT_INFORMATION": 208886
+    },
+    "fused_counts": {
+      "APPROVE": 0,
+      "HUMAN_REVIEW": 208859,
+      "REJECT": 27
+    },
+    "review_causes": {
+      "governance_insufficiency": 5232,
+      "governance_insufficiency_and_credit_uncertainty": 203627
+    },
+    "l1_status": "INSUFFICIENT_SCHEMA_FOR_APPLICANT_DETERMINATION",
+    "l1_is_applicant_level_ruling": false,
+    "l2_evaluation_mode": "PER_APPLICATION",
+    "any_expert_validated": false,
+    "certification_claim_policy": false,
+    "n_unique_evidence_hashes": 1,
+    "n_unique_record_hashes": 208886,
+    "t_low": 0.06,
+    "t_high": 0.69,
+    "table3_a1": {
+      "APPROVE": 0,
+      "HUMAN_REVIEW": 208859,
+      "REJECT": 27,
+      "n": 208886
+    },
+    "v1_freeze_sha256_recorded": "4d3da6a9e5bac2b38b546c7a5a60e870bf83f30adcadf67f067f99951e32f0c4",
+    "test_cal_sha256_recorded": "e15ddd2f85a6c3fc9d0a79eecb578f7a94ded8a7efc63d9d114212728b2469eb"
+  },
+  "models_trained": false,
+  "models_loaded_for_scoring": false,
+  "calibration_refit": false,
+  "thresholds_searched": false,
+  "uci_opened": false,
+  "stage8_9_results_modified": false,
+  "s10_i1_modified": false,
+  "s10_r1_modified": false,
+  "s10_a4_executed": false,
+  "random_seed_used": null,
+  "git_commit": null
+}

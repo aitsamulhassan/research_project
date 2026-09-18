@@ -1,0 +1,484 @@
+{
+  "n_rows": 30000,
+  "n_columns": 25,
+  "column_names": [
+    "ID",
+    "LIMIT_BAL",
+    "SEX",
+    "EDUCATION",
+    "MARRIAGE",
+    "AGE",
+    "PAY_0",
+    "PAY_2",
+    "PAY_3",
+    "PAY_4",
+    "PAY_5",
+    "PAY_6",
+    "BILL_AMT1",
+    "BILL_AMT2",
+    "BILL_AMT3",
+    "BILL_AMT4",
+    "BILL_AMT5",
+    "BILL_AMT6",
+    "PAY_AMT1",
+    "PAY_AMT2",
+    "PAY_AMT3",
+    "PAY_AMT4",
+    "PAY_AMT5",
+    "PAY_AMT6",
+    "default payment next month"
+  ],
+  "x_code_aliases": {
+    "ID": "ID",
+    "LIMIT_BAL": "X1",
+    "SEX": "X2",
+    "EDUCATION": "X3",
+    "MARRIAGE": "X4",
+    "AGE": "X5",
+    "PAY_0": "X6",
+    "PAY_2": "X7",
+    "PAY_3": "X8",
+    "PAY_4": "X9",
+    "PAY_5": "X10",
+    "PAY_6": "X11",
+    "BILL_AMT1": "X12",
+    "BILL_AMT2": "X13",
+    "BILL_AMT3": "X14",
+    "BILL_AMT4": "X15",
+    "BILL_AMT5": "X16",
+    "BILL_AMT6": "X17",
+    "PAY_AMT1": "X18",
+    "PAY_AMT2": "X19",
+    "PAY_AMT3": "X20",
+    "PAY_AMT4": "X21",
+    "PAY_AMT5": "X22",
+    "PAY_AMT6": "X23",
+    "default payment next month": "Y"
+  },
+  "uci_stated_instances": 30000,
+  "uci_stated_features": 23,
+  "observed_minus_id_and_target_feature_count": 23,
+  "duplicate_rows": 0,
+  "duplicate_ids": 0,
+  "target": {
+    "target_column": "default payment next month",
+    "target_definition_status": "VERIFIED_FROM_UCI_SPREADSHEET_AND_DOCUMENTATION",
+    "target_definition_from_documentation": "UCI Additional Variable Information: binary default payment (Yes = 1, No = 0) as the response variable. Spreadsheet header names this column 'default payment next month'.",
+    "unique_values": [
+      1,
+      0
+    ],
+    "value_counts": [
+      {
+        "value": 0,
+        "count": 23364,
+        "percentage": 77.88
+      },
+      {
+        "value": 1,
+        "count": 6636,
+        "percentage": 22.12
+      }
+    ],
+    "missing_target_rows": 0,
+    "prevalence_eq_1": 0.2212,
+    "prevalence_eq_1_percentage": 22.12
+  },
+  "missingness": [
+    {
+      "column": "ID",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "minimum_non_null": null,
+      "maximum_non_null": null,
+      "missingness_class": "NO_MISSINGNESS"
+    },
+    {
+      "column": "LIMIT_BAL",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "minimum_non_null": 10000,
+      "maximum_non_null": 1000000,
+      "missingness_class": "NO_MISSINGNESS"
+    },
+    {
+      "column": "SEX",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "minimum_non_null": 1,
+      "maximum_non_null": 2,
+      "missingness_class": "NO_MISSINGNESS"
+    },
+    {
+      "column": "EDUCATION",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "minimum_non_null": 0,
+      "maximum_non_null": 6,
+      "missingness_class": "NO_MISSINGNESS"
+    },
+    {
+      "column": "MARRIAGE",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "minimum_non_null": 0,
+      "maximum_non_null": 3,
+      "missingness_class": "NO_MISSINGNESS"
+    },
+    {
+      "column": "AGE",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "minimum_non_null": 21,
+      "maximum_non_null": 79,
+      "missingness_class": "NO_MISSINGNESS"
+    },
+    {
+      "column": "PAY_0",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "minimum_non_null": -2,
+      "maximum_non_null": 8,
+      "missingness_class": "NO_MISSINGNESS"
+    },
+    {
+      "column": "PAY_2",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "minimum_non_null": -2,
+      "maximum_non_null": 8,
+      "missingness_class": "NO_MISSINGNESS"
+    },
+    {
+      "column": "PAY_3",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "minimum_non_null": -2,
+      "maximum_non_null": 8,
+      "missingness_class": "NO_MISSINGNESS"
+    },
+    {
+      "column": "PAY_4",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "minimum_non_null": -2,
+      "maximum_non_null": 8,
+      "missingness_class": "NO_MISSINGNESS"
+    },
+    {
+      "column": "PAY_5",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "minimum_non_null": -2,
+      "maximum_non_null": 8,
+      "missingness_class": "NO_MISSINGNESS"
+    },
+    {
+      "column": "PAY_6",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "minimum_non_null": -2,
+      "maximum_non_null": 8,
+      "missingness_class": "NO_MISSINGNESS"
+    },
+    {
+      "column": "BILL_AMT1",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "minimum_non_null": -165580,
+      "maximum_non_null": 964511,
+      "missingness_class": "NO_MISSINGNESS"
+    },
+    {
+      "column": "BILL_AMT2",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "minimum_non_null": -69777,
+      "maximum_non_null": 983931,
+      "missingness_class": "NO_MISSINGNESS"
+    },
+    {
+      "column": "BILL_AMT3",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "minimum_non_null": -157264,
+      "maximum_non_null": 1664089,
+      "missingness_class": "NO_MISSINGNESS"
+    },
+    {
+      "column": "BILL_AMT4",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "minimum_non_null": -170000,
+      "maximum_non_null": 891586,
+      "missingness_class": "NO_MISSINGNESS"
+    },
+    {
+      "column": "BILL_AMT5",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "minimum_non_null": -81334,
+      "maximum_non_null": 927171,
+      "missingness_class": "NO_MISSINGNESS"
+    },
+    {
+      "column": "BILL_AMT6",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "minimum_non_null": -339603,
+      "maximum_non_null": 961664,
+      "missingness_class": "NO_MISSINGNESS"
+    },
+    {
+      "column": "PAY_AMT1",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "minimum_non_null": 0,
+      "maximum_non_null": 873552,
+      "missingness_class": "NO_MISSINGNESS"
+    },
+    {
+      "column": "PAY_AMT2",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "minimum_non_null": 0,
+      "maximum_non_null": 1684259,
+      "missingness_class": "NO_MISSINGNESS"
+    },
+    {
+      "column": "PAY_AMT3",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "minimum_non_null": 0,
+      "maximum_non_null": 896040,
+      "missingness_class": "NO_MISSINGNESS"
+    },
+    {
+      "column": "PAY_AMT4",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "minimum_non_null": 0,
+      "maximum_non_null": 621000,
+      "missingness_class": "NO_MISSINGNESS"
+    },
+    {
+      "column": "PAY_AMT5",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "minimum_non_null": 0,
+      "maximum_non_null": 426529,
+      "missingness_class": "NO_MISSINGNESS"
+    },
+    {
+      "column": "PAY_AMT6",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "minimum_non_null": 0,
+      "maximum_non_null": 528666,
+      "missingness_class": "NO_MISSINGNESS"
+    },
+    {
+      "column": "default payment next month",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "minimum_non_null": 0,
+      "maximum_non_null": 1,
+      "missingness_class": "NO_MISSINGNESS"
+    }
+  ],
+  "has_calendar_timestamp_fields": false,
+  "date_like_column_names": [],
+  "temporal_field_availability": "NO_CALENDAR_TIMESTAMPS. Payment/bill columns encode a fixed April-September 2005 window from the UCI documentation, not per-row origination timestamps.",
+  "financing_purpose_fields": [],
+  "financing_purpose_availability": "ABSENT",
+  "identifier_fields": [
+    "ID"
+  ],
+  "documented_no_missing_values_on_uci_page": true,
+  "observed_any_missing": false,
+  "documentation_vs_contents_conflicts": [
+    {
+      "field": "EDUCATION",
+      "documentation": "UCI Additional Variable Information: 1=graduate school; 2=university; 3=high school; 4=others.",
+      "undocumented_values_observed": [
+        0,
+        5,
+        6
+      ],
+      "counts": {
+        "0": 14,
+        "5": 280,
+        "6": 51
+      },
+      "status": "SOURCE_CONTENTS_CONFLICT"
+    },
+    {
+      "field": "MARRIAGE",
+      "documentation": "UCI Additional Variable Information: 1=married; 2=single; 3=others.",
+      "undocumented_values_observed": [
+        0
+      ],
+      "counts": {
+        "0": 54
+      },
+      "status": "SOURCE_CONTENTS_CONFLICT"
+    },
+    {
+      "field": "PAY_0",
+      "documentation": "UCI Additional Variable Information: -1=pay duly; 1=delay one month; ...; 8=delay eight months; 9=delay nine months and above. Values 0 and -2 are not defined there.",
+      "undocumented_values_observed": [
+        -2,
+        0
+      ],
+      "counts": {
+        "-2": 2759,
+        "0": 14737
+      },
+      "status": "SOURCE_CONTENTS_CONFLICT"
+    },
+    {
+      "field": "PAY_2",
+      "documentation": "UCI Additional Variable Information: -1=pay duly; 1=delay one month; ...; 8=delay eight months; 9=delay nine months and above. Values 0 and -2 are not defined there.",
+      "undocumented_values_observed": [
+        -2,
+        0
+      ],
+      "counts": {
+        "-2": 3782,
+        "0": 15730
+      },
+      "status": "SOURCE_CONTENTS_CONFLICT"
+    },
+    {
+      "field": "PAY_3",
+      "documentation": "UCI Additional Variable Information: -1=pay duly; 1=delay one month; ...; 8=delay eight months; 9=delay nine months and above. Values 0 and -2 are not defined there.",
+      "undocumented_values_observed": [
+        -2,
+        0
+      ],
+      "counts": {
+        "-2": 4085,
+        "0": 15764
+      },
+      "status": "SOURCE_CONTENTS_CONFLICT"
+    },
+    {
+      "field": "PAY_4",
+      "documentation": "UCI Additional Variable Information: -1=pay duly; 1=delay one month; ...; 8=delay eight months; 9=delay nine months and above. Values 0 and -2 are not defined there.",
+      "undocumented_values_observed": [
+        -2,
+        0
+      ],
+      "counts": {
+        "-2": 4348,
+        "0": 16455
+      },
+      "status": "SOURCE_CONTENTS_CONFLICT"
+    },
+    {
+      "field": "PAY_5",
+      "documentation": "UCI Additional Variable Information: -1=pay duly; 1=delay one month; ...; 8=delay eight months; 9=delay nine months and above. Values 0 and -2 are not defined there.",
+      "undocumented_values_observed": [
+        -2,
+        0
+      ],
+      "counts": {
+        "-2": 4546,
+        "0": 16947
+      },
+      "status": "SOURCE_CONTENTS_CONFLICT"
+    },
+    {
+      "field": "PAY_6",
+      "documentation": "UCI Additional Variable Information: -1=pay duly; 1=delay one month; ...; 8=delay eight months; 9=delay nine months and above. Values 0 and -2 are not defined there.",
+      "undocumented_values_observed": [
+        -2,
+        0
+      ],
+      "counts": {
+        "-2": 4895,
+        "0": 16286
+      },
+      "status": "SOURCE_CONTENTS_CONFLICT"
+    }
+  ],
+  "negative_bill_amount_counts": {
+    "BILL_AMT1": 590,
+    "BILL_AMT2": 669,
+    "BILL_AMT3": 655,
+    "BILL_AMT4": 675,
+    "BILL_AMT5": 655,
+    "BILL_AMT6": 688
+  },
+  "negative_bill_amounts_note": "Negative bill statement amounts are present. UCI documentation does not define their meaning. They were not deleted.",
+  "load_meta": {
+    "zip_members": [
+      "default of credit card clients.xls"
+    ],
+    "xls_member": "default of credit card clients.xls",
+    "xls_member_size_bytes": 5539328,
+    "header_row_names": [
+      "ID",
+      "LIMIT_BAL",
+      "SEX",
+      "EDUCATION",
+      "MARRIAGE",
+      "AGE",
+      "PAY_0",
+      "PAY_2",
+      "PAY_3",
+      "PAY_4",
+      "PAY_5",
+      "PAY_6",
+      "BILL_AMT1",
+      "BILL_AMT2",
+      "BILL_AMT3",
+      "BILL_AMT4",
+      "BILL_AMT5",
+      "BILL_AMT6",
+      "PAY_AMT1",
+      "PAY_AMT2",
+      "PAY_AMT3",
+      "PAY_AMT4",
+      "PAY_AMT5",
+      "PAY_AMT6",
+      "default payment next month"
+    ],
+    "alias_map": {
+      "ID": "ID",
+      "LIMIT_BAL": "X1",
+      "SEX": "X2",
+      "EDUCATION": "X3",
+      "MARRIAGE": "X4",
+      "AGE": "X5",
+      "PAY_0": "X6",
+      "PAY_2": "X7",
+      "PAY_3": "X8",
+      "PAY_4": "X9",
+      "PAY_5": "X10",
+      "PAY_6": "X11",
+      "BILL_AMT1": "X12",
+      "BILL_AMT2": "X13",
+      "BILL_AMT3": "X14",
+      "BILL_AMT4": "X15",
+      "BILL_AMT5": "X16",
+      "BILL_AMT6": "X17",
+      "PAY_AMT1": "X18",
+      "PAY_AMT2": "X19",
+      "PAY_AMT3": "X20",
+      "PAY_AMT4": "X21",
+      "PAY_AMT5": "X22",
+      "PAY_AMT6": "X23",
+      "default payment next month": "Y"
+    },
+    "loader": "zipfile + Microsoft Excel COM SaveAs CSV (xlCSV=6) to a temporary file; raw zip was not modified"
+  },
+  "semantic_differences_from_lendingclub": [
+    "UCI is revolving credit-card default in Taiwan, not US P2P personal-loan origination.",
+    "UCI has no financing-purpose field.",
+    "UCI has no issue/application timestamp.",
+    "UCI includes demographics (SEX, EDUCATION, MARRIAGE, AGE) absent from this LendingClub release.",
+    "UCI includes 6-month bill and payment history; this LendingClub granting release does not.",
+    "UCI target is default payment next month after the 2005 observation window, not terminal Fully Paid vs charged-off on a closed installment loan."
+  ]
+}

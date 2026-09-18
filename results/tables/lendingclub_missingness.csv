@@ -1,0 +1,16 @@
+column,missing_count,missing_percentage,minimum_non_null,maximum_non_null,missingness_class
+id,0,0.0,54734,145636374,NO_MISSINGNESS
+issue_d,0,0.0,,,NO_MISSINGNESS
+revenue,0,0.0,1896.0,10999200.0,NO_MISSINGNESS
+dti_n,0,0.0,0.0,999.0,NO_MISSINGNESS
+loan_amnt,0,0.0,500,40000,NO_MISSINGNESS
+fico_n,0,0.0,612.0,847.5,NO_MISSINGNESS
+experience_c,0,0.0,0,1,NO_MISSINGNESS
+emp_length,0,0.0,,,NO_MISSINGNESS
+purpose,0,0.0,,,NO_MISSINGNESS
+home_ownership_n,0,0.0,,,NO_MISSINGNESS
+addr_state,0,0.0,,,NO_MISSINGNESS
+zip_code,1,7.4e-05,,,LOW_MISSINGNESS
+Default,0,0.0,0,1,NO_MISSINGNESS
+title,16657,1.235975,,,LOW_MISSINGNESS
+desc,1228582,91.162671,,,HIGH_MISSINGNESS

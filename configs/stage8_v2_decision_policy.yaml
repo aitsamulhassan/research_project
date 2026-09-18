@@ -1,0 +1,41 @@
+policy_version: stage8-v2
+audit_schema_version: "2.0"
+experiment_id: stage8-lc-decision-v2
+amendment_id: AMENDMENT-SHARIAH-001
+random_seed: 42
+
+frozen_from_stage8_v1:
+  policy_file: results/decision/frozen_policy.json
+  config_file: configs/stage8_decision_policy.yaml
+  t_low: 0.06
+  t_high: 0.69
+  policy_type: two_threshold
+  threshold_reselection: forbidden
+  note: >
+    Stage 8 v2 reuses the Stage 8 v1 validation-selected credit-only thresholds and the
+    frozen governance matrix. Thresholds are not searched again and are not selected on TEST.
+
+model_reference:
+  family: explainable_boosting_machine
+  experiment_id: stage4b-lc-granting-v1
+  seed: 42
+  artifact: results/calibration/artifacts/ebm_train_only_seed42.joblib
+  note: TRAIN-only EBM used by Stage 5 calibration. Not refit in Stage 8 v2.
+
+calibrator_reference:
+  method: platt
+  experiment_id: stage5-lc-ebm-calibration-v1
+  artifact: results/calibration/artifacts/platt_calibrator.joblib
+  a: 1.1988263209549705
+  b: 0.6697765046966161
+  note: Frozen Platt parameters. Not refit.
+
+governance_reference:
+  experiment_id: stage7-shariah-gov-v2
+  engine_version: stage7-shariah-engine-v1
+  l1l2_version: stage7-l1l2-v2
+  evaluation_mode: PER_APPLICATION
+  l1_status: INSUFFICIENT_SCHEMA_FOR_APPLICANT_DETERMINATION
+  note: Stage 7 v2 L1/L2 is the source of truth. Stage 8 does not duplicate rule logic.
+
+inherits_governance_matrix_from: configs/stage8_decision_policy.yaml

@@ -1,0 +1,53 @@
+{
+  "n": 197528,
+  "n_positive": 49163,
+  "n_negative": 148365,
+  "tp": 43952,
+  "tn": 40783,
+  "fp": 107582,
+  "fn": 5211,
+  "n_approve": 45994,
+  "n_review": 0,
+  "n_reject": 151534,
+  "approval_rate": 0.2328480012960188,
+  "review_rate": 0.0,
+  "rejection_rate": 0.7671519987039812,
+  "fpr_auto": 0.7251171098304856,
+  "fnr_auto": 0.10599434534100848,
+  "fpr_population": 0.7251171098304856,
+  "fnr_population": 0.10599434534100848,
+  "precision_reject": 0.2900471181385036,
+  "recall_reject_auto": 0.8940056546589915,
+  "recall_reject_population": 0.8940056546589915,
+  "expected_normalized_cost": 0.6765471224332753,
+  "cost_scenario": {
+    "label": "ASSUMED RELATIVE COST SCENARIO",
+    "name": "FN:FP=5:1",
+    "fn_fp_ratio": 5.0,
+    "c_fp": 1.0,
+    "c_fn": 5.0,
+    "c_review_over_fp": 0.0,
+    "c_review": 0.0,
+    "assumption": "Researcher sensitivity scenario, not a real operational cost."
+  },
+  "decision_bands": [
+    {
+      "band": "APPROVE",
+      "n": 45994,
+      "n_default": 5211,
+      "default_rate": 0.11329738661564552,
+      "default_rate_ci_lower": 0.11043291774981355,
+      "default_rate_ci_upper": 0.1162264479365973,
+      "ci_method": "wilson_95"
+    },
+    {
+      "band": "REJECT",
+      "n": 151534,
+      "n_default": 43952,
+      "default_rate": 0.2900471181385036,
+      "default_rate_ci_lower": 0.28776765348495587,
+      "default_rate_ci_upper": 0.2923372277238048,
+      "ci_method": "wilson_95"
+    }
+  ]
+}

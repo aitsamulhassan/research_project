@@ -1,0 +1,36 @@
+{
+  "dataset_hash": "207d65b2712f775a91404496ab27c786ac0da6b0f977f849e6d5d8149e925acc",
+  "target_column": "Default",
+  "time_index": "issue_d",
+  "excluded_columns": [
+    "id",
+    "issue_d",
+    "experience_c",
+    "title",
+    "desc"
+  ],
+  "retained_columns": [
+    "revenue",
+    "dti_n",
+    "loan_amnt",
+    "fico_n",
+    "emp_length",
+    "purpose",
+    "home_ownership_n",
+    "addr_state",
+    "zip_code"
+  ],
+  "train_rule": "issue_month <= 2016-03",
+  "validation_rule": "2016-04 <= issue_month <= 2017-01",
+  "test_rule": "issue_month >= 2017-02",
+  "train_row_count": 941267,
+  "validation_row_count": 197528,
+  "test_row_count": 208886,
+  "train_hash": "02ba5877fdf189ba807a6b8e4463383fd04e86f6b3a65a1a5e9583f8b2d989d2",
+  "validation_hash": "d1585d22e101c717bf52426e8e625da960c975aa35db703a435bc4a7f8b3df91",
+  "test_hash": "4dfedb1ad7785fa3833047135b1883676f3e1b49aca9c87fcdb346e64fd489c6",
+  "creation_timestamp": "2026-09-14T11:40:24+00:00",
+  "git_commit": null,
+  "script_version": "stage3-0.1.0",
+  "hash_method": "sha256 of sorted issue_month\\tid lines within each split"
+}

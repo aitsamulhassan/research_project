@@ -1,0 +1,176 @@
+{
+  "experiment_id": "s10_i1_identity_v1",
+  "classification": "INTEGRITY / PROVENANCE CHECK \u2014 NOT A SCIENTIFIC CONFIRMATORY EXPERIMENT",
+  "status": "PASS WITH DOCUMENTATION LIMITATION",
+  "issues": [],
+  "documentation_limitations": [
+    "Stage 8 v2 test_audit_records.csv has no row_ref column; calibrated_probability vs p_selected identity is positional (calibrated CSV file order), not a keyed join. This is a provenance documentation limitation, not a count/hash mismatch.",
+    "git_commit is null (no usable .git / git). Recorded, not fabricated. Stage 10 protocol \u00a714: not by itself a scientific abort."
+  ],
+  "n": 208886,
+  "same_test_rows": true,
+  "probability_file": "C:/Users/User/research-project/results/calibration/test/ebm_seed42_calibrated.csv",
+  "p_selected_identity": {
+    "a0_a1_a3_share_single_p_selected_vector": true,
+    "p_selected_equals_stored_p_platt": true,
+    "p_selected_differs_from_p_raw": true,
+    "selected_method_platt_only": true,
+    "no_ebm_or_platt_joblib_loaded_for_scoring": true,
+    "no_p_selected_recomputed_from_p_raw": true
+  },
+  "a0": {
+    "t_low": 0.06,
+    "t_high": 0.69,
+    "remap_counts": {
+      "APPROVE": 5232,
+      "HUMAN_REVIEW": 203627,
+      "REJECT": 27
+    },
+    "stored_counts": {
+      "APPROVE": 5232,
+      "HUMAN_REVIEW": 203627,
+      "REJECT": 27
+    },
+    "match": true
+  },
+  "a1": {
+    "credit_bands_from_same_p_selected": {
+      "LOW": 5232,
+      "MEDIUM": 203627,
+      "HIGH": 27
+    },
+    "stored_credit_bands": {
+      "HIGH": 27,
+      "LOW": 5232,
+      "MEDIUM": 203627
+    },
+    "bands_match": true,
+    "g0_insufficient_map": {
+      "LOW": "HUMAN_REVIEW",
+      "MEDIUM": "HUMAN_REVIEW",
+      "HIGH": "REJECT"
+    },
+    "remap_counts": {
+      "APPROVE": 0,
+      "HUMAN_REVIEW": 208859,
+      "REJECT": 27
+    },
+    "stored_counts": {
+      "APPROVE": 0,
+      "HUMAN_REVIEW": 208859,
+      "REJECT": 27
+    },
+    "match": true,
+    "expected_a1": {
+      "APPROVE": 0,
+      "HUMAN_REVIEW": 208859,
+      "REJECT": 27
+    }
+  },
+  "a3_a4": {
+    "t_star": 0.16,
+    "remap_counts": {
+      "APPROVE": 61855,
+      "HUMAN_REVIEW": 0,
+      "REJECT": 147031
+    },
+    "stored_counts": {
+      "APPROVE": 61855,
+      "HUMAN_REVIEW": 0,
+      "REJECT": 147031
+    },
+    "match": true,
+    "human_review_branch": false,
+    "human_review_count": 0
+  },
+  "row_provenance": {
+    "test_cal_n": 208886,
+    "unique_row_ref": 208886,
+    "split_test_only": true,
+    "stage8_v2_audit_n": 208886,
+    "audit_calibrated_matches_p_selected": true,
+    "audit_bands_match_frozen_map": true
+  },
+  "hashes": {
+    "v1_freeze_sha256": "4d3da6a9e5bac2b38b546c7a5a60e870bf83f30adcadf67f067f99951e32f0c4",
+    "v2_freeze_sha256": "b874782326a8f20ed9bb7df1aa5ed1c75f883d8b6cba76b68991181d50b1604b",
+    "table3_sha256": "90759eb72f1173b40b5b9363c21b0ef3d6f1cde5042748eb57871d49fb73d5ee",
+    "test_cal_sha256": "e15ddd2f85a6c3fc9d0a79eecb578f7a94ded8a7efc63d9d114212728b2469eb",
+    "expected_v1": "4d3da6a9e5bac2b38b546c7a5a60e870bf83f30adcadf67f067f99951e32f0c4",
+    "expected_v2": "b874782326a8f20ed9bb7df1aa5ed1c75f883d8b6cba76b68991181d50b1604b",
+    "expected_table3": "90759eb72f1173b40b5b9363c21b0ef3d6f1cde5042748eb57871d49fb73d5ee",
+    "expected_test_cal": "e15ddd2f85a6c3fc9d0a79eecb578f7a94ded8a7efc63d9d114212728b2469eb",
+    "vs_stage9_4_protected_after": {
+      "all_match": true,
+      "checks": {
+        "results/decision/frozen_policy.json": {
+          "live": "4d3da6a9e5bac2b38b546c7a5a60e870bf83f30adcadf67f067f99951e32f0c4",
+          "stage9_4_protected_after": "4d3da6a9e5bac2b38b546c7a5a60e870bf83f30adcadf67f067f99951e32f0c4",
+          "matched_key": "C:\\Users\\User\\research-project\\results\\decision\\frozen_policy.json",
+          "match": true
+        },
+        "results/decision/v2/frozen_policy.json": {
+          "live": "b874782326a8f20ed9bb7df1aa5ed1c75f883d8b6cba76b68991181d50b1604b",
+          "stage9_4_protected_after": "b874782326a8f20ed9bb7df1aa5ed1c75f883d8b6cba76b68991181d50b1604b",
+          "matched_key": "C:\\Users\\User\\research-project\\results\\decision\\v2\\frozen_policy.json",
+          "match": true
+        },
+        "results/decision/v2/tables/table3_test_decision_outcomes.csv": {
+          "live": "90759eb72f1173b40b5b9363c21b0ef3d6f1cde5042748eb57871d49fb73d5ee",
+          "stage9_4_protected_after": "90759eb72f1173b40b5b9363c21b0ef3d6f1cde5042748eb57871d49fb73d5ee",
+          "matched_key": "C:\\Users\\User\\research-project\\results\\decision\\v2\\tables\\table3_test_decision_outcomes.csv",
+          "match": true
+        },
+        "results/calibration/test/ebm_seed42_calibrated.csv": {
+          "live": "e15ddd2f85a6c3fc9d0a79eecb578f7a94ded8a7efc63d9d114212728b2469eb",
+          "stage9_4_protected_after": "e15ddd2f85a6c3fc9d0a79eecb578f7a94ded8a7efc63d9d114212728b2469eb",
+          "matched_key": "C:\\Users\\User\\research-project\\results\\calibration\\test\\ebm_seed42_calibrated.csv",
+          "match": true
+        }
+      }
+    }
+  },
+  "thresholds": {
+    "t_low": 0.06,
+    "t_high": 0.69,
+    "t_star": 0.16,
+    "v1_t_low": 0.06,
+    "v1_t_high": 0.69,
+    "v2_t_low": 0.06,
+    "v2_t_high": 0.69,
+    "v2_monolithic_t": 0.16,
+    "thresholds_reselected": false
+  },
+  "platt": {
+    "a": 1.1988263209549705,
+    "b": 0.6697765046966161,
+    "record_a": 1.1988263209549705,
+    "record_b": 0.6697765046966161,
+    "match": true,
+    "fit_split": "validation"
+  },
+  "integrity_from_stage9_1": {
+    "v1_freeze_sha256": "4d3da6a9e5bac2b38b546c7a5a60e870bf83f30adcadf67f067f99951e32f0c4",
+    "v2_freeze_sha256": "b874782326a8f20ed9bb7df1aa5ed1c75f883d8b6cba76b68991181d50b1604b",
+    "platt_record_sha256": "9ca39188c961e5d1222346a7fba14902cb58dc24b78a0de2136b6437de01f44c",
+    "ebm_joblib_sha256": "8d373df1b576ca74f498d2bfcc54653cbf43d37b0af69400a26e20ab98a3a0c4",
+    "platt_joblib_sha256": "7f05d116676fcf5160e91b46bf2c587a974a9489360bae140c49c5ff40ed1a12",
+    "t_low": 0.06,
+    "t_high": 0.69,
+    "t_star": 0.16,
+    "platt_a": 1.1988263209549705,
+    "platt_b": 0.6697765046966161,
+    "test_cal_sha256": "e15ddd2f85a6c3fc9d0a79eecb578f7a94ded8a7efc63d9d114212728b2469eb"
+  },
+  "models_trained": false,
+  "models_loaded_for_scoring": false,
+  "calibration_refit": false,
+  "thresholds_searched": false,
+  "uci_opened": false,
+  "stage8_9_results_modified": false,
+  "s10_r1_executed": false,
+  "s10_a1_gap_executed": false,
+  "s10_a4_executed": false,
+  "confirmatory_experiment": false,
+  "git_commit": null
+}

@@ -1,0 +1,79 @@
+{
+  "family": "random_forest",
+  "seed": 42,
+  "split": "test",
+  "experiment_id": "stage4b-lc-granting-v1",
+  "roc_auc": 0.6609260816246479,
+  "pr_auc": 0.33258566142201473,
+  "brier": 0.23597628092130948,
+  "log_loss": 0.6648999360582141,
+  "n": 208886,
+  "roc_auc_ci_lower": 0.6583409722918866,
+  "roc_auc_ci_upper": 0.6636583681808403,
+  "pr_auc_ci_lower": 0.32835543187117855,
+  "pr_auc_ci_upper": 0.33652823943186394,
+  "brier_ci_lower": 0.23580210979805832,
+  "brier_ci_upper": 0.23614993443338622,
+  "log_loss_ci_lower": 0.6645493297463685,
+  "log_loss_ci_upper": 0.6652497037853771,
+  "bootstrap": {
+    "roc_auc": {
+      "point": 0.6609260816246479,
+      "ci_lower": 0.6583409722918866,
+      "ci_upper": 0.6636583681808403,
+      "n_bootstrap": 1000,
+      "n_valid": 1000,
+      "n_skipped_degenerate": 0,
+      "confidence_level": 0.95,
+      "seed": 42,
+      "method": "percentile_bootstrap_rows_with_replacement"
+    },
+    "pr_auc": {
+      "point": 0.33258566142201473,
+      "ci_lower": 0.32835543187117855,
+      "ci_upper": 0.33652823943186394,
+      "n_bootstrap": 1000,
+      "n_valid": 1000,
+      "n_skipped_degenerate": 0,
+      "confidence_level": 0.95,
+      "seed": 42,
+      "method": "percentile_bootstrap_rows_with_replacement"
+    },
+    "brier": {
+      "point": 0.23597628092130948,
+      "ci_lower": 0.23580210979805832,
+      "ci_upper": 0.23614993443338622,
+      "n_bootstrap": 1000,
+      "n_valid": 1000,
+      "n_skipped_degenerate": 0,
+      "confidence_level": 0.95,
+      "seed": 42,
+      "method": "percentile_bootstrap_rows_with_replacement"
+    },
+    "log_loss": {
+      "point": 0.6648999360582141,
+      "ci_lower": 0.6645493297463685,
+      "ci_upper": 0.6652497037853771,
+      "n_bootstrap": 1000,
+      "n_valid": 1000,
+      "n_skipped_degenerate": 0,
+      "confidence_level": 0.95,
+      "seed": 42,
+      "method": "percentile_bootstrap_rows_with_replacement"
+    }
+  },
+  "config": {
+    "family": "random_forest",
+    "n_estimators": 80,
+    "max_depth": 12,
+    "min_samples_leaf": 100,
+    "max_features": "sqrt",
+    "class_weight": "balanced",
+    "bootstrap": true,
+    "n_jobs": 4,
+    "random_state": 42,
+    "imbalance_strategy": "sklearn class_weight='balanced'",
+    "input_representation": "Stage 4A sparse matrix converted to CSC float32. Not densified; sklearn 1.9 RandomForestClassifier accepts sparse CSC.",
+    "size_justification": "80 trees, depth 12, leaf 100: small enough for reproducible training on ~941k rows x 1023 features without an uncontrolled search."
+  }
+}

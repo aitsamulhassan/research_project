@@ -1,0 +1,24 @@
+{
+  "overlap_top3": 1.0,
+  "overlap_top5": 1.0,
+  "overlap_top9": 1.0,
+  "spearman": 1.0,
+  "kendall": 1.0,
+  "footrule_normalized": 0.0,
+  "sign_agreement_vs_centered_terms": 1.0,
+  "sign_agreement_vs_uncentered_terms": 1.0,
+  "additive_reconstruction_max_abs_error": 8.881784197001252e-16,
+  "background_means": {
+    "revenue": 1.7392413238658858e-17,
+    "dti_n": -2.1257393958360827e-17,
+    "loan_amnt": 6.18396915152315e-17,
+    "fico_n": -9.662451799254921e-18,
+    "emp_length": 2.1740516548323573e-18,
+    "purpose": 4.8312258996274606e-18,
+    "home_ownership_n": -1.1594942159105905e-17,
+    "addr_state": 8.303669514984698e-20,
+    "zip_code": 0.0
+  },
+  "background_mean_max_abs": 6.18396915152315e-17,
+  "experiment_id": "stage6-lc-ebm-explain-v1"
+}

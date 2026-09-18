@@ -1,0 +1,4 @@
+c_review_over_fp,t_low,t_high,policy_type,expected_normalized_cost,approval_rate,review_rate,rejection_rate,scenario,split
+0.1,0.04,0.77,two_threshold,0.0999392491191122,0.0028856668421692,0.9971143331578308,0.0,FN:FP=5:1,validation
+0.25,0.06,0.69,two_threshold,0.2490254546190919,0.0148029646429873,0.9850856587420518,0.0001113766149609,FN:FP=5:1,validation
+0.5,0.1,0.53,two_threshold,0.4871916892794946,0.0728909319185128,0.9153638977765176,0.0117451703049694,FN:FP=5:1,validation

@@ -1,0 +1,13 @@
+governance,credit_band,final_decision,assumption
+NOT_STRUCTURABLE_WITHOUT_REDESIGN,LOW,REJECT,"Researcher policy mapping, not a religious ruling"
+NOT_STRUCTURABLE_WITHOUT_REDESIGN,MEDIUM,REJECT,"Researcher policy mapping, not a religious ruling"
+NOT_STRUCTURABLE_WITHOUT_REDESIGN,HIGH,REJECT,"Researcher policy mapping, not a religious ruling"
+INSUFFICIENT_INFORMATION,LOW,HUMAN_REVIEW,"Researcher policy mapping, not a religious ruling"
+INSUFFICIENT_INFORMATION,MEDIUM,HUMAN_REVIEW,"Researcher policy mapping, not a religious ruling"
+INSUFFICIENT_INFORMATION,HIGH,REJECT,"Researcher policy mapping, not a religious ruling"
+REVIEW,LOW,HUMAN_REVIEW,"Researcher policy mapping, not a religious ruling"
+REVIEW,MEDIUM,HUMAN_REVIEW,"Researcher policy mapping, not a religious ruling"
+REVIEW,HIGH,REJECT,"Researcher policy mapping, not a religious ruling"
+PASS,LOW,APPROVE,"Researcher policy mapping, not a religious ruling"
+PASS,MEDIUM,HUMAN_REVIEW,"Researcher policy mapping, not a religious ruling"
+PASS,HIGH,REJECT,"Researcher policy mapping, not a religious ruling"

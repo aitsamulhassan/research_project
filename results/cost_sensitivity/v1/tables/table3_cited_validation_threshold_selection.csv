@@ -1,0 +1,5 @@
+cost_scenario,t_low,t_high,single_t,expected_normalized_cost,single_cost,approval_rate,review_rate,rejection_rate,split,note
+FN:FP=1:1,0.25,0.69,0.53,0.2056050281479081,0.2471092705844234,0.542702806690697,0.457185816694342,0.0001113766149609,validation,Already-executed Stage 8 validation threshold identification. Not repeated. Not TEST selection.
+FN:FP=2:1,0.12,0.69,0.33,0.240082418695071,0.4483263132315419,0.1169150702685189,0.8829735531165201,0.0001113766149609,validation,Already-executed Stage 8 validation threshold identification. Not repeated. Not TEST selection.
+FN:FP=5:1,0.06,0.69,0.16,0.2490254546190919,0.6765471224332753,0.0148029646429873,0.9850856587420518,0.0001113766149609,validation,Already-executed Stage 8 validation threshold identification. Not repeated. Not TEST selection.
+FN:FP=10:1,0.04,0.69,0.1,0.249726621036005,0.7321797416062533,0.0028856668421692,0.99700295654287,0.0001113766149609,validation,Already-executed Stage 8 validation threshold identification. Not repeated. Not TEST selection.

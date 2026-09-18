@@ -1,0 +1,102 @@
+{
+  "family": "explainable_boosting_machine",
+  "seed": 42,
+  "split": "test",
+  "experiment_id": "stage4b-lc-granting-v1",
+  "roc_auc": 0.6799408767429772,
+  "pr_auc": 0.3534066581608194,
+  "brier": 0.15684495750106664,
+  "log_loss": 0.48493888407781477,
+  "n": 208886,
+  "roc_auc_ci_lower": 0.6772520975812178,
+  "roc_auc_ci_upper": 0.6828319764466856,
+  "pr_auc_ci_lower": 0.3492795049814313,
+  "pr_auc_ci_upper": 0.3577134296795478,
+  "brier_ci_lower": 0.15586719460814155,
+  "brier_ci_upper": 0.1579539606709722,
+  "log_loss_ci_lower": 0.48256540952492283,
+  "log_loss_ci_upper": 0.4876684847208271,
+  "bootstrap": {
+    "roc_auc": {
+      "point": 0.6799408767429772,
+      "ci_lower": 0.6772520975812178,
+      "ci_upper": 0.6828319764466856,
+      "n_bootstrap": 1000,
+      "n_valid": 1000,
+      "n_skipped_degenerate": 0,
+      "confidence_level": 0.95,
+      "seed": 42,
+      "method": "percentile_bootstrap_rows_with_replacement"
+    },
+    "pr_auc": {
+      "point": 0.3534066581608194,
+      "ci_lower": 0.3492795049814313,
+      "ci_upper": 0.3577134296795478,
+      "n_bootstrap": 1000,
+      "n_valid": 1000,
+      "n_skipped_degenerate": 0,
+      "confidence_level": 0.95,
+      "seed": 42,
+      "method": "percentile_bootstrap_rows_with_replacement"
+    },
+    "brier": {
+      "point": 0.15684495750106664,
+      "ci_lower": 0.15586719460814155,
+      "ci_upper": 0.1579539606709722,
+      "n_bootstrap": 1000,
+      "n_valid": 1000,
+      "n_skipped_degenerate": 0,
+      "confidence_level": 0.95,
+      "seed": 42,
+      "method": "percentile_bootstrap_rows_with_replacement"
+    },
+    "log_loss": {
+      "point": 0.48493888407781477,
+      "ci_lower": 0.48256540952492283,
+      "ci_upper": 0.4876684847208271,
+      "n_bootstrap": 1000,
+      "n_valid": 1000,
+      "n_skipped_degenerate": 0,
+      "confidence_level": 0.95,
+      "seed": 42,
+      "method": "percentile_bootstrap_rows_with_replacement"
+    }
+  },
+  "config": {
+    "family": "explainable_boosting_machine",
+    "feature_names": [
+      "revenue",
+      "dti_n",
+      "loan_amnt",
+      "fico_n",
+      "emp_length",
+      "purpose",
+      "home_ownership_n",
+      "addr_state",
+      "zip_code"
+    ],
+    "feature_types": [
+      "continuous",
+      "continuous",
+      "continuous",
+      "continuous",
+      "nominal",
+      "nominal",
+      "nominal",
+      "nominal",
+      "nominal"
+    ],
+    "interactions": 0,
+    "interaction_justification": "Interactions are set to 0 before any test evaluation so EBM remains an additive per-original-feature reference. They are not added to improve test scores.",
+    "max_bins": 256,
+    "learning_rate": 0.02,
+    "max_rounds": 200,
+    "outer_bags": 4,
+    "inner_bags": 0,
+    "validation_size": 0.15,
+    "early_stopping_rounds": 20,
+    "random_state": 42,
+    "imbalance_strategy": "none (EBM 0.7.8 has no class_weight argument; labels are used as observed)",
+    "input_representation": "Stage 4A train-only (or train+val) imputers applied to the original 9 columns; one-hot expansion is not used because it would destroy EBM additive structure and exceed practical memory on 1023 dense dummy columns."
+  }
+}

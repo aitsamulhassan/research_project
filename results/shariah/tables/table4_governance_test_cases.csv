@@ -1,0 +1,11 @@
+case_id,synthetic,label,layer_a,expected_status,actual_status,experiment_id
+SYN-LC-001,True,Synthetic governance test case,INSUFFICIENT,INSUFFICIENT_INFORMATION,INSUFFICIENT_INFORMATION,stage7-shariah-gov-v1
+SYN-AMBIGUOUS-001,True,Synthetic governance test case,PARTIAL,REVIEW,REVIEW,stage7-shariah-gov-v1
+SYN-MUR-OPS-COMPLETE-001,True,Synthetic governance test case,PARTIAL,REVIEW,REVIEW,stage7-shariah-gov-v1
+SYN-MUR-MISSING-PAY-001,True,Synthetic governance test case,INSUFFICIENT,INSUFFICIENT_INFORMATION,INSUFFICIENT_INFORMATION,stage7-shariah-gov-v1
+SYN-MUR-PAY-CUSTOMER-001,True,Synthetic governance test case,PARTIAL,NOT_STRUCTURABLE_WITHOUT_REDESIGN,NOT_STRUCTURABLE_WITHOUT_REDESIGN,stage7-shariah-gov-v1
+SYN-MUR-NO-SB-001,True,Synthetic governance test case,PARTIAL,NOT_STRUCTURABLE_WITHOUT_REDESIGN,NOT_STRUCTURABLE_WITHOUT_REDESIGN,stage7-shariah-gov-v1
+SYN-MUR-ALT-DOCS-001,True,Synthetic governance test case,PARTIAL,REVIEW,REVIEW,stage7-shariah-gov-v1
+SYN-IJARAH-IBI-001,True,Synthetic governance test case,PARTIAL,REVIEW,REVIEW,stage7-shariah-gov-v1
+SYN-SECP-CLAIM-NO-CERT-001,True,Synthetic governance test case,COMPLETE,NOT_STRUCTURABLE_WITHOUT_REDESIGN,NOT_STRUCTURABLE_WITHOUT_REDESIGN,stage7-shariah-gov-v1
+SYN-UNKNOWN-NOT-PASS-001,True,Synthetic governance test case,INSUFFICIENT,INSUFFICIENT_INFORMATION,INSUFFICIENT_INFORMATION,stage7-shariah-gov-v1

@@ -1,0 +1,97 @@
+{
+  "experiment_id": "s10_i1_identity_v1",
+  "amendment_id": "AMENDMENT-STAGE10-AUTHORIZATION",
+  "amendment_status": "APPROVED",
+  "started": "2026-09-15T20:32:14+00:00",
+  "execution_timestamp": "2026-09-15T20:32:18+00:00",
+  "git_commit": null,
+  "status": "PASS WITH DOCUMENTATION LIMITATION",
+  "classification": "INTEGRITY / PROVENANCE CHECK \u2014 NOT A SCIENTIFIC CONFIRMATORY EXPERIMENT",
+  "confirmatory_experiment": false,
+  "models_trained": false,
+  "models_loaded_for_scoring": false,
+  "calibration_refit": false,
+  "thresholds_searched": false,
+  "uci_opened": false,
+  "stage8_9_results_modified": false,
+  "s10_r1_executed": false,
+  "s10_a1_gap_executed": false,
+  "s10_a4_executed": false,
+  "issues": [],
+  "documentation_limitations": [
+    "Stage 8 v2 test_audit_records.csv has no row_ref column; calibrated_probability vs p_selected identity is positional (calibrated CSV file order), not a keyed join. This is a provenance documentation limitation, not a count/hash mismatch.",
+    "git_commit is null (no usable .git / git). Recorded, not fabricated. Stage 10 protocol \u00a714: not by itself a scientific abort."
+  ],
+  "n": 208886,
+  "a0_match": true,
+  "a1_match": true,
+  "a3_match": true,
+  "hashes": {
+    "v1_freeze_sha256": "4d3da6a9e5bac2b38b546c7a5a60e870bf83f30adcadf67f067f99951e32f0c4",
+    "v2_freeze_sha256": "b874782326a8f20ed9bb7df1aa5ed1c75f883d8b6cba76b68991181d50b1604b",
+    "table3_sha256": "90759eb72f1173b40b5b9363c21b0ef3d6f1cde5042748eb57871d49fb73d5ee",
+    "test_cal_sha256": "e15ddd2f85a6c3fc9d0a79eecb578f7a94ded8a7efc63d9d114212728b2469eb",
+    "expected_v1": "4d3da6a9e5bac2b38b546c7a5a60e870bf83f30adcadf67f067f99951e32f0c4",
+    "expected_v2": "b874782326a8f20ed9bb7df1aa5ed1c75f883d8b6cba76b68991181d50b1604b",
+    "expected_table3": "90759eb72f1173b40b5b9363c21b0ef3d6f1cde5042748eb57871d49fb73d5ee",
+    "expected_test_cal": "e15ddd2f85a6c3fc9d0a79eecb578f7a94ded8a7efc63d9d114212728b2469eb",
+    "vs_stage9_4_protected_after": {
+      "all_match": true,
+      "checks": {
+        "results/decision/frozen_policy.json": {
+          "live": "4d3da6a9e5bac2b38b546c7a5a60e870bf83f30adcadf67f067f99951e32f0c4",
+          "stage9_4_protected_after": "4d3da6a9e5bac2b38b546c7a5a60e870bf83f30adcadf67f067f99951e32f0c4",
+          "matched_key": "C:\\Users\\User\\research-project\\results\\decision\\frozen_policy.json",
+          "match": true
+        },
+        "results/decision/v2/frozen_policy.json": {
+          "live": "b874782326a8f20ed9bb7df1aa5ed1c75f883d8b6cba76b68991181d50b1604b",
+          "stage9_4_protected_after": "b874782326a8f20ed9bb7df1aa5ed1c75f883d8b6cba76b68991181d50b1604b",
+          "matched_key": "C:\\Users\\User\\research-project\\results\\decision\\v2\\frozen_policy.json",
+          "match": true
+        },
+        "results/decision/v2/tables/table3_test_decision_outcomes.csv": {
+          "live": "90759eb72f1173b40b5b9363c21b0ef3d6f1cde5042748eb57871d49fb73d5ee",
+          "stage9_4_protected_after": "90759eb72f1173b40b5b9363c21b0ef3d6f1cde5042748eb57871d49fb73d5ee",
+          "matched_key": "C:\\Users\\User\\research-project\\results\\decision\\v2\\tables\\table3_test_decision_outcomes.csv",
+          "match": true
+        },
+        "results/calibration/test/ebm_seed42_calibrated.csv": {
+          "live": "e15ddd2f85a6c3fc9d0a79eecb578f7a94ded8a7efc63d9d114212728b2469eb",
+          "stage9_4_protected_after": "e15ddd2f85a6c3fc9d0a79eecb578f7a94ded8a7efc63d9d114212728b2469eb",
+          "matched_key": "C:\\Users\\User\\research-project\\results\\calibration\\test\\ebm_seed42_calibrated.csv",
+          "match": true
+        }
+      }
+    }
+  },
+  "thresholds": {
+    "t_low": 0.06,
+    "t_high": 0.69,
+    "t_star": 0.16,
+    "v1_t_low": 0.06,
+    "v1_t_high": 0.69,
+    "v2_t_low": 0.06,
+    "v2_t_high": 0.69,
+    "v2_monolithic_t": 0.16,
+    "thresholds_reselected": false
+  },
+  "platt": {
+    "a": 1.1988263209549705,
+    "b": 0.6697765046966161,
+    "record_a": 1.1988263209549705,
+    "record_b": 0.6697765046966161,
+    "match": true,
+    "fit_split": "validation"
+  },
+  "protected_files_unchanged": true,
+  "config_sha256": "872d85b8ea2eb44474d66032e39098dda9dc9e6e8d87b856fbc32e702bf087cc",
+  "metrics_sha256": "b276319d72c5a9088cda4334c484a5fff6af027cdba4bc89859cb0e1d65be120",
+  "report_sha256": "5ba09c8990548ee169d0d2368fbc8fdece45e8091f68d95cf00c2f7ebf30d784",
+  "pytest_exit_code": 0,
+  "test_command": "python -m pytest tests/test_stage10_i1_identity.py -q --tb=short",
+  "test_summary": "6 passed in 1.66s",
+  "software": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]"
+  }
+}

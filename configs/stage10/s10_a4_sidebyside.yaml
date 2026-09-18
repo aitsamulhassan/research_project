@@ -1,0 +1,23 @@
+experiment_id: s10_a4_sidebyside_v1
+amendment_id: AMENDMENT-STAGE10-AUTHORIZATION
+classification: ANALYSIS-ONLY / DESCRIPTIVE COMPARISON
+confirmatory_experiment: false
+metrics_recomputed: false
+policy_assignments_recomputed: false
+xgboost_in_primary_table: false
+xgboost_ratified: false
+overall_model_ranking_produced: false
+uci_reopened: false
+discrepancy_reopened: false
+inputs:
+  - results/calibration/metrics/stage5_test_metrics.json
+  - results/metrics/stage4b_test_metrics.json
+  - audit/stage4b_modeling_run.json
+  - audit/stage5_calibration_run.json
+  - audit/lendingclub_split_manifest.json
+  - experiments/stage5_calibration/checkpoints/train_only_ebm_meta.json
+  - results/calibration/artifacts/platt_record.json
+  - results/decision/v2/tables/table3_test_decision_outcomes.csv
+  - audit/stage9_1_ablation_run.json
+  - results/uci_generalization/v1/tables/uci_test_family_raw.csv
+  - docs/STAGE_9_4_UCI_GENERALIZATION_REPORT.md

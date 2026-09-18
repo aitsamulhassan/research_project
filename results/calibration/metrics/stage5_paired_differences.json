@@ -1,0 +1,66 @@
+[
+  {
+    "comparison": "RAW vs PLATT",
+    "metric": "brier",
+    "difference": -0.0017665131094414532,
+    "ci_lower": -0.002005035391561569,
+    "ci_upper": -0.001507883218065545,
+    "direction": "calibrated_minus_raw"
+  },
+  {
+    "comparison": "RAW vs PLATT",
+    "metric": "log_loss",
+    "difference": -0.004515417972415947,
+    "ci_lower": -0.005181489447647724,
+    "ci_upper": -0.0038453430498090846,
+    "direction": "calibrated_minus_raw"
+  },
+  {
+    "comparison": "RAW vs PLATT",
+    "metric": "ece",
+    "difference": -0.017267209870280038,
+    "ci_lower": -0.020730233602408395,
+    "ci_upper": -0.014169897420753972,
+    "direction": "calibrated_minus_raw"
+  },
+  {
+    "comparison": "RAW vs PLATT",
+    "metric": "mce",
+    "difference": -0.19732540047298552,
+    "ci_lower": -0.33662737867187215,
+    "ci_upper": 0.270316378125387,
+    "direction": "calibrated_minus_raw"
+  },
+  {
+    "comparison": "RAW vs ISOTONIC",
+    "metric": "brier",
+    "difference": -0.0017387793964645792,
+    "ci_lower": -0.0019763298419630424,
+    "ci_upper": -0.0014803299597269531,
+    "direction": "calibrated_minus_raw"
+  },
+  {
+    "comparison": "RAW vs ISOTONIC",
+    "metric": "log_loss",
+    "difference": -0.004477499067512158,
+    "ci_lower": -0.00511892780730931,
+    "ci_upper": -0.0038034933470266334,
+    "direction": "calibrated_minus_raw"
+  },
+  {
+    "comparison": "RAW vs ISOTONIC",
+    "metric": "ece",
+    "difference": -0.01748835547446187,
+    "ci_lower": -0.020971409698413962,
+    "ci_upper": -0.014390360961132968,
+    "direction": "calibrated_minus_raw"
+  },
+  {
+    "comparison": "RAW vs ISOTONIC",
+    "metric": "mce",
+    "difference": -0.0767038191375059,
+    "ci_lower": -0.23818530061898746,
+    "ci_upper": 0.35120183521382486,
+    "direction": "calibrated_minus_raw"
+  }
+]

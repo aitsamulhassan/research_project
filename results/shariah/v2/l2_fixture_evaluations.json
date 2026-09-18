@@ -1,0 +1,233 @@
+{
+  "experiment_id": "stage7-shariah-gov-v2",
+  "evaluations": [
+    {
+      "case_id": "l2:lendingclub:c23802cf3026b797",
+      "synthetic": true,
+      "evaluation_mode": "PER_APPLICATION",
+      "dataset_id": "lendingclub",
+      "record_reference_hash": "c23802cf3026b7975ab1de4ae51039ce64a66d089d069dcba85a1994993dbd46",
+      "evidence_hash": "5d8c1ac34bec8a286e0e453ff40c0d24e254fa509cd6a30429313ca68b7da0b2",
+      "overall_governance_status": "INSUFFICIENT_INFORMATION",
+      "layer_a": "INSUFFICIENT",
+      "missing_evidence": [
+        "verified_contract_type",
+        "shariah_board_approval",
+        "invoice_or_payment_path",
+        "security_claim",
+        "security_certificate",
+        "ownership_or_possession_evidence",
+        "contractual_sequence_documented"
+      ],
+      "triggered_rule_ids": [
+        "SH-ARCH-001"
+      ],
+      "source_ids": [
+        "SRC-STAGE7-ARCHITECTURE"
+      ],
+      "expert_validation_states": [
+        "RESEARCH_ARCHITECTURE_NOT_A_RULING",
+        "SOURCE_VERIFIED_PENDING_EXPERT_REVIEW"
+      ],
+      "any_expert_validated": false,
+      "certification_claim": false,
+      "cache_hit": false,
+      "l1": {
+        "readiness_status": "INSUFFICIENT_SCHEMA_FOR_APPLICANT_DETERMINATION",
+        "is_applicant_level_ruling": false,
+        "evaluation_mode": "DATASET_INTEGRATION",
+        "dataset_id": "lendingclub"
+      },
+      "l2": {
+        "evaluation_mode": "PER_APPLICATION",
+        "dataset_id": "lendingclub",
+        "record_reference_hash": "c23802cf3026b7975ab1de4ae51039ce64a66d089d069dcba85a1994993dbd46",
+        "evidence_hash": "5d8c1ac34bec8a286e0e453ff40c0d24e254fa509cd6a30429313ca68b7da0b2",
+        "missing_evidence": [
+          "verified_contract_type",
+          "shariah_board_approval",
+          "invoice_or_payment_path",
+          "security_claim",
+          "security_certificate",
+          "ownership_or_possession_evidence",
+          "contractual_sequence_documented"
+        ],
+        "cache_hit": false,
+        "firewall_fields_dropped": [
+          "Default",
+          "addr_state",
+          "desc",
+          "dti_n",
+          "emp_length",
+          "experience_c",
+          "fico_n",
+          "home_ownership_n",
+          "id",
+          "issue_d",
+          "loan_amnt",
+          "purpose",
+          "revenue",
+          "title",
+          "zip_code"
+        ]
+      },
+      "amendment_id": "AMENDMENT-SHARIAH-001",
+      "engine_version": "stage7-shariah-engine-v1",
+      "l1l2_version": "stage7-l1l2-v2",
+      "timestamp": "2026-09-15T00:00:00+00:00",
+      "fixture_key": "lc-unit-001"
+    },
+    {
+      "case_id": "l2:lendingclub:c474c3be1b9d8083",
+      "synthetic": true,
+      "evaluation_mode": "PER_APPLICATION",
+      "dataset_id": "lendingclub",
+      "record_reference_hash": "c474c3be1b9d808398b3141f84d82a99773af5a8decd9f20dad32ee7656f1e06",
+      "evidence_hash": "5d8c1ac34bec8a286e0e453ff40c0d24e254fa509cd6a30429313ca68b7da0b2",
+      "overall_governance_status": "INSUFFICIENT_INFORMATION",
+      "layer_a": "INSUFFICIENT",
+      "missing_evidence": [
+        "verified_contract_type",
+        "shariah_board_approval",
+        "invoice_or_payment_path",
+        "security_claim",
+        "security_certificate",
+        "ownership_or_possession_evidence",
+        "contractual_sequence_documented"
+      ],
+      "triggered_rule_ids": [
+        "SH-ARCH-001"
+      ],
+      "source_ids": [
+        "SRC-STAGE7-ARCHITECTURE"
+      ],
+      "expert_validation_states": [
+        "RESEARCH_ARCHITECTURE_NOT_A_RULING",
+        "SOURCE_VERIFIED_PENDING_EXPERT_REVIEW"
+      ],
+      "any_expert_validated": false,
+      "certification_claim": false,
+      "cache_hit": true,
+      "l1": {
+        "readiness_status": "INSUFFICIENT_SCHEMA_FOR_APPLICANT_DETERMINATION",
+        "is_applicant_level_ruling": false,
+        "evaluation_mode": "DATASET_INTEGRATION",
+        "dataset_id": "lendingclub"
+      },
+      "l2": {
+        "evaluation_mode": "PER_APPLICATION",
+        "dataset_id": "lendingclub",
+        "record_reference_hash": "c474c3be1b9d808398b3141f84d82a99773af5a8decd9f20dad32ee7656f1e06",
+        "evidence_hash": "5d8c1ac34bec8a286e0e453ff40c0d24e254fa509cd6a30429313ca68b7da0b2",
+        "missing_evidence": [
+          "verified_contract_type",
+          "shariah_board_approval",
+          "invoice_or_payment_path",
+          "security_claim",
+          "security_certificate",
+          "ownership_or_possession_evidence",
+          "contractual_sequence_documented"
+        ],
+        "cache_hit": true,
+        "firewall_fields_dropped": [
+          "Default",
+          "addr_state",
+          "desc",
+          "dti_n",
+          "emp_length",
+          "experience_c",
+          "fico_n",
+          "home_ownership_n",
+          "id",
+          "issue_d",
+          "loan_amnt",
+          "purpose",
+          "revenue",
+          "title",
+          "zip_code"
+        ]
+      },
+      "amendment_id": "AMENDMENT-SHARIAH-001",
+      "engine_version": "stage7-shariah-engine-v1",
+      "l1l2_version": "stage7-l1l2-v2",
+      "timestamp": "2026-09-15T00:00:00+00:00",
+      "fixture_key": "lc-unit-002"
+    },
+    {
+      "case_id": "l2:lendingclub:939809f42849c4c3",
+      "synthetic": true,
+      "evaluation_mode": "PER_APPLICATION",
+      "dataset_id": "lendingclub",
+      "record_reference_hash": "939809f42849c4c355684f6f8690bab7f3cdfd127df390dc6cce3122b9a0cad8",
+      "evidence_hash": "5d8c1ac34bec8a286e0e453ff40c0d24e254fa509cd6a30429313ca68b7da0b2",
+      "overall_governance_status": "INSUFFICIENT_INFORMATION",
+      "layer_a": "INSUFFICIENT",
+      "missing_evidence": [
+        "verified_contract_type",
+        "shariah_board_approval",
+        "invoice_or_payment_path",
+        "security_claim",
+        "security_certificate",
+        "ownership_or_possession_evidence",
+        "contractual_sequence_documented"
+      ],
+      "triggered_rule_ids": [
+        "SH-ARCH-001"
+      ],
+      "source_ids": [
+        "SRC-STAGE7-ARCHITECTURE"
+      ],
+      "expert_validation_states": [
+        "RESEARCH_ARCHITECTURE_NOT_A_RULING",
+        "SOURCE_VERIFIED_PENDING_EXPERT_REVIEW"
+      ],
+      "any_expert_validated": false,
+      "certification_claim": false,
+      "cache_hit": true,
+      "l1": {
+        "readiness_status": "INSUFFICIENT_SCHEMA_FOR_APPLICANT_DETERMINATION",
+        "is_applicant_level_ruling": false,
+        "evaluation_mode": "DATASET_INTEGRATION",
+        "dataset_id": "lendingclub"
+      },
+      "l2": {
+        "evaluation_mode": "PER_APPLICATION",
+        "dataset_id": "lendingclub",
+        "record_reference_hash": "939809f42849c4c355684f6f8690bab7f3cdfd127df390dc6cce3122b9a0cad8",
+        "evidence_hash": "5d8c1ac34bec8a286e0e453ff40c0d24e254fa509cd6a30429313ca68b7da0b2",
+        "missing_evidence": [
+          "verified_contract_type",
+          "shariah_board_approval",
+          "invoice_or_payment_path",
+          "security_claim",
+          "security_certificate",
+          "ownership_or_possession_evidence",
+          "contractual_sequence_documented"
+        ],
+        "cache_hit": true,
+        "firewall_fields_dropped": [
+          "Default",
+          "addr_state",
+          "desc",
+          "dti_n",
+          "emp_length",
+          "experience_c",
+          "fico_n",
+          "home_ownership_n",
+          "id",
+          "issue_d",
+          "loan_amnt",
+          "purpose",
+          "revenue",
+          "title",
+          "zip_code"
+        ]
+      },
+      "amendment_id": "AMENDMENT-SHARIAH-001",
+      "engine_version": "stage7-shariah-engine-v1",
+      "l1l2_version": "stage7-l1l2-v2",
+      "timestamp": "2026-09-15T00:00:00+00:00",
+      "fixture_key": "lc-unit-003"
+    }
+  ]
+}

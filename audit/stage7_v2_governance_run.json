@@ -1,0 +1,50 @@
+{
+  "amendment_id": "AMENDMENT-SHARIAH-001",
+  "methodology_version": "stage7-l1l2-v2",
+  "experiment_id": "stage7-shariah-gov-v2",
+  "engine_version": "stage7-shariah-engine-v1",
+  "l1l2_version": "stage7-l1l2-v2",
+  "catalog_version": "stage7-shariah-catalog-v1",
+  "source_register_version": "stage7-source-register-v1",
+  "l1_status": "INSUFFICIENT_SCHEMA_FOR_APPLICANT_DETERMINATION",
+  "l1_is_applicant_level_ruling": false,
+  "l2_evaluation_mode": "PER_APPLICATION",
+  "any_expert_validated": false,
+  "certification_claim_policy": false,
+  "shr_001_status": "UNSUPPORTED_RETIRED",
+  "aaoifi_clause_level_implementation": "BLOCKED",
+  "credit_model_not_called": true,
+  "explainability_not_used_for_rulings": true,
+  "protected_test_split_not_used": true,
+  "stage8_implemented": false,
+  "stage9": "BLOCKED",
+  "hashes": {
+    "catalog": "4eef75aad02540726c5784538dc961db0ef9f84d40e94526f3d5f8d33c94e6cd",
+    "source_register": "5c6ede8c299a1a7b57970bc21fb80b98e83ca68632b80082e5b12cd636e3c7a2",
+    "amendment": "108d0057a9405f9cbc6a07e7e7427fd0b4eccdca16ab5d5da87006e16f0517bd",
+    "synthetic_cases": "c42ad99ad806d5f2f96e1a75ed14d02f03151a364945cc2fd3f2b8ffacbb94c8",
+    "l2_fixtures": "36545e89d1855a201aea1ff59c6093058a8b7f65a89279054cb8310a6c12a19d"
+  },
+  "git_commit": null,
+  "execution_timestamp": "2026-09-15T13:44:53+00:00",
+  "fixed_evaluation_timestamp": "2026-09-15T00:00:00+00:00",
+  "software_library_versions": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]"
+  },
+  "synthetic_case_mismatches": [],
+  "purpose_invariance": {
+    "hash_a": "5d8c1ac34bec8a286e0e453ff40c0d24e254fa509cd6a30429313ca68b7da0b2",
+    "hash_b": "5d8c1ac34bec8a286e0e453ff40c0d24e254fa509cd6a30429313ca68b7da0b2",
+    "hashes_equal": true,
+    "status_equal": true,
+    "record_hashes_differ": true
+  },
+  "status": "PASS",
+  "tests_executed": "python -m pytest tests -q --tb=short",
+  "pass_count": 148,
+  "fail_count": 0,
+  "pytest_exit_code": 0,
+  "status_reason": "Stage 7 v2 L1/L2 implemented under AMENDMENT-SHARIAH-001; synthetic cases matched; pytest passed; no EXPERT_VALIDATED claim; Stage 8 not modified.",
+  "test_summary": "148 passed, 2 warnings in 33.29s",
+  "pytest_tail": "........................................................................ [ 48%]\n........................................................................ [ 97%]\n....                                                                     [100%]\n============================== warnings summary ===============================\ntests/test_stage4b_modeling.py::test_seeds_reproduce_logistic_within_tolerance\ntests/test_stage4b_modeling.py::test_seeds_reproduce_logistic_within_tolerance\n  C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\sklearn\\linear_model\\_logistic.py:1403: FutureWarning: 'penalty' was deprecated in version 1.8 and will be removed in 1.10. To avoid this warning, leave 'penalty' set to its default value and use 'l1_ratio' or 'C' instead. Use l1_ratio=0 instead of penalty='l2', l1_ratio=1 instead of penalty='l1', l1_ratio set to a float between 0 and 1 instead of penalty='elasticnet', and C=np.inf instead of penalty=None.\n    warnings.warn(\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n148 passed, 2 warnings in 33.29s"
+}

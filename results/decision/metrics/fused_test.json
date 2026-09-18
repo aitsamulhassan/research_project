@@ -1,0 +1,104 @@
+{
+  "metrics": {
+    "n": 208886,
+    "n_positive": 44240,
+    "n_negative": 164646,
+    "tp": 14,
+    "tn": 0,
+    "fp": 13,
+    "fn": 0,
+    "n_approve": 0,
+    "n_review": 208859,
+    "n_reject": 27,
+    "approval_rate": 0.0,
+    "review_rate": 0.9998707428932527,
+    "rejection_rate": 0.00012925710674722098,
+    "fpr_auto": 1.0,
+    "fnr_auto": 0.0,
+    "fpr_population": 7.895727803894416e-05,
+    "fnr_population": 0.0,
+    "precision_reject": 0.5185185185185185,
+    "recall_reject_auto": 1.0,
+    "recall_reject_population": 0.00031645569620253165,
+    "expected_normalized_cost": 0.2500299206265619,
+    "cost_scenario": {
+      "label": "ASSUMED RELATIVE COST SCENARIO",
+      "name": "FN:FP=5:1",
+      "fn_fp_ratio": 5.0,
+      "c_fp": 1.0,
+      "c_fn": 5.0,
+      "c_review_over_fp": 0.25,
+      "c_review": 0.25,
+      "assumption": "Researcher sensitivity scenario, not a real operational cost."
+    },
+    "decision_bands": [
+      {
+        "band": "HUMAN_REVIEW",
+        "n": 208859,
+        "n_default": 44226,
+        "default_rate": 0.21175051111036633,
+        "default_rate_ci_lower": 0.21000366178265062,
+        "default_rate_ci_upper": 0.2135079639444601,
+        "ci_method": "wilson_95"
+      },
+      {
+        "band": "REJECT",
+        "n": 27,
+        "n_default": 14,
+        "default_rate": 0.5185185185185185,
+        "default_rate_ci_lower": 0.3398532458621043,
+        "default_rate_ci_upper": 0.6925704935029092,
+        "ci_method": "wilson_95"
+      }
+    ]
+  },
+  "credit_bands": [
+    {
+      "band": "HIGH",
+      "n": 27,
+      "n_default": 14,
+      "default_rate": 0.5185185185185185,
+      "default_rate_ci_lower": 0.3398532458621043,
+      "default_rate_ci_upper": 0.6925704935029092,
+      "ci_method": "wilson_95"
+    },
+    {
+      "band": "LOW",
+      "n": 5232,
+      "n_default": 196,
+      "default_rate": 0.03746177370030581,
+      "default_rate_ci_lower": 0.03264637430979647,
+      "default_rate_ci_upper": 0.04295591281821748,
+      "ci_method": "wilson_95"
+    },
+    {
+      "band": "MEDIUM",
+      "n": 203627,
+      "n_default": 44030,
+      "default_rate": 0.21622869265863565,
+      "default_rate_ci_lower": 0.21444596353189307,
+      "default_rate_ci_upper": 0.2180221287671469,
+      "ci_method": "wilson_95"
+    }
+  ],
+  "decision_bands": [
+    {
+      "band": "HUMAN_REVIEW",
+      "n": 208859,
+      "n_default": 44226,
+      "default_rate": 0.21175051111036633,
+      "default_rate_ci_lower": 0.21000366178265062,
+      "default_rate_ci_upper": 0.2135079639444601,
+      "ci_method": "wilson_95"
+    },
+    {
+      "band": "REJECT",
+      "n": 27,
+      "n_default": 14,
+      "default_rate": 0.5185185185185185,
+      "default_rate_ci_lower": 0.3398532458621043,
+      "default_rate_ci_upper": 0.6925704935029092,
+      "ci_method": "wilson_95"
+    }
+  ]
+}

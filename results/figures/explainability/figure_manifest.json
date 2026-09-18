@@ -1,0 +1,21 @@
+{
+  "experiment_id": "stage6-lc-ebm-explain-v1",
+  "stems": [
+    "figure1_global_shap_importance",
+    "figure2_shap_beeswarm",
+    "figure3_local_high_risk",
+    "figure4_local_low_risk",
+    "figure5_local_median_risk",
+    "figure6_shap_vs_ebm_disagreement",
+    "figure7_effect_fico_n",
+    "figure8_effect_loan_amnt",
+    "figure9_effect_dti_n",
+    "figure10_effect_revenue",
+    "figure11_effect_home_ownership_n",
+    "figure12_seed_rank_stability"
+  ],
+  "formats": [
+    "png",
+    "pdf"
+  ]
+}

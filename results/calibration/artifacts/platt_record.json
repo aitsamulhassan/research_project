@@ -1,0 +1,12 @@
+{
+  "method": "platt",
+  "form": "sigmoid(a * logit(p_raw) + b)",
+  "a": 1.1988263209549705,
+  "b": 0.6697765046966161,
+  "solver": "lbfgs",
+  "penalty": "none (C=np.inf)",
+  "max_iter": 1000,
+  "n_iter": 10,
+  "converged": true,
+  "fit_split": "validation"
+}

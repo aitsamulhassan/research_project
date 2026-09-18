@@ -1,0 +1,10 @@
+feature,original_dtype,processed_representation,missing_policy,encoding_policy,fit_source
+revenue,float64,numeric_passthrough_after_median_impute,SimpleImputer median fitted on TRAIN; no missing values in TRAIN,NONE,TRAIN_ONLY
+dti_n,float64,numeric_passthrough_after_median_impute,SimpleImputer median fitted on TRAIN; no missing values in TRAIN,NONE,TRAIN_ONLY
+loan_amnt,int64,numeric_passthrough_after_median_impute,SimpleImputer median fitted on TRAIN; no missing values in TRAIN,NONE,TRAIN_ONLY
+fico_n,float64,numeric_passthrough_after_median_impute,SimpleImputer median fitted on TRAIN; no missing values in TRAIN,NONE,TRAIN_ONLY
+emp_length,str,one_hot_12_train_categories,"SimpleImputer constant token '__MISSING__'; token is not a TRAIN category, so transform-time NA follows unseen-category handling",OneHotEncoder(handle_unknown='ignore') fitted on TRAIN,TRAIN_ONLY
+purpose,str,one_hot_14_train_categories,"SimpleImputer constant token '__MISSING__'; token is not a TRAIN category, so transform-time NA follows unseen-category handling",OneHotEncoder(handle_unknown='ignore') fitted on TRAIN,TRAIN_ONLY
+home_ownership_n,str,one_hot_4_train_categories,"SimpleImputer constant token '__MISSING__'; token is not a TRAIN category, so transform-time NA follows unseen-category handling",OneHotEncoder(handle_unknown='ignore') fitted on TRAIN,TRAIN_ONLY
+addr_state,str,one_hot_51_train_categories,"SimpleImputer constant token '__MISSING__'; token is not a TRAIN category, so transform-time NA follows unseen-category handling",OneHotEncoder(handle_unknown='ignore') fitted on TRAIN,TRAIN_ONLY
+zip_code,str,one_hot_938_train_categories,"SimpleImputer constant token '__MISSING__'; token is not a TRAIN category, so transform-time NA follows unseen-category handling",OneHotEncoder(handle_unknown='ignore') fitted on TRAIN,TRAIN_ONLY

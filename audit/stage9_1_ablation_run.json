@@ -1,0 +1,69 @@
+{
+  "experiment_id": "stage9_1_ablation_lc_v1",
+  "amendment_id": "AMENDMENT-SHARIAH-001",
+  "started": "2026-09-15T16:50:08+00:00",
+  "execution_timestamp": "2026-09-15T16:50:11+00:00",
+  "git_commit": null,
+  "status": "PASS",
+  "issues": [],
+  "a3_identical_to_a4": true,
+  "a1_counts": {
+    "APPROVE": 0,
+    "HUMAN_REVIEW": 208859,
+    "REJECT": 27
+  },
+  "a0_counts": {
+    "APPROVE": 5232,
+    "HUMAN_REVIEW": 203627,
+    "REJECT": 27
+  },
+  "a3_counts": {
+    "APPROVE": 61855,
+    "HUMAN_REVIEW": 0,
+    "REJECT": 147031
+  },
+  "integrity": {
+    "v1_freeze_sha256": "4d3da6a9e5bac2b38b546c7a5a60e870bf83f30adcadf67f067f99951e32f0c4",
+    "v2_freeze_sha256": "b874782326a8f20ed9bb7df1aa5ed1c75f883d8b6cba76b68991181d50b1604b",
+    "platt_record_sha256": "9ca39188c961e5d1222346a7fba14902cb58dc24b78a0de2136b6437de01f44c",
+    "ebm_joblib_sha256": "8d373df1b576ca74f498d2bfcc54653cbf43d37b0af69400a26e20ab98a3a0c4",
+    "platt_joblib_sha256": "7f05d116676fcf5160e91b46bf2c587a974a9489360bae140c49c5ff40ed1a12",
+    "t_low": 0.06,
+    "t_high": 0.69,
+    "t_star": 0.16,
+    "platt_a": 1.1988263209549705,
+    "platt_b": 0.6697765046966161,
+    "test_cal_sha256": "e15ddd2f85a6c3fc9d0a79eecb578f7a94ded8a7efc63d9d114212728b2469eb"
+  },
+  "consistency": {
+    "label": "descriptive_reanalysis_of_previously_exposed_test_outputs",
+    "used_for_selection": false,
+    "test_cal_sha256": "e15ddd2f85a6c3fc9d0a79eecb578f7a94ded8a7efc63d9d114212728b2469eb",
+    "a0_match": true,
+    "a3_match": true,
+    "n": 208886
+  },
+  "stage8_not_overwritten": true,
+  "stage8_hashes": {
+    "C:/Users/User/research-project/results/decision/frozen_policy.json": "4d3da6a9e5bac2b38b546c7a5a60e870bf83f30adcadf67f067f99951e32f0c4",
+    "C:/Users/User/research-project/results/decision/v2/frozen_policy.json": "b874782326a8f20ed9bb7df1aa5ed1c75f883d8b6cba76b68991181d50b1604b",
+    "C:/Users/User/research-project/results/decision/v2/tables/table3_test_decision_outcomes.csv": "90759eb72f1173b40b5b9363c21b0ef3d6f1cde5042748eb57871d49fb73d5ee",
+    "C:/Users/User/research-project/results/decision/v2/metrics/fused_test.json": "53871e050a20f1536ad9ebf85e64f92d19747c7e9aad2748e4ede6b472dd8bc9",
+    "C:/Users/User/research-project/docs/STAGE_8_DECISION_FUSION_REPORT_V2.md": "211337df3f4e1d2600198e645f4ed6ad50a2f3824b1073fcd397d9ac4c98a36d",
+    "C:/Users/User/research-project/audit/stage8_v2_decision_fusion_run.json": "bfd5b8102c571774b336b4c879f3bf8d42763b5f2a995222135a1c86b378f3e9"
+  },
+  "models_trained": false,
+  "thresholds_searched": false,
+  "test_used_for_selection": false,
+  "stage9_2_plus_executed": false,
+  "config_sha256": "7618a31b34c7ca64faa97dd35e806488ec014054f099ef501571d255cd6a573e",
+  "source_table3_sha256": "90759eb72f1173b40b5b9363c21b0ef3d6f1cde5042748eb57871d49fb73d5ee",
+  "pytest_exit_code": 0,
+  "test_command": "python -m pytest tests/test_stage9_1_ablation.py -q --tb=short",
+  "test_summary": "9 passed in 0.54s",
+  "software": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "pandas": "3.0.5",
+    "numpy": "2.5.2"
+  }
+}

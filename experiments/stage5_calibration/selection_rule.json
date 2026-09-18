@@ -1,0 +1,36 @@
+{
+  "declared_before_test": true,
+  "primary_criterion": "validation Brier score",
+  "indistinguishable_brier": 0.001,
+  "simplicity_order": [
+    "raw",
+    "platt",
+    "isotonic"
+  ],
+  "secondary_inspected": [
+    "log_loss",
+    "ece",
+    "mce"
+  ],
+  "test_metrics_not_consulted": true,
+  "ece_definition": {
+    "n_bins": 10,
+    "binning": "equal_width",
+    "bin_edges": [
+      0.0,
+      0.1,
+      0.2,
+      0.30000000000000004,
+      0.4,
+      0.5,
+      0.6000000000000001,
+      0.7000000000000001,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "empty_bins": "exclude_from_ece_and_mce",
+    "formula": "sum_b (n_b / n) * |acc_b - conf_b| over non-empty bins"
+  },
+  "timestamp": "2026-09-14T18:23:58+00:00"
+}

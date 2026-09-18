@@ -1,0 +1,29 @@
+project:
+  name:
+  version:
+
+datasets:
+  primary:
+  secondary:
+
+random_seeds: []
+
+split:
+  strategy:
+
+models: []
+
+calibration:
+  methods: []
+
+explainability:
+  methods: []
+
+shariah:
+  standards: []
+
+decision_policy:
+  cost_scenarios: []
+
+evaluation:
+  metrics: []

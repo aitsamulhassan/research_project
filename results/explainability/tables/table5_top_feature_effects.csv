@@ -1,0 +1,6 @@
+feature,type,pattern,scale,experiment_id
+fico_n,continuous,Fitted term tends to decrease as fico_n increases (bin-level Pearson=-0.99); not a causal claim.,EBM additive term on logit/link scale,stage6-lc-ebm-explain-v1
+loan_amnt,continuous,Fitted term tends to increase as loan_amnt increases (bin-level Pearson=0.96); not a causal claim.,EBM additive term on logit/link scale,stage6-lc-ebm-explain-v1
+dti_n,continuous,Fitted term is not approximately monotone in dti_n (bin-level Pearson=0.40).,EBM additive term on logit/link scale,stage6-lc-ebm-explain-v1
+revenue,continuous,Fitted term is not approximately monotone in revenue (bin-level Pearson=-0.25).,EBM additive term on logit/link scale,stage6-lc-ebm-explain-v1
+home_ownership_n,categorical,Category-specific terms on the logit scale; home_ownership_n is not a numeric magnitude. Largest negative fitted term: MORTGAGE. Largest positive fitted term: RENT.,EBM additive term on logit/link scale,stage6-lc-ebm-explain-v1

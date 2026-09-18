@@ -1,0 +1,129 @@
+[
+  {
+    "audit_schema_version": "1.0",
+    "event_timestamp": "2026-09-14T21:22:29+00:00",
+    "dataset_id": "lendingclub_granting_v0.1",
+    "dataset_hash": "207d65b2712f775a91404496ab27c786ac0da6b0f977f849e6d5d8149e925acc",
+    "record_reference_hash": "a65c0be96ada07bc",
+    "model_name": "explainable_boosting_machine",
+    "model_version": "stage4b-lc-granting-v1:seed42",
+    "preprocessor_version": "stage4a-0.1.0",
+    "calibrator_name": "platt",
+    "calibrator_version": "stage5-lc-ebm-calibration-v1",
+    "raw_probability": 0.5381221989789047,
+    "calibrated_probability": 0.701183418571294,
+    "credit_risk_band": "HIGH",
+    "top_explanation_features": [
+      "fico_n",
+      "loan_amnt",
+      "dti_n",
+      "revenue",
+      "home_ownership_n"
+    ],
+    "shariah_evidence_completeness": "INSUFFICIENT",
+    "shariah_governance_status": "INSUFFICIENT_INFORMATION",
+    "triggered_rule_ids": [
+      "SH-ARCH-001",
+      "SH-ARCH-003"
+    ],
+    "rule_source_ids": [
+      "SRC-STAGE7-ARCHITECTURE"
+    ],
+    "policy_version": "stage8-v1",
+    "cost_scenario": "FN:FP=5:1",
+    "threshold_configuration": {
+      "t_low": 0.06,
+      "t_high": 0.69,
+      "policy_type": "two_threshold",
+      "identification": "credit_only_validation"
+    },
+    "final_decision": "REJECT",
+    "review_required": false,
+    "decision_id": "478aa9a0f780d4162dcc710a4e06d55ab4c39ca9272f32263268a096851f3c92"
+  },
+  {
+    "audit_schema_version": "1.0",
+    "event_timestamp": "2026-09-14T21:22:29+00:00",
+    "dataset_id": "lendingclub_granting_v0.1",
+    "dataset_hash": "207d65b2712f775a91404496ab27c786ac0da6b0f977f849e6d5d8149e925acc",
+    "record_reference_hash": "22a757c5af5c2dc5",
+    "model_name": "explainable_boosting_machine",
+    "model_version": "stage4b-lc-granting-v1:seed42",
+    "preprocessor_version": "stage4a-0.1.0",
+    "calibrator_name": "platt",
+    "calibrator_version": "stage5-lc-ebm-calibration-v1",
+    "raw_probability": 0.0506287898297365,
+    "calibrated_probability": 0.0549757447054981,
+    "credit_risk_band": "LOW",
+    "top_explanation_features": [
+      "fico_n",
+      "loan_amnt",
+      "dti_n",
+      "revenue",
+      "home_ownership_n"
+    ],
+    "shariah_evidence_completeness": "INSUFFICIENT",
+    "shariah_governance_status": "INSUFFICIENT_INFORMATION",
+    "triggered_rule_ids": [
+      "SH-ARCH-001",
+      "SH-ARCH-003"
+    ],
+    "rule_source_ids": [
+      "SRC-STAGE7-ARCHITECTURE"
+    ],
+    "policy_version": "stage8-v1",
+    "cost_scenario": "FN:FP=5:1",
+    "threshold_configuration": {
+      "t_low": 0.06,
+      "t_high": 0.69,
+      "policy_type": "two_threshold",
+      "identification": "credit_only_validation"
+    },
+    "final_decision": "HUMAN_REVIEW",
+    "review_required": true,
+    "decision_id": "04776d340c82774c8bac48d4e21ab3e9dbfd7148174e19c4d243ef13a5643fd0"
+  },
+  {
+    "audit_schema_version": "1.0",
+    "event_timestamp": "2026-09-14T21:22:29+00:00",
+    "dataset_id": "synthetic_governance_illustration",
+    "dataset_hash": "synthetic-not-a-lendingclub-row",
+    "record_reference_hash": "d290805fc2fc7bdc",
+    "model_name": "explainable_boosting_machine",
+    "model_version": "stage4b-lc-granting-v1:seed42",
+    "preprocessor_version": "stage4a-0.1.0",
+    "calibrator_name": "platt",
+    "calibrator_version": "stage5-lc-ebm-calibration-v1",
+    "raw_probability": 0.04,
+    "calibrated_probability": 0.05,
+    "credit_risk_band": "LOW",
+    "top_explanation_features": [
+      "fico_n",
+      "loan_amnt",
+      "dti_n",
+      "revenue",
+      "home_ownership_n"
+    ],
+    "shariah_evidence_completeness": "COMPLETE",
+    "shariah_governance_status": "PASS",
+    "triggered_rule_ids": [
+      "SYNTHETIC_ILLUSTRATION_NOT_A_STAGE7_RULE"
+    ],
+    "rule_source_ids": [
+      "SYNTHETIC_ILLUSTRATION"
+    ],
+    "policy_version": "stage8-v1",
+    "cost_scenario": "FN:FP=5:1",
+    "threshold_configuration": {
+      "t_low": 0.06,
+      "t_high": 0.69,
+      "policy_type": "two_threshold",
+      "identification": "credit_only_validation"
+    },
+    "final_decision": "APPROVE",
+    "review_required": false,
+    "decision_id": "2210e1ca4797ad9cb924951eeebc6deac854ba5f6f389110b12c19be217e544b",
+    "synthetic": true,
+    "label": "Synthetic illustration of PASS+LOW. Not a LendingClub observation."
+  }
+]

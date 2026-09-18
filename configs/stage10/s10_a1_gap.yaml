@@ -1,0 +1,15 @@
+experiment_id: s10_a1_gap_v1
+amendment_id: AMENDMENT-STAGE10-AUTHORIZATION
+classification: ANALYSIS-ONLY / DESCRIPTIVE
+confirmatory_experiment: false
+models_trained: false
+calibration_refit: false
+thresholds_searched: false
+g1_g3_treated_as_observed: false
+inputs:
+  - audit/stage8_v2_decision_fusion_run.json
+  - results/decision/v2/tables/table3_test_decision_outcomes.csv
+  - results/decision/v2/audit/test_audit_records.csv
+  - configs/stage8_decision_policy.yaml
+  - results/stage10/v1/metrics/s10_i1_identity.json
+  - results/stage10/v1/metrics/s10_r1_year.json

@@ -1,0 +1,297 @@
+[
+  {
+    "audit_schema_version": "2.0",
+    "event_timestamp": "2026-09-15T14:19:28+00:00",
+    "dataset_id": "lendingclub_granting_v0.1",
+    "dataset_hash": "207d65b2712f775a91404496ab27c786ac0da6b0f977f849e6d5d8149e925acc",
+    "record_reference_hash": "5283d5b9605c7a043af3668efbef1fc01f625408fcf81d79cecf0611c1af240e",
+    "evidence_hash": "78a76f91155ea19aa645eb84a9cfa4c30a13d38f4f18726fe0ffc0f085886b28",
+    "evaluation_mode": "PER_APPLICATION",
+    "l1_status": "INSUFFICIENT_SCHEMA_FOR_APPLICANT_DETERMINATION",
+    "l1_is_applicant_level_ruling": false,
+    "missing_evidence": [
+      "verified_contract_type",
+      "shariah_board_approval",
+      "invoice_or_payment_path",
+      "security_claim",
+      "security_certificate",
+      "ownership_or_possession_evidence",
+      "contractual_sequence_documented"
+    ],
+    "expert_validation_state": "NONE_EXPERT_VALIDATED",
+    "amendment_id": "AMENDMENT-SHARIAH-001",
+    "l1l2_version": "stage7-l1l2-v2",
+    "certification_claim": false,
+    "model_name": "explainable_boosting_machine",
+    "model_version": "stage4b-lc-granting-v1:seed42",
+    "preprocessor_version": "stage4a-0.1.0",
+    "calibrator_name": "platt",
+    "calibrator_version": "stage5-lc-ebm-calibration-v1",
+    "raw_probability": 0.0506287898297365,
+    "calibrated_probability": 0.0549757447054981,
+    "credit_risk_band": "LOW",
+    "top_explanation_features": [
+      "fico_n",
+      "loan_amnt",
+      "dti_n",
+      "revenue",
+      "home_ownership_n"
+    ],
+    "shariah_evidence_completeness": "INSUFFICIENT",
+    "shariah_governance_status": "INSUFFICIENT_INFORMATION",
+    "triggered_rule_ids": [
+      "SH-ARCH-001"
+    ],
+    "rule_source_ids": [
+      "SRC-STAGE7-ARCHITECTURE"
+    ],
+    "policy_version": "stage8-v2",
+    "cost_scenario": "FN:FP=5:1",
+    "threshold_configuration": {
+      "t_low": 0.06,
+      "t_high": 0.69,
+      "policy_type": "two_threshold",
+      "identification": "credit_only_validation_frozen_from_stage8_v1",
+      "reselected": false
+    },
+    "final_decision": "HUMAN_REVIEW",
+    "review_required": true,
+    "decision_id": "9e148044696eec27b9247af24a8a1e4bb23cb4d91ed52a786cc276b33fcdda40"
+  },
+  {
+    "audit_schema_version": "2.0",
+    "event_timestamp": "2026-09-15T14:19:28+00:00",
+    "dataset_id": "lendingclub_granting_v0.1",
+    "dataset_hash": "207d65b2712f775a91404496ab27c786ac0da6b0f977f849e6d5d8149e925acc",
+    "record_reference_hash": "d33f06b03276a272c65b226307749f1c85cb4f08d3d863040ca1e543fc0a9ddd",
+    "evidence_hash": "78a76f91155ea19aa645eb84a9cfa4c30a13d38f4f18726fe0ffc0f085886b28",
+    "evaluation_mode": "PER_APPLICATION",
+    "l1_status": "INSUFFICIENT_SCHEMA_FOR_APPLICANT_DETERMINATION",
+    "l1_is_applicant_level_ruling": false,
+    "missing_evidence": [
+      "verified_contract_type",
+      "shariah_board_approval",
+      "invoice_or_payment_path",
+      "security_claim",
+      "security_certificate",
+      "ownership_or_possession_evidence",
+      "contractual_sequence_documented"
+    ],
+    "expert_validation_state": "NONE_EXPERT_VALIDATED",
+    "amendment_id": "AMENDMENT-SHARIAH-001",
+    "l1l2_version": "stage7-l1l2-v2",
+    "certification_claim": false,
+    "model_name": "explainable_boosting_machine",
+    "model_version": "stage4b-lc-granting-v1:seed42",
+    "preprocessor_version": "stage4a-0.1.0",
+    "calibrator_name": "platt",
+    "calibrator_version": "stage5-lc-ebm-calibration-v1",
+    "raw_probability": 0.1519541956187435,
+    "calibrated_probability": 0.1991792214000285,
+    "credit_risk_band": "MEDIUM",
+    "top_explanation_features": [
+      "fico_n",
+      "loan_amnt",
+      "dti_n",
+      "revenue",
+      "home_ownership_n"
+    ],
+    "shariah_evidence_completeness": "INSUFFICIENT",
+    "shariah_governance_status": "INSUFFICIENT_INFORMATION",
+    "triggered_rule_ids": [
+      "SH-ARCH-001"
+    ],
+    "rule_source_ids": [
+      "SRC-STAGE7-ARCHITECTURE"
+    ],
+    "policy_version": "stage8-v2",
+    "cost_scenario": "FN:FP=5:1",
+    "threshold_configuration": {
+      "t_low": 0.06,
+      "t_high": 0.69,
+      "policy_type": "two_threshold",
+      "identification": "credit_only_validation_frozen_from_stage8_v1",
+      "reselected": false
+    },
+    "final_decision": "HUMAN_REVIEW",
+    "review_required": true,
+    "decision_id": "f7b7a45f84e0275371aa792fa839fb39391ee2f4c7df93f239ac10b6939ff58f"
+  },
+  {
+    "audit_schema_version": "2.0",
+    "event_timestamp": "2026-09-15T14:19:28+00:00",
+    "dataset_id": "lendingclub_granting_v0.1",
+    "dataset_hash": "207d65b2712f775a91404496ab27c786ac0da6b0f977f849e6d5d8149e925acc",
+    "record_reference_hash": "9d5b8461973377a4a7c4cf8b06ca86afe626185a17662276de23e6ea6eeb9042",
+    "evidence_hash": "78a76f91155ea19aa645eb84a9cfa4c30a13d38f4f18726fe0ffc0f085886b28",
+    "evaluation_mode": "PER_APPLICATION",
+    "l1_status": "INSUFFICIENT_SCHEMA_FOR_APPLICANT_DETERMINATION",
+    "l1_is_applicant_level_ruling": false,
+    "missing_evidence": [
+      "verified_contract_type",
+      "shariah_board_approval",
+      "invoice_or_payment_path",
+      "security_claim",
+      "security_certificate",
+      "ownership_or_possession_evidence",
+      "contractual_sequence_documented"
+    ],
+    "expert_validation_state": "NONE_EXPERT_VALIDATED",
+    "amendment_id": "AMENDMENT-SHARIAH-001",
+    "l1l2_version": "stage7-l1l2-v2",
+    "certification_claim": false,
+    "model_name": "explainable_boosting_machine",
+    "model_version": "stage4b-lc-granting-v1:seed42",
+    "preprocessor_version": "stage4a-0.1.0",
+    "calibrator_name": "platt",
+    "calibrator_version": "stage5-lc-ebm-calibration-v1",
+    "raw_probability": 0.1878020145458983,
+    "calibrated_probability": 0.2524228560984851,
+    "credit_risk_band": "MEDIUM",
+    "top_explanation_features": [
+      "fico_n",
+      "loan_amnt",
+      "dti_n",
+      "revenue",
+      "home_ownership_n"
+    ],
+    "shariah_evidence_completeness": "INSUFFICIENT",
+    "shariah_governance_status": "INSUFFICIENT_INFORMATION",
+    "triggered_rule_ids": [
+      "SH-ARCH-001"
+    ],
+    "rule_source_ids": [
+      "SRC-STAGE7-ARCHITECTURE"
+    ],
+    "policy_version": "stage8-v2",
+    "cost_scenario": "FN:FP=5:1",
+    "threshold_configuration": {
+      "t_low": 0.06,
+      "t_high": 0.69,
+      "policy_type": "two_threshold",
+      "identification": "credit_only_validation_frozen_from_stage8_v1",
+      "reselected": false
+    },
+    "final_decision": "HUMAN_REVIEW",
+    "review_required": true,
+    "decision_id": "22a36d4a751c6327e8619ddb223e6a38bb87a8d15d50a8e75cd83cdfdf370440"
+  },
+  {
+    "audit_schema_version": "2.0",
+    "event_timestamp": "2026-09-15T14:19:28+00:00",
+    "dataset_id": "lendingclub_granting_v0.1",
+    "dataset_hash": "207d65b2712f775a91404496ab27c786ac0da6b0f977f849e6d5d8149e925acc",
+    "record_reference_hash": "783816fbbbe38785077f0ab4f8c9f5016438db7e21c0bfc95c6275c192a2748a",
+    "evidence_hash": "78a76f91155ea19aa645eb84a9cfa4c30a13d38f4f18726fe0ffc0f085886b28",
+    "evaluation_mode": "PER_APPLICATION",
+    "l1_status": "INSUFFICIENT_SCHEMA_FOR_APPLICANT_DETERMINATION",
+    "l1_is_applicant_level_ruling": false,
+    "missing_evidence": [
+      "verified_contract_type",
+      "shariah_board_approval",
+      "invoice_or_payment_path",
+      "security_claim",
+      "security_certificate",
+      "ownership_or_possession_evidence",
+      "contractual_sequence_documented"
+    ],
+    "expert_validation_state": "NONE_EXPERT_VALIDATED",
+    "amendment_id": "AMENDMENT-SHARIAH-001",
+    "l1l2_version": "stage7-l1l2-v2",
+    "certification_claim": false,
+    "model_name": "explainable_boosting_machine",
+    "model_version": "stage4b-lc-granting-v1:seed42",
+    "preprocessor_version": "stage4a-0.1.0",
+    "calibrator_name": "platt",
+    "calibrator_version": "stage5-lc-ebm-calibration-v1",
+    "raw_probability": 0.3751041158408603,
+    "calibrated_probability": 0.5144754096947933,
+    "credit_risk_band": "MEDIUM",
+    "top_explanation_features": [
+      "fico_n",
+      "loan_amnt",
+      "dti_n",
+      "revenue",
+      "home_ownership_n"
+    ],
+    "shariah_evidence_completeness": "INSUFFICIENT",
+    "shariah_governance_status": "INSUFFICIENT_INFORMATION",
+    "triggered_rule_ids": [
+      "SH-ARCH-001"
+    ],
+    "rule_source_ids": [
+      "SRC-STAGE7-ARCHITECTURE"
+    ],
+    "policy_version": "stage8-v2",
+    "cost_scenario": "FN:FP=5:1",
+    "threshold_configuration": {
+      "t_low": 0.06,
+      "t_high": 0.69,
+      "policy_type": "two_threshold",
+      "identification": "credit_only_validation_frozen_from_stage8_v1",
+      "reselected": false
+    },
+    "final_decision": "HUMAN_REVIEW",
+    "review_required": true,
+    "decision_id": "b5dc9b1152268fa36d7887eb2436daada137e6ea804ed308a9e1dae49786183f"
+  },
+  {
+    "audit_schema_version": "2.0",
+    "event_timestamp": "2026-09-15T14:19:28+00:00",
+    "dataset_id": "lendingclub_granting_v0.1",
+    "dataset_hash": "207d65b2712f775a91404496ab27c786ac0da6b0f977f849e6d5d8149e925acc",
+    "record_reference_hash": "789e9998973678326081594c1492f2bee3f2ff36897502bbe6af6253e873f3d6",
+    "evidence_hash": "78a76f91155ea19aa645eb84a9cfa4c30a13d38f4f18726fe0ffc0f085886b28",
+    "evaluation_mode": "PER_APPLICATION",
+    "l1_status": "INSUFFICIENT_SCHEMA_FOR_APPLICANT_DETERMINATION",
+    "l1_is_applicant_level_ruling": false,
+    "missing_evidence": [
+      "verified_contract_type",
+      "shariah_board_approval",
+      "invoice_or_payment_path",
+      "security_claim",
+      "security_certificate",
+      "ownership_or_possession_evidence",
+      "contractual_sequence_documented"
+    ],
+    "expert_validation_state": "NONE_EXPERT_VALIDATED",
+    "amendment_id": "AMENDMENT-SHARIAH-001",
+    "l1l2_version": "stage7-l1l2-v2",
+    "certification_claim": false,
+    "model_name": "explainable_boosting_machine",
+    "model_version": "stage4b-lc-granting-v1:seed42",
+    "preprocessor_version": "stage4a-0.1.0",
+    "calibrator_name": "platt",
+    "calibrator_version": "stage5-lc-ebm-calibration-v1",
+    "raw_probability": 0.3690465536295179,
+    "calibrated_probability": 0.5067083019841568,
+    "credit_risk_band": "MEDIUM",
+    "top_explanation_features": [
+      "fico_n",
+      "loan_amnt",
+      "dti_n",
+      "revenue",
+      "home_ownership_n"
+    ],
+    "shariah_evidence_completeness": "INSUFFICIENT",
+    "shariah_governance_status": "INSUFFICIENT_INFORMATION",
+    "triggered_rule_ids": [
+      "SH-ARCH-001"
+    ],
+    "rule_source_ids": [
+      "SRC-STAGE7-ARCHITECTURE"
+    ],
+    "policy_version": "stage8-v2",
+    "cost_scenario": "FN:FP=5:1",
+    "threshold_configuration": {
+      "t_low": 0.06,
+      "t_high": 0.69,
+      "policy_type": "two_threshold",
+      "identification": "credit_only_validation_frozen_from_stage8_v1",
+      "reselected": false
+    },
+    "final_decision": "HUMAN_REVIEW",
+    "review_required": true,
+    "decision_id": "0c38f34dd1c1bd2259b6aed3e44dfcb96a941bd79170e95ac56291dee9d20bb7"
+  }
+]

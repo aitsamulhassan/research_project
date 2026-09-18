@@ -1,0 +1,19 @@
+{
+  "issue_d_present": true,
+  "documented_meaning": "Month and year in which the loan was approved (Zenodo).",
+  "available_at_or_before_lending_decision": "AT_APPROVAL_NOT_SHOWN_TO_BE_BEFORE_DECISION",
+  "available_at_or_before_lending_decision_detail": "Documentation defines issue_d as the approval month/year. That is the decision/origination stamp, not a pre-decision application timestamp, and not a post-decision servicing date. Flagged for methodology review if used as a model feature.",
+  "dtype_in_raw_file": "str",
+  "parsed_as": "pandas datetime using format %b-%Y, with a secondary infer parse for leftovers",
+  "unique_raw_values": 139,
+  "unique_parsed_months": 139,
+  "minimum_date": "2007-06-01",
+  "maximum_date": "2018-12-01",
+  "missing_count": 0,
+  "missing_percentage": 0.0,
+  "malformed_unparseable_count": 0,
+  "non_null_raw_count": 1347681,
+  "other_date_like_column_names": [],
+  "split_cutoffs_defined": false,
+  "note": "Train/validation/test cutoffs are not defined in Stage 2."
+}

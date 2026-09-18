@@ -1,0 +1,62 @@
+# Python
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# Secrets
+.env
+.env.*
+*.pem
+*.key
+credentials*
+secrets*
+
+# OS/editor
+Thumbs.db
+.DS_Store
+.vscode/
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+texput.log
+
+# Local PDF/visual QA/build directories
+docs/paper/build_ieee/
+docs/paper/qa_pages/
+
+# Intermediate paper PDFs
+docs/paper/IEEE_ACCESS_FINAL_REVIEW_READY.prev.pdf
+docs/paper/IEEE_ACCESS_READY_MANUSCRIPT.pdf
+
+# Raw datasets
+data/raw/
+
+# Oversized audit dumps
+results/decision/**/test_audit_records.csv
+
+# Large row-level prediction / calibrated-score dumps (LFS decision deferred)
+results/predictions/
+results/calibration/test/
+results/calibration/validation/
+results/calibration/raw/
+results/tables/lendingclub_split_assignments.csv
+
+# Compile copies inside the Access template directory (keep FINAL_REVIEW_READY.pdf only)
+docs/paper/ieee_access_official_templates/**/IEEE_ACCESS_READY_MANUSCRIPT.pdf
+docs/paper/ieee_access_official_templates/**/access.pdf
+docs/paper/IEEE_ACCESS_REVIEW_READY.pdf
+
+# Local staging review helper
+STAGED_FILE_LIST_FOR_REVIEW.txt
+

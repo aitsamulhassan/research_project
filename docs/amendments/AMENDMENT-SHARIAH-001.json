@@ -1,0 +1,22 @@
+{
+  "amendment_id": "AMENDMENT-SHARIAH-001",
+  "constitution_rule": 14,
+  "status": "APPROVED",
+  "approval_date": "[APPROVAL DATE — RESEARCH OWNER]",
+  "approver": "Research owner (identity not fabricated in this record)",
+  "expert_sign_off": null,
+  "expert_validation_status": "NOT_EXPERT_VALIDATED",
+  "scope": "Stage 7/8 Shariah-governance methodology. Stage 7 v2 L1/L2 implemented. Stage 8 v2 per-row fusion implemented. Stage 9 blocked.",
+  "design_adopted": "A_contract_level_institutional_product_governance",
+  "design_rejected": "B_purpose_classification",
+  "shr_001_status": "UNSUPPORTED_RETIRED",
+  "shr_001_reconstructed": false,
+  "aaoifi_clause_level_implementation": "BLOCKED",
+  "stage7_remediation_implemented": true,
+  "stage7_v2_report": "docs/STAGE_7_SHARIAH_GOVERNANCE_REPORT_V2.md",
+  "stage8_remediation_implemented": true,
+  "stage8_v2_report": "docs/STAGE_8_DECISION_FUSION_REPORT_V2.md",
+  "stage9": "BLOCKED",
+  "full_text": "docs/amendments/AMENDMENT-SHARIAH-001.md",
+  "methodology_document": "docs/shariah_methodology.md"
+}

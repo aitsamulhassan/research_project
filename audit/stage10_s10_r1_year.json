@@ -1,0 +1,76 @@
+{
+  "experiment_id": "s10_r1_year_v1",
+  "amendment_id": "AMENDMENT-STAGE10-AUTHORIZATION",
+  "amendment_status": "APPROVED",
+  "started": "2026-09-15T20:40:42+00:00",
+  "execution_timestamp": "2026-09-15T20:40:45+00:00",
+  "git_commit": null,
+  "status": "COMPLETED \u2014 exploratory/descriptive post-hoc reanalysis",
+  "classification": "EXPLORATORY / DESCRIPTIVE POST-HOC REANALYSIS \u2014 NON-CONFIRMATORY",
+  "confirmatory_experiment": false,
+  "models_trained": false,
+  "models_loaded_for_scoring": false,
+  "calibration_refit": false,
+  "thresholds_searched": false,
+  "year_specific_threshold": false,
+  "uci_opened": false,
+  "stage8_9_results_modified": false,
+  "s10_i1_modified": false,
+  "s10_a1_gap_executed": false,
+  "s10_a4_executed": false,
+  "issues": [],
+  "documentation_limitations": [
+    "HIGH credit-band n is 27 on pooled TEST; year-wise HIGH default rates are descriptive counts only.",
+    "S10-R1 is post-hoc grouping of already-unblinded LendingClub TEST outputs. It is not confirmatory.",
+    "git_commit is null (no usable .git / git). Recorded, not fabricated. Stage 10 protocol \u00a714: not by itself a scientific abort."
+  ],
+  "n": 208886,
+  "n_by_year": {
+    "2017": 152726,
+    "2018": 56160
+  },
+  "hashes": {
+    "results/decision/frozen_policy.json": "4d3da6a9e5bac2b38b546c7a5a60e870bf83f30adcadf67f067f99951e32f0c4",
+    "results/decision/v2/frozen_policy.json": "b874782326a8f20ed9bb7df1aa5ed1c75f883d8b6cba76b68991181d50b1604b",
+    "results/decision/v2/tables/table3_test_decision_outcomes.csv": "90759eb72f1173b40b5b9363c21b0ef3d6f1cde5042748eb57871d49fb73d5ee",
+    "results/calibration/test/ebm_seed42_calibrated.csv": "e15ddd2f85a6c3fc9d0a79eecb578f7a94ded8a7efc63d9d114212728b2469eb"
+  },
+  "year_derivation": {
+    "used_in_this_run": "stored column `year` in results/calibration/test/ebm_seed42_calibrated.csv",
+    "not_recomputed": true,
+    "not_parsed_here": [
+      "issue_d",
+      "issue_month"
+    ],
+    "historical_stage5_source": "Stage 5 stored year as int(issue_month[0:4]); S10-R1 reads the stored column only.",
+    "allowed_years": [
+      2017,
+      2018
+    ],
+    "stage5_temporal_n_citation": {
+      "2017": 152726,
+      "2018": 56160
+    }
+  },
+  "thresholds": {
+    "t_low": 0.06,
+    "t_high": 0.69,
+    "t_star": 0.16,
+    "year_specific_threshold": false,
+    "thresholds_searched": false
+  },
+  "protected_files_unchanged": true,
+  "config_sha256": "66cb707f9f1ad5d7f25006aa7115b02be74710297a40b93937bb28470b992c5e",
+  "metrics_sha256": "d25b35272008352ad3daee56911fa12ea9790073f9c2cf1bd99626ee26ff946e",
+  "report_sha256": "f923de20431d2bb06cd059ada80562302649b1c1d31a0a2cdd14e187e6189691",
+  "table_mix_sha256": "f05f6f35f64430d1cdf0c03bb02affa54f4e9b8a3a5205b91783ab3904ef09a4",
+  "table_bands_sha256": "4b04209987da383c5c7c259bef1233af21fa81c574ee08753e635bd49968571c",
+  "pytest_exit_code": 0,
+  "test_command": "python -m pytest tests/test_stage10_r1_year.py -q --tb=short",
+  "test_summary": "5 passed in 0.92s",
+  "software": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]"
+  },
+  "random_seed_used": null,
+  "stored_prediction_seed": 42
+}

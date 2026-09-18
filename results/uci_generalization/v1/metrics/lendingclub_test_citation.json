@@ -1,0 +1,16 @@
+{
+  "dataset": "LendingClub granting extract",
+  "target": "Default (1 = Charged Off, 0 = Fully Paid)",
+  "source": "results/calibration/metrics/stage5_test_metrics.json",
+  "source_sha256": "a6c8ab44676d62109c1a346dbcf14a12a745b761f13b9fda6a9002853fc326e3",
+  "split": "LC TEST",
+  "n": 208886,
+  "method": "platt",
+  "family": "explainable_boosting_machine",
+  "roc_auc": 0.6776693941139847,
+  "pr_auc": 0.35096314719303284,
+  "brier": 0.15616920271522994,
+  "log_loss": 0.48357015583149326,
+  "ece": 0.020267295489117824,
+  "note": "Cited from frozen Stage 5 artifacts. Not recomputed. Not merged with UCI rows."
+}

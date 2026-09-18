@@ -1,0 +1,61 @@
+{
+  "version": "stage7-lc-l2-fixtures-v1",
+  "disclaimer": "Synthetic LendingClub-schema unit fixtures. Not protected TEST rows and not real applicants.",
+  "dataset_id": "lendingclub",
+  "fixtures": [
+    {
+      "_fixture_key": "lc-unit-001",
+      "id": 101,
+      "purpose": "car",
+      "title": "unit fixture title a",
+      "desc": "unit fixture desc a",
+      "fico_n": 710,
+      "loan_amnt": 12000,
+      "dti_n": 12.5,
+      "revenue": 54000,
+      "emp_length": "5 years",
+      "home_ownership_n": "RENT",
+      "addr_state": "CA",
+      "zip_code": "900xx",
+      "issue_d": "2016-03-01",
+      "experience_c": 5,
+      "Default": 0
+    },
+    {
+      "_fixture_key": "lc-unit-002",
+      "id": 102,
+      "purpose": "home_improvement",
+      "title": "unit fixture title a",
+      "desc": "unit fixture desc a",
+      "fico_n": 710,
+      "loan_amnt": 12000,
+      "dti_n": 12.5,
+      "revenue": 54000,
+      "emp_length": "5 years",
+      "home_ownership_n": "RENT",
+      "addr_state": "CA",
+      "zip_code": "900xx",
+      "issue_d": "2016-03-01",
+      "experience_c": 5,
+      "Default": 0
+    },
+    {
+      "_fixture_key": "lc-unit-003",
+      "id": 103,
+      "purpose": "small_business",
+      "title": "other title",
+      "desc": "other desc",
+      "fico_n": 640,
+      "loan_amnt": 8000,
+      "dti_n": 22.0,
+      "revenue": 31000,
+      "emp_length": "1 year",
+      "home_ownership_n": "OWN",
+      "addr_state": "TX",
+      "zip_code": "750xx",
+      "issue_d": "2016-06-01",
+      "experience_c": 1,
+      "Default": 1
+    }
+  ]
+}

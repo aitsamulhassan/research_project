@@ -1,0 +1,15 @@
+{
+  "explainability_experiment_id": "stage6-lc-ebm-explain-v1",
+  "base_model_experiment_id": "stage4b-lc-granting-v1",
+  "calibration_experiment_id": "stage5-lc-ebm-calibration-v1",
+  "selected_family": "explainable_boosting_machine",
+  "selected_calibration": "platt",
+  "final_seed": 42,
+  "seeds": [42, 123, 2024, 3407, 9999],
+  "explanation_sample_n": 5000,
+  "explanation_sample_seed": 42,
+  "sampling": "deterministic random sample of TEST without replacement; labels not used",
+  "shap_explainer": "exact_additive_shap_from_ebm_terms",
+  "output_space": "ebm_decision_function_logit_link",
+  "ebm_is": "transparent-model reference, not ground truth"
+}

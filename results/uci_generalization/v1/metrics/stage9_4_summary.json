@@ -1,0 +1,23 @@
+{
+  "selected_family": "xgboost",
+  "selected_calibrator": "isotonic",
+  "uci_test": {
+    "roc_auc": 0.7708780071798891,
+    "pr_auc": 0.5224208622925242,
+    "brier": 0.1368528550434721,
+    "log_loss": 0.449533259034068,
+    "ece": 0.01744321566180452,
+    "n": 4502.0
+  },
+  "lendingclub_test_cited": {
+    "roc_auc": 0.6776693941139847,
+    "pr_auc": 0.35096314719303284,
+    "brier": 0.15616920271522994,
+    "log_loss": 0.48357015583149326,
+    "ece": 0.020267295489117824,
+    "n": 208886
+  },
+  "test_used_for_selection": false,
+  "models_trained": true,
+  "lendingclub_artifacts_touched": false
+}

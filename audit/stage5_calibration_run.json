@@ -1,0 +1,76 @@
+{
+  "calibration_experiment_id": "stage5-lc-ebm-calibration-v1",
+  "base_model_experiment_id": "stage4b-lc-granting-v1",
+  "selected_family": "explainable_boosting_machine",
+  "selected_calibration_method": "platt",
+  "dataset_hash": "207d65b2712f775a91404496ab27c786ac0da6b0f977f849e6d5d8149e925acc",
+  "split_manifest_hash": "d4db2099199258ae5ca4f5a85a7ce8e7dde2943a0bf7b9239212cce1e44d0e70",
+  "feature_policy_hash": "ad2319d55ba545733340dd42e9d4be91fe3bfe59c8d63c4e934bb5192546960b",
+  "preprocessing_policy_hash": "3435a985086eccdfb548b6dff88c4fadaa6c060250237dcc759be3db64b44fd9",
+  "random_seed": 42,
+  "software_library_versions": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "pandas": "3.0.5",
+    "numpy": "2.5.2",
+    "sklearn": "1.9.0",
+    "interpret": "0.7.8",
+    "matplotlib": "3.11.1",
+    "joblib": "1.6.0"
+  },
+  "execution_timestamp": "2026-09-14T18:45:52+00:00",
+  "git_commit": null,
+  "ece": {
+    "n_bins": 10,
+    "binning": "equal_width",
+    "bin_edges": [
+      0.0,
+      0.1,
+      0.2,
+      0.30000000000000004,
+      0.4,
+      0.5,
+      0.6000000000000001,
+      0.7000000000000001,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "empty_bins": "exclude_from_ece_and_mce",
+    "formula": "sum_b (n_b / n) * |acc_b - conf_b| over non-empty bins"
+  },
+  "bootstrap": {
+    "n_bootstrap": 1000,
+    "seed": 42,
+    "confidence_level": 0.95,
+    "method": "percentile_bootstrap_rows_with_replacement"
+  },
+  "protocol": "validation_only_calibration_no_train_val_calibrator_refit",
+  "status": "PASS",
+  "status_reason": "Calibration experiments completed; method frozen on validation; test evaluated once; leakage tests passed.",
+  "issues": [],
+  "pytest_exit_code": 0,
+  "platt": {
+    "method": "platt",
+    "form": "sigmoid(a * logit(p_raw) + b)",
+    "a": 1.1988263209549705,
+    "b": 0.6697765046966161,
+    "solver": "lbfgs",
+    "penalty": "none (C=np.inf)",
+    "max_iter": 1000,
+    "n_iter": 10,
+    "converged": true,
+    "fit_split": "validation"
+  },
+  "isotonic": {
+    "method": "isotonic",
+    "y_min": 0.0,
+    "y_max": 1.0,
+    "out_of_bounds": "clip",
+    "increasing": true,
+    "n_thresholds": 186,
+    "clipping": "predictions outside the fitted raw-probability range are clipped to the boundary calibrated value",
+    "random_seed": null,
+    "fit_split": "validation"
+  },
+  "train_only_vs_stage4b_val_max_abs_diff": 9.71445146547012e-17
+}

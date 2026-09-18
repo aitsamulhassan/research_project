@@ -1,0 +1,167 @@
+[
+  {
+    "method": "raw",
+    "range_left": 0.0,
+    "range_right": 0.1,
+    "range_label": "0.00\u20130.10",
+    "n": 36303,
+    "mean_predicted": 0.07521312171886894,
+    "observed_rate": 0.07470456987025866,
+    "gap": -0.0005085518486102891,
+    "stable": true
+  },
+  {
+    "method": "raw",
+    "range_left": 0.1,
+    "range_right": 0.2,
+    "range_label": "0.10\u20130.20",
+    "n": 102604,
+    "mean_predicted": 0.14943677961735574,
+    "observed_rate": 0.17834587345522593,
+    "gap": 0.028909093837870187,
+    "stable": true
+  },
+  {
+    "method": "raw",
+    "range_left": 0.2,
+    "range_right": 0.3,
+    "range_label": "0.20\u20130.30",
+    "n": 55457,
+    "mean_predicted": 0.24074256769381186,
+    "observed_rate": 0.30185549164217323,
+    "gap": 0.061112923948361375,
+    "stable": true
+  },
+  {
+    "method": "raw",
+    "range_left": 0.3,
+    "range_right": 0.5,
+    "range_label": "0.30\u20130.50",
+    "n": 14446,
+    "mean_predicted": 0.34491194835565275,
+    "observed_rate": 0.44614426138723523,
+    "gap": 0.10123231303158248,
+    "stable": true
+  },
+  {
+    "method": "raw",
+    "range_left": 0.5,
+    "range_right": 1.0,
+    "range_label": "0.50\u20131.00",
+    "n": 76,
+    "mean_predicted": 0.5231493796877452,
+    "observed_rate": 0.5789473684210527,
+    "gap": 0.055797988733307435,
+    "stable": true
+  },
+  {
+    "method": "platt",
+    "range_left": 0.0,
+    "range_right": 0.1,
+    "range_label": "0.00\u20130.10",
+    "n": 22354,
+    "mean_predicted": 0.07388027909556726,
+    "observed_rate": 0.0601234678357341,
+    "gap": -0.013756811259833156,
+    "stable": true
+  },
+  {
+    "method": "platt",
+    "range_left": 0.1,
+    "range_right": 0.2,
+    "range_label": "0.10\u20130.20",
+    "n": 69003,
+    "mean_predicted": 0.15210354434515375,
+    "observed_rate": 0.13709548860194484,
+    "gap": -0.015008055743208903,
+    "stable": true
+  },
+  {
+    "method": "platt",
+    "range_left": 0.2,
+    "range_right": 0.3,
+    "range_label": "0.20\u20130.30",
+    "n": 63766,
+    "mean_predicted": 0.24701316065632842,
+    "observed_rate": 0.22568453407772168,
+    "gap": -0.021328626578606735,
+    "stable": true
+  },
+  {
+    "method": "platt",
+    "range_left": 0.3,
+    "range_right": 0.5,
+    "range_label": "0.30\u20130.50",
+    "n": 49962,
+    "mean_predicted": 0.37021437226518594,
+    "observed_rate": 0.3425003002281734,
+    "gap": -0.027714072037012538,
+    "stable": true
+  },
+  {
+    "method": "platt",
+    "range_left": 0.5,
+    "range_right": 1.0,
+    "range_label": "0.50\u20131.00",
+    "n": 3801,
+    "mean_predicted": 0.5468934455838603,
+    "observed_rate": 0.5085503814785582,
+    "gap": -0.03834306410530208,
+    "stable": true
+  },
+  {
+    "method": "isotonic",
+    "range_left": 0.0,
+    "range_right": 0.1,
+    "range_label": "0.00\u20130.10",
+    "n": 22126,
+    "mean_predicted": 0.06448849832040689,
+    "observed_rate": 0.05983910331736419,
+    "gap": -0.004649395003042699,
+    "stable": true
+  },
+  {
+    "method": "isotonic",
+    "range_left": 0.1,
+    "range_right": 0.2,
+    "range_label": "0.10\u20130.20",
+    "n": 63065,
+    "mean_predicted": 0.15025302916688305,
+    "observed_rate": 0.13341790216443353,
+    "gap": -0.016835127002449518,
+    "stable": true
+  },
+  {
+    "method": "isotonic",
+    "range_left": 0.2,
+    "range_right": 0.3,
+    "range_label": "0.20\u20130.30",
+    "n": 69817,
+    "mean_predicted": 0.24296268343914848,
+    "observed_rate": 0.22096337568214044,
+    "gap": -0.021999307757008035,
+    "stable": true
+  },
+  {
+    "method": "isotonic",
+    "range_left": 0.3,
+    "range_right": 0.5,
+    "range_label": "0.30\u20130.50",
+    "n": 48930,
+    "mean_predicted": 0.36609603393994367,
+    "observed_rate": 0.33899448191293685,
+    "gap": -0.027101552027006814,
+    "stable": true
+  },
+  {
+    "method": "isotonic",
+    "range_left": 0.5,
+    "range_right": 1.0,
+    "range_label": "0.50\u20131.00",
+    "n": 4948,
+    "mean_predicted": 0.535322485098113,
+    "observed_rate": 0.5028294260307195,
+    "gap": -0.032493059067393526,
+    "stable": true
+  }
+]

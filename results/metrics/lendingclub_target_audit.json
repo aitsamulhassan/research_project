@@ -1,0 +1,28 @@
+{
+  "target_column": "Default",
+  "target_definition_from_documentation": "Binary variable Default: 0 = fully paid, 1 = defaulted. The depositor states the default category corresponds to charged off and that transitory loan_status values were excluded.",
+  "target_definition_status": "TARGET_DEFINITION_DOCUMENTATION_CONFLICT",
+  "documentation_conflict": "Zenodo documentation states that Default=1 corresponds to charged off and Default=0 to fully paid, and that transitory loan_status values were removed. A later sentence says the release keeps loans that are either \"Fully Paid\" or \"Default\" (original loan_status names) and does not mention \"Charged Off\" in that filter sentence. Original loan_status also contains a rare 'Default' category distinct from 'Charged Off'. This internal documentation conflict is not silently reconciled.",
+  "unique_values": [
+    0,
+    1
+  ],
+  "value_counts": [
+    {
+      "value": 0,
+      "count": 1078432,
+      "percentage": 80.021311
+    },
+    {
+      "value": 1,
+      "count": 269249,
+      "percentage": 19.978689
+    }
+  ],
+  "missing_target_rows": 0,
+  "impossible_or_undocumented_target_values": 0,
+  "prevalence_Default_eq_1": 0.19978689318911522,
+  "prevalence_Default_eq_1_percentage": 19.978689,
+  "column_and_binary_coding_verified": true,
+  "original_loan_status_mapping_verified": false
+}

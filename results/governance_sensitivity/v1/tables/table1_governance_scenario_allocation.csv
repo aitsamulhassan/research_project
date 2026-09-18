@@ -1,0 +1,4 @@
+scenario,role,governance_status_input,n,n_approve,n_human_review,n_reject,approval_rate,review_rate,rejection_rate,source
+G0,observed_data_supported,INSUFFICIENT_INFORMATION,208886,0,208859,27,0.0,0.9998707428932527,0.00012925710674722098,stored Stage 8 v2 fused counts; algebra from published band counts confirms
+G1,hypothetical_engineering_scenario,INSUFFICIENT_INFORMATION,208886,0,0,208886,0.0,0.0,1.0,derived commentary from published Stage 8 v2 band counts; not a new TEST evaluation
+G3,hypothetical_engineering_scenario,INSUFFICIENT_INFORMATION,208886,0,208886,0,0.0,1.0,0.0,derived commentary from published Stage 8 v2 band counts; not a new TEST evaluation

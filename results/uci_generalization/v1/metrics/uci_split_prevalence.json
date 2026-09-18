@@ -1,0 +1,17 @@
+{
+  "train": {
+    "n": 20999,
+    "n_positive": 4645,
+    "prevalence": 0.22120100957188438
+  },
+  "validation": {
+    "n": 4499,
+    "n_positive": 995,
+    "prevalence": 0.22116025783507445
+  },
+  "test": {
+    "n": 4502,
+    "n_positive": 996,
+    "prevalence": 0.22123500666370502
+  }
+}

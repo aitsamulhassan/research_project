@@ -1,0 +1,67 @@
+experiment_id: stage9_3_governance_sensitivity_lc_v1
+stage: "9.3"
+amendment_id: AMENDMENT-SHARIAH-001
+random_seed: 42
+protocol_id: STAGE-9-PROTOCOL-2026-09-15
+protocol_section: "5.2 Governance-insufficiency sensitivity"
+
+scope:
+  authorized: [G0, G1, G3]
+  primary: G0
+  g1_g3: hypothetical_engineering_scenarios
+  g_unsafe: not_authorized
+  out_of_scope:
+    - stage9.4_temporal
+    - stage9.5_uci
+    - stage9.6_clean_room
+    - religious_ranking
+    - shariah_score
+    - G-unsafe
+
+frozen:
+  t_low: 0.06
+  t_high: 0.69
+  v1_freeze: results/decision/frozen_policy.json
+  v1_freeze_sha256: 4d3da6a9e5bac2b38b546c7a5a60e870bf83f30adcadf67f067f99951e32f0c4
+  stage7_l1l2_version: stage7-l1l2-v2
+  observed_l2: INSUFFICIENT_INFORMATION
+  analysis: algebraic_from_published_stage8_v2_band_counts
+
+g0:
+  label: Frozen Stage 8 matrix
+  role: primary_observed
+  treatment_of_INSUFFICIENT_INFORMATION:
+    LOW: HUMAN_REVIEW
+    MEDIUM: HUMAN_REVIEW
+    HIGH: REJECT
+
+g1:
+  label: Conservative REJECT
+  role: hypothetical_engineering_scenario
+  treatment_of_INSUFFICIENT_INFORMATION:
+    LOW: REJECT
+    MEDIUM: REJECT
+    HIGH: REJECT
+
+g3:
+  label: Governance-gated REVIEW
+  role: hypothetical_engineering_scenario
+  treatment_of_INSUFFICIENT_INFORMATION:
+    LOW: HUMAN_REVIEW
+    MEDIUM: HUMAN_REVIEW
+    HIGH: HUMAN_REVIEW
+
+test_protection: >
+  LendingClub TEST was already exposed during Stages 4B–8. Stage 9.3 does not use
+  TEST data to select a governance scenario. G0 cites stored Stage 8 v2 fused counts.
+  G1/G3 are algebraic illustrations from already published credit-band counts,
+  labeled derived commentary, not a new TEST evaluation.
+
+retraining: forbidden
+threshold_search: forbidden
+new_shariah_rules: forbidden
+overwrite_stage8: forbidden
+overwrite_stage9_1: forbidden
+overwrite_stage9_2: forbidden
+certification_claim: false
+expert_validation: NONE_EXPERT_VALIDATED

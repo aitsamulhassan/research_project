@@ -1,0 +1,13 @@
+{
+  "selected_family": "explainable_boosting_machine",
+  "reason": "Primary criterion is mean validation PR-AUC. Best PR-AUC is 0.388473. Candidates within 0.005: ['explainable_boosting_machine', 'xgboost']. Among those, lowest mean Brier then simplicity selected `explainable_boosting_machine` (PR-AUC=0.385841, Brier=0.179907).",
+  "ranking": [
+    "xgboost",
+    "explainable_boosting_machine",
+    "logistic_regression",
+    "random_forest"
+  ],
+  "xgboost_frozen_n_estimators": 300,
+  "declared_before_test": true,
+  "timestamp": "2026-09-14T17:37:05+00:00"
+}

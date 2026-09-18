@@ -1,0 +1,38 @@
+{
+  "conflict_register_version": "stage7-conflicts-v1",
+  "conflicts": [
+    {
+      "conflict_id": "CONF-AAOIFI-SS8-VS-SBP-MUR-OPS",
+      "issue": "AAOIFI SS (8) is the named Murabahah standard, but official clauses were not retrieved. SBP IBD Circular 01 of 2012 supplies only invoice/payment operational instructions for Pakistani IBIs. These are not the same rule-set.",
+      "source_a": "SRC-AAOIFI-SS8-IDENTITY",
+      "source_b": "SRC-SBP-IBD-C1-2012",
+      "difference": "Cannot compare clause-level Murabahah conditions. SBP text is operational documentation/payment; AAOIFI body text is unavailable here.",
+      "product_scope": "Murabahah at Pakistani IBIs",
+      "resolution_status": "unresolved",
+      "decision_rationale": "Evaluate only verified SBP operational rules. AAOIFI clause evaluation is gated as INSUFFICIENT_INFORMATION. Layer A remains PARTIAL. Overall status cannot be PASS for Murabahah identifications.",
+      "match": {"contract_type": "Murabahah", "institution_class": "IBI"}
+    },
+    {
+      "conflict_id": "CONF-SECP-VS-SBP-SCOPE",
+      "issue": "SECP SGR 2023 excludes SBP-regulated banking companies; SBP SGF applies to IBIs.",
+      "source_a": "SRC-SECP-SGR-2023-SRO-TEXT",
+      "source_b": "SRC-SBP-SGF-2025-TEXT",
+      "difference": "Different regulators and different legal objects (companies/securities vs IBI products).",
+      "product_scope": "Not a textual contradiction; complementary exclusive scopes.",
+      "resolution_status": "resolved_by_scope",
+      "decision_rationale": "Apply SGF rules only when institution_class=IBI. Apply SGR security-claim rules only when a security claim is made and the institution is not an IBI.",
+      "match": null
+    },
+    {
+      "conflict_id": "CONF-2008-ESSENTIALS-VS-2012-INVOICE",
+      "issue": "IBD Circular 01 of 2012 amends invoice instructions that originated in IBD Circular 02 of 2008 Appendix-A Murabaha sub clause vi. The 2008 annex PDF was not retrieved.",
+      "source_a": "SRC-SBP-IBD-C2-2008-IDENTITY",
+      "source_b": "SRC-SBP-IBD-C1-2012",
+      "difference": "2012 is the later retrieved operative circular for invoice/payment. Unretrieved 2008 clauses are not implemented.",
+      "product_scope": "IBI Murabaha documentation",
+      "resolution_status": "resolved_by_later_circular_for_retrieved_paragraphs_only",
+      "decision_rationale": "Implement only 2012 paragraphs 1, 2, and 4. Do not reconstruct 2008 Essentials from memory.",
+      "match": null
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "train_rows": 941267,
+  "validation_rows": 197528,
+  "test_rows": 208886,
+  "train_start": "2007-06",
+  "train_end": "2016-03",
+  "validation_start": "2016-04",
+  "validation_end": "2017-01",
+  "test_start": "2017-02",
+  "test_end": "2018-12",
+  "train_prevalence": 0.18681840540463016,
+  "validation_prevalence": 0.24889129642379815,
+  "test_prevalence": 0.2117901630554465,
+  "cutoff_rule": "Chronological issue_d month order. Train = earliest months with cumulative observation share <= 0.70. Validation = subsequent months until cumulative share <= 0.85. Test = remaining latest months. Cutoffs snap to observed months; a month is never split. Cutoffs were not chosen by inspecting model performance.",
+  "train_plus_validation_cumulative_cap": 0.85,
+  "train_cumulative_cap": 0.7
+}

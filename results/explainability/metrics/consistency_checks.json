@@ -1,0 +1,61 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": "exactly_nine_predictors",
+      "passed": true,
+      "detail": "names=['revenue', 'dti_n', 'loan_amnt', 'fico_n', 'emp_length', 'purpose', 'home_ownership_n', 'addr_state', 'zip_code']"
+    },
+    {
+      "check": "no_excluded_fields_or_target",
+      "passed": true,
+      "detail": "violations=[]"
+    },
+    {
+      "check": "exactly_nine_predictors",
+      "passed": true,
+      "detail": "names=['revenue', 'dti_n', 'loan_amnt', 'fico_n', 'emp_length', 'purpose', 'home_ownership_n', 'addr_state', 'zip_code']"
+    },
+    {
+      "check": "shap_additivity_logit_link",
+      "passed": true,
+      "detail": "max_abs_error=8.881784197001252e-16"
+    },
+    {
+      "check": "repeatable_additive_shap",
+      "passed": true,
+      "detail": "identical closed-form evaluation"
+    },
+    {
+      "check": "deterministic_explanation_sample",
+      "passed": true,
+      "detail": "n=208886 size=5000 seed=42"
+    },
+    {
+      "check": "shap_columns_match_predictors",
+      "passed": true,
+      "detail": "p=9"
+    },
+    {
+      "check": "ebm_columns_match_predictors",
+      "passed": true,
+      "detail": "p=9"
+    },
+    {
+      "check": "identical_seed_feature_order",
+      "passed": true,
+      "detail": "seed experiments use the frozen predictor order"
+    },
+    {
+      "check": "no_nan_inf_shap",
+      "passed": true,
+      "detail": "shape=(5000, 9)"
+    },
+    {
+      "check": "no_nan_inf_ebm",
+      "passed": true,
+      "detail": "shape=(5000, 9)"
+    }
+  ],
+  "experiment_id": "stage6-lc-ebm-explain-v1"
+}

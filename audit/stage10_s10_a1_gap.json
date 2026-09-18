@@ -1,0 +1,87 @@
+{
+  "experiment_id": "s10_a1_gap_v1",
+  "amendment_id": "AMENDMENT-STAGE10-AUTHORIZATION",
+  "amendment_status": "APPROVED",
+  "started": "2026-09-16T13:18:55+00:00",
+  "execution_timestamp": "2026-09-16T13:19:00+00:00",
+  "git_commit": null,
+  "status": "COMPLETED \u2014 analysis-only descriptive decomposition",
+  "classification": "ANALYSIS-ONLY / DESCRIPTIVE",
+  "confirmatory_experiment": false,
+  "models_trained": false,
+  "calibration_refit": false,
+  "thresholds_searched": false,
+  "uci_opened": false,
+  "g1_g3_treated_as_observed": false,
+  "s10_i1_modified": false,
+  "s10_r1_modified": false,
+  "s10_a4_executed": false,
+  "issues": [],
+  "documentation_limitations": [
+    "Stage 8 v2 per-row audit records have no row_ref; band \u00d7 L2 identity uses stored Stage 8 columns, not a keyed join to p_selected.",
+    "LendingClub schema does not contain contractual Shariah evidence; this analysis does not invent it.",
+    "S10-A1-GAP is analysis-only / descriptive. It does not independently validate the governance layer.",
+    "Stage 8 v2 recorded n_unique_evidence_hashes=1 and n_unique_record_hashes=208886: per-row record hashes are unique, but the governance evidence object is identical across TEST rows.",
+    "git_commit is null (no usable .git / git). Recorded, not fabricated. Stage 10 protocol \u00a714: not by itself a scientific abort."
+  ],
+  "n": 208886,
+  "decomposition": {
+    "n": 208886,
+    "a1_approve": 0,
+    "a1_review": 208859,
+    "a1_reject": 27,
+    "review_rate": 0.9998707428932527,
+    "low_to_review": {
+      "n": 5232,
+      "share_of_test": 0.025047154907461486,
+      "share_of_a1_review": 0.025050392848763998,
+      "stage8_review_cause": "governance_insufficiency",
+      "meaning": "LOW would be A0 APPROVE; G0 + INSUFFICIENT_INFORMATION maps LOW to HUMAN_REVIEW."
+    },
+    "medium_to_review": {
+      "n": 203627,
+      "share_of_test": 0.9748235879857913,
+      "share_of_a1_review": 0.974949607151236,
+      "stage8_review_cause": "governance_insufficiency_and_credit_uncertainty",
+      "meaning": "MEDIUM is already HUMAN_REVIEW on credit; G0 keeps HUMAN_REVIEW."
+    },
+    "high_to_review": {
+      "n": 0,
+      "share_of_test": 0.0,
+      "share_of_a1_review": 0.0,
+      "meaning": "HIGH does not contribute to A1 HUMAN_REVIEW."
+    },
+    "high_to_reject": {
+      "n": 27,
+      "share_of_test": 0.00012925710674722098,
+      "share_of_a1_reject": 1.0,
+      "meaning": "HIGH + INSUFFICIENT_INFORMATION maps to REJECT under G0 (same REJECT count as A0)."
+    },
+    "approve_identity": "A1 APPROVE requires G0(PASS, LOW). Observed PASS n=0, so A1 APPROVE=0. Algebra: A1 APPROVE - A0 APPROVE = -LOW = -5232.",
+    "review_identity": "A1 HUMAN_REVIEW = LOW + MEDIUM = 5232 + 203627 = 208859.",
+    "reject_identity": "A1 REJECT = HIGH = 27."
+  },
+  "hashes": {
+    "v1_freeze_sha256": "4d3da6a9e5bac2b38b546c7a5a60e870bf83f30adcadf67f067f99951e32f0c4",
+    "v2_freeze_sha256": "b874782326a8f20ed9bb7df1aa5ed1c75f883d8b6cba76b68991181d50b1604b",
+    "table3_sha256": "90759eb72f1173b40b5b9363c21b0ef3d6f1cde5042748eb57871d49fb73d5ee",
+    "test_cal_sha256": "e15ddd2f85a6c3fc9d0a79eecb578f7a94ded8a7efc63d9d114212728b2469eb",
+    "stage8_policy_yaml_sha256": "d1f20fd8a0fd2ffde1ba93db36b4029af0f11a0c38215c9aba0a09a58087dfaf",
+    "expected_v1": "4d3da6a9e5bac2b38b546c7a5a60e870bf83f30adcadf67f067f99951e32f0c4",
+    "expected_v2": "b874782326a8f20ed9bb7df1aa5ed1c75f883d8b6cba76b68991181d50b1604b",
+    "expected_table3": "90759eb72f1173b40b5b9363c21b0ef3d6f1cde5042748eb57871d49fb73d5ee",
+    "expected_test_cal": "e15ddd2f85a6c3fc9d0a79eecb578f7a94ded8a7efc63d9d114212728b2469eb"
+  },
+  "protected_files_unchanged": true,
+  "config_sha256": "d974f6979265df025ad017ce26b89c2299f7492dc26668606abe957bb7680c51",
+  "metrics_sha256": "8980aa13b53324c347d754eeb829f70740265a0bb640d98a68f59d19981b340a",
+  "report_sha256": "207504941eaad57d02ae610f05cb3d97c25a0c41d18d237c95b3a894d652c6a8",
+  "crosstab_sha256": "ef9d4d2b178eb54490282c9e5d80f662809c482add0158c274f1c2abdc68be76",
+  "pytest_exit_code": 0,
+  "test_command": "python -m pytest tests/test_stage10_a1_gap.py -q --tb=short",
+  "test_summary": "5 passed in 2.55s",
+  "software": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]"
+  },
+  "random_seed_used": null
+}

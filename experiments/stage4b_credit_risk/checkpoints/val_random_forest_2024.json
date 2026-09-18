@@ -1,0 +1,27 @@
+{
+  "family": "random_forest",
+  "seed": 2024,
+  "split": "validation",
+  "experiment_id": "stage4b-lc-granting-v1",
+  "roc_auc": 0.6509863876045217,
+  "pr_auc": 0.36904092639471936,
+  "brier": 0.24023566239578104,
+  "log_loss": 0.6734981392971516,
+  "n": 197528,
+  "n_positive": 49163,
+  "prevalence": 0.24889129642379815,
+  "config": {
+    "family": "random_forest",
+    "n_estimators": 80,
+    "max_depth": 12,
+    "min_samples_leaf": 100,
+    "max_features": "sqrt",
+    "class_weight": "balanced",
+    "bootstrap": true,
+    "n_jobs": 4,
+    "random_state": 2024,
+    "imbalance_strategy": "sklearn class_weight='balanced'",
+    "input_representation": "Stage 4A sparse matrix converted to CSC float32. Not densified; sklearn 1.9 RandomForestClassifier accepts sparse CSC.",
+    "size_justification": "80 trees, depth 12, leaf 100: small enough for reproducible training on ~941k rows x 1023 features without an uncontrolled search."
+  }
+}

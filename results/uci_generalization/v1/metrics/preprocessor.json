@@ -1,0 +1,9 @@
+{
+  "dataset": "uci_default_of_credit_card_clients",
+  "fit_split": "train",
+  "numeric_scaling": "StandardScaler on UCI continuous columns, train-fit only",
+  "categorical_encoding": "OneHotEncoder handle_unknown=ignore, undocumented codes retained as observed levels",
+  "recode_applied": false,
+  "lendingclub_imputer_applied": false,
+  "n_features_out": 90
+}

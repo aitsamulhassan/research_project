@@ -1,0 +1,18 @@
+{
+  "experiment_id": "stage4b-lc-granting-v1",
+  "dataset": "LendingClub granting-model dataset",
+  "target": "Default",
+  "positive_class": 1,
+  "seeds": [42, 123, 2024, 3407, 9999],
+  "final_seed": 42,
+  "primary_validation_criterion": "mean PR-AUC across seeds",
+  "selection_rule": "Highest mean validation PR-AUC. Among families within 0.005 mean PR-AUC of the best, prefer lower mean Brier; remaining ties prefer logistic_regression, then EBM, then random_forest, then xgboost.",
+  "bootstrap": {
+    "n_bootstrap": 1000,
+    "confidence_level": 0.95,
+    "seed": 42,
+    "method": "percentile_bootstrap_rows_with_replacement"
+  },
+  "ebm_interactions": 0,
+  "notes": "Single pre-declared configuration per family. No test-set tuning. No SMOTE."
+}

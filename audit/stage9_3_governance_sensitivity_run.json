@@ -1,0 +1,96 @@
+{
+  "experiment_id": "stage9_3_governance_sensitivity_lc_v1",
+  "amendment_id": "AMENDMENT-SHARIAH-001",
+  "protocol_id": "STAGE-9-PROTOCOL-2026-09-15",
+  "protocol_section": "5.2",
+  "started": "2026-09-15T18:22:31+00:00",
+  "execution_timestamp": "2026-09-15T18:22:35+00:00",
+  "git_commit": null,
+  "status": "PASS",
+  "issues": [],
+  "stage7_governance_version": "stage7-l1l2-v2",
+  "g0_definition": "Frozen Stage 8 matrix treatment of INSUFFICIENT_INFORMATION: LOW/MEDIUM \u2192 HUMAN_REVIEW; HIGH \u2192 REJECT. Primary observed LendingClub evidence state.",
+  "g1_definition": "Conservative REJECT: treatment of INSUFFICIENT_INFORMATION maps all credit bands (LOW, MEDIUM, HIGH) to REJECT. Hypothetical engineering scenario. Protocol \u00a75.2.",
+  "g3_definition": "Governance-gated REVIEW: treatment of INSUFFICIENT_INFORMATION maps all credit bands (LOW, MEDIUM, HIGH) to HUMAN_REVIEW, including HIGH. Hypothetical engineering scenario. Protocol \u00a75.2.",
+  "g_unsafe_status": "NOT_EXECUTED \u2014 NOT_AUTHORIZED",
+  "n": 208886,
+  "frozen_thresholds": {
+    "t_low": 0.06,
+    "t_high": 0.69
+  },
+  "credit_band_counts": {
+    "HIGH": 27,
+    "LOW": 5232,
+    "MEDIUM": 203627
+  },
+  "governance_state_counts": {
+    "INSUFFICIENT_INFORMATION": 208886
+  },
+  "final_decision_counts": {
+    "G0": {
+      "APPROVE": 0,
+      "HUMAN_REVIEW": 208859,
+      "REJECT": 27
+    },
+    "G1": {
+      "APPROVE": 0,
+      "HUMAN_REVIEW": 0,
+      "REJECT": 208886
+    },
+    "G3": {
+      "APPROVE": 0,
+      "HUMAN_REVIEW": 208886,
+      "REJECT": 0
+    }
+  },
+  "stage8_policy_hash": "4d3da6a9e5bac2b38b546c7a5a60e870bf83f30adcadf67f067f99951e32f0c4",
+  "models_loaded": false,
+  "models_trained": false,
+  "calibration_refit": false,
+  "test_used_for_selection": false,
+  "stage8_modified": false,
+  "new_shariah_rules_added": false,
+  "expert_validation": "NONE_EXPERT_VALIDATED",
+  "certification_claim": false,
+  "stage9_4_plus_executed": false,
+  "integrity": {
+    "v1_freeze_sha256": "4d3da6a9e5bac2b38b546c7a5a60e870bf83f30adcadf67f067f99951e32f0c4",
+    "v2_freeze_sha256": "b874782326a8f20ed9bb7df1aa5ed1c75f883d8b6cba76b68991181d50b1604b",
+    "platt_record_sha256": "9ca39188c961e5d1222346a7fba14902cb58dc24b78a0de2136b6437de01f44c",
+    "ebm_joblib_sha256": "8d373df1b576ca74f498d2bfcc54653cbf43d37b0af69400a26e20ab98a3a0c4",
+    "platt_joblib_sha256": "7f05d116676fcf5160e91b46bf2c587a974a9489360bae140c49c5ff40ed1a12",
+    "t_low": 0.06,
+    "t_high": 0.69,
+    "t_star": 0.16,
+    "platt_a": 1.1988263209549705,
+    "platt_b": 0.6697765046966161,
+    "test_cal_sha256": "e15ddd2f85a6c3fc9d0a79eecb578f7a94ded8a7efc63d9d114212728b2469eb"
+  },
+  "config_sha256": "8cb0cb4aa505a226e7032a0946d6597cc30e1b2fbe71ef383714881792bc7738",
+  "guard_hashes": {
+    "C:/Users/User/research-project/results/decision/frozen_policy.json": "4d3da6a9e5bac2b38b546c7a5a60e870bf83f30adcadf67f067f99951e32f0c4",
+    "C:/Users/User/research-project/results/decision/v2/frozen_policy.json": "b874782326a8f20ed9bb7df1aa5ed1c75f883d8b6cba76b68991181d50b1604b",
+    "C:/Users/User/research-project/results/decision/v2/tables/table3_test_decision_outcomes.csv": "90759eb72f1173b40b5b9363c21b0ef3d6f1cde5042748eb57871d49fb73d5ee",
+    "C:/Users/User/research-project/results/decision/v2/metrics/fused_test.json": "53871e050a20f1536ad9ebf85e64f92d19747c7e9aad2748e4ede6b472dd8bc9",
+    "C:/Users/User/research-project/docs/STAGE_8_DECISION_FUSION_REPORT_V2.md": "211337df3f4e1d2600198e645f4ed6ad50a2f3824b1073fcd397d9ac4c98a36d",
+    "C:/Users/User/research-project/audit/stage8_v2_decision_fusion_run.json": "bfd5b8102c571774b336b4c879f3bf8d42763b5f2a995222135a1c86b378f3e9",
+    "C:/Users/User/research-project/configs/stage8_decision_policy.yaml": "d1f20fd8a0fd2ffde1ba93db36b4029af0f11a0c38215c9aba0a09a58087dfaf",
+    "C:/Users/User/research-project/configs/stage8_v2_decision_policy.yaml": "4b2826d81a3616536b89714dd41d57cb1a4ca9f8e6f0ce701455aea4d48e5f0d",
+    "C:/Users/User/research-project/audit/stage7_v2_governance_run.json": "b84dbd9662707a40663dc68af57190d8cbafc0dfb75c287009898faa91b7bb11",
+    "C:/Users/User/research-project/docs/STAGE_7_SHARIAH_GOVERNANCE_REPORT_V2.md": "6d8185de96f7b27f3a037129c36b489752b886babfb9bd620f76bb1359ef6db0",
+    "C:/Users/User/research-project/results/ablation/v1/metrics/ablation_summary.json": "5c4bc2189f0d26f2a774ff0f1ada5bb15b8f74cafd87e5deab7571b05383d11b",
+    "C:/Users/User/research-project/docs/STAGE_9_1_ABLATION_REPORT.md": "4d6f227503e282b1b79048fe7012d85f6ad8d90f53e424d689c170d56c9c23fe",
+    "C:/Users/User/research-project/audit/stage9_1_ablation_run.json": "8f93bf371844fa5ba8f2014c8d1b1a4ccc5b919f90fd148005de82f9d6a7704b",
+    "C:/Users/User/research-project/results/cost_sensitivity/v1/metrics/cost_sensitivity_summary.json": "e8d3c4ca07576885a00603ec6344010fa02a34ce0cb8e19b1b54f798b2a88289",
+    "C:/Users/User/research-project/docs/STAGE_9_2_COST_SENSITIVITY_REPORT.md": "5ec4712abcfd5934dcb11d50b4780b798ae80fe3cdb4291b46c958ade31d58ba",
+    "C:/Users/User/research-project/audit/stage9_2_cost_sensitivity_run.json": "ba69bd35ea899717d4435ff755a786c36e1251033162de7da96ebd073d51f889"
+  },
+  "pytest_exit_code": 0,
+  "test_command": "python -m pytest tests/test_stage9_3_governance_sensitivity.py -q --tb=short",
+  "test_summary": "13 passed in 1.16s",
+  "software": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "pandas": "3.0.5",
+    "numpy": "2.5.2"
+  }
+}

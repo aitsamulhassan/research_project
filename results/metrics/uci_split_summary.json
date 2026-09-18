@@ -1,0 +1,190 @@
+{
+  "train_rows": 20999,
+  "validation_rows": 4499,
+  "test_rows": 4502,
+  "train_prevalence": 0.22120100957188438,
+  "validation_prevalence": 0.22116025783507445,
+  "test_prevalence": 0.22123500666370502,
+  "seed": 42,
+  "train_fraction": 0.7,
+  "validation_fraction": 0.15,
+  "method": "stratified_by_target_no_temporal_index",
+  "merged_with_lendingclub": false,
+  "undocumented_codes": {
+    "recode_applied": false,
+    "fields": [
+      {
+        "column": "EDUCATION",
+        "documented_values": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "undocumented_values_observed": [
+          0,
+          5,
+          6
+        ],
+        "counts": {
+          "0": 14,
+          "5": 280,
+          "6": 51
+        }
+      },
+      {
+        "column": "MARRIAGE",
+        "documented_values": [
+          1,
+          2,
+          3
+        ],
+        "undocumented_values_observed": [
+          0
+        ],
+        "counts": {
+          "0": 54
+        }
+      },
+      {
+        "column": "PAY_0",
+        "documented_values": [
+          -1,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "undocumented_values_observed": [
+          -2,
+          0
+        ],
+        "counts": {
+          "-2": 2759,
+          "0": 14737
+        }
+      },
+      {
+        "column": "PAY_2",
+        "documented_values": [
+          -1,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "undocumented_values_observed": [
+          -2,
+          0
+        ],
+        "counts": {
+          "-2": 3782,
+          "0": 15730
+        }
+      },
+      {
+        "column": "PAY_3",
+        "documented_values": [
+          -1,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "undocumented_values_observed": [
+          -2,
+          0
+        ],
+        "counts": {
+          "-2": 4085,
+          "0": 15764
+        }
+      },
+      {
+        "column": "PAY_4",
+        "documented_values": [
+          -1,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "undocumented_values_observed": [
+          -2,
+          0
+        ],
+        "counts": {
+          "-2": 4348,
+          "0": 16455
+        }
+      },
+      {
+        "column": "PAY_5",
+        "documented_values": [
+          -1,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "undocumented_values_observed": [
+          -2,
+          0
+        ],
+        "counts": {
+          "-2": 4546,
+          "0": 16947
+        }
+      },
+      {
+        "column": "PAY_6",
+        "documented_values": [
+          -1,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "undocumented_values_observed": [
+          -2,
+          0
+        ],
+        "counts": {
+          "-2": 4895,
+          "0": 16286
+        }
+      }
+    ]
+  },
+  "recode_applied": false
+}

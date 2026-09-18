@@ -1,0 +1,50 @@
+experiment_id: stage9_4_uci_generalization_v1
+stage: "9.4"
+amendment_id: AMENDMENT-STAGE9-4-AUTHORIZATION
+amendment_status_required: APPROVED
+random_seed: 42
+validation_seeds: [42, 123, 2024, 3407, 9999]
+
+purpose: >
+  Test whether the credit-risk / calibration methodology generalizes to a second,
+  independent, public credit dataset. This is NOT a test of the evidence-separated
+  decision architecture as a whole and does NOT include a Shariah governance layer.
+
+dataset:
+  name: UCI Default of Credit Card Clients
+  target: default payment next month
+  target_not_equivalent_to: LendingClub Default (Charged Off vs Fully Paid)
+  split: frozen Stage 3 stratified 0.70/0.15/0.15 seed 42
+  merge_with_lendingclub: false
+  invent_temporal_structure: false
+
+families:
+  - logistic_regression
+  - explainable_boosting_machine
+  - xgboost
+
+out_of_scope:
+  - random_forest
+  - lendingclub_hyperparameter_transfer
+  - lendingclub_threshold_transfer
+  - shariah_l2_fusion
+  - uci_decision_thresholds
+  - shap_vs_ebm_fidelity
+  - stage9.5
+  - stage9.6
+  - stage9.7
+  - stage10
+  - paper_writing
+
+frozen_uci:
+  zip_sha256: 56c885f84457f6680f8438f02bfcdac9579323d8a94465ee5f26e32baa727602
+  assignments: results/tables/uci_split_assignments.csv
+  manifest: audit/uci_split_manifest.json
+
+test_protection: >
+  UCI TEST is not used to select family, calibrator, or any hyperparameter.
+  TEST is evaluated once after those choices are frozen.
+
+retraining_lendingclub: forbidden
+overwrite_stage7_8_9: forbidden
+runner_may_edit_execution_gate: false

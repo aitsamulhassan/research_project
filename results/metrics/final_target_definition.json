@@ -1,0 +1,14 @@
+{
+  "dataset": "LendingClub",
+  "target": "Default",
+  "positive_class": 1,
+  "negative_class": 0,
+  "positive_semantics": "Charged Off",
+  "negative_semantics": "Fully Paid",
+  "n_rows": 1347681,
+  "missing_count": 0,
+  "value_counts": {
+    "0": 1078432,
+    "1": 269249
+  }
+}

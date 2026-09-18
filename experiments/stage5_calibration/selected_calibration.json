@@ -1,0 +1,40 @@
+{
+  "selected_method": "platt",
+  "reason": "Primary criterion is validation Brier. Best Brier=0.174694. Methods within 0.001 (practically indistinguishable): ['platt', 'isotonic']. Among those, simplicity order ['raw', 'platt', 'isotonic'] selected `platt` (Brier=0.174845, log_loss=0.527846, ECE=0.002212).",
+  "candidates": [
+    "platt",
+    "isotonic"
+  ],
+  "best_brier": 0.17469431274375435,
+  "declared_before_test": true,
+  "indistinguishable_brier": 0.001,
+  "simplicity_order": [
+    "raw",
+    "platt",
+    "isotonic"
+  ],
+  "timestamp": "2026-09-14T18:24:32+00:00",
+  "platt": {
+    "method": "platt",
+    "form": "sigmoid(a * logit(p_raw) + b)",
+    "a": 1.1988263209549705,
+    "b": 0.6697765046966161,
+    "solver": "lbfgs",
+    "penalty": "none (C=np.inf)",
+    "max_iter": 1000,
+    "n_iter": 10,
+    "converged": true,
+    "fit_split": "validation"
+  },
+  "isotonic": {
+    "method": "isotonic",
+    "y_min": 0.0,
+    "y_max": 1.0,
+    "out_of_bounds": "clip",
+    "increasing": true,
+    "n_thresholds": 186,
+    "clipping": "predictions outside the fitted raw-probability range are clipped to the boundary calibrated value",
+    "random_seed": null,
+    "fit_split": "validation"
+  }
+}

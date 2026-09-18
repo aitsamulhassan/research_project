@@ -1,0 +1,30 @@
+{
+  "stage": "2",
+  "status": "COMPLETE",
+  "datasets_audited": [
+    "lendingclub_zenodo_11295916",
+    "uci_default_of_credit_card_clients_350"
+  ],
+  "raw_hashes_verified": true,
+  "target_verified": true,
+  "temporal_field_verified": true,
+  "leakage_audit_complete": true,
+  "purpose_field_verified": true,
+  "license_verified": true,
+  "modeling_started": false,
+  "test_set_created": false,
+  "open_issues": [
+    "LendingClub target original loan_status mapping is not uniquely specified in Zenodo text.",
+    "UCI documentation vs contents conflict (not recoded) in: EDUCATION, MARRIAGE, PAY_0, PAY_2, PAY_3, PAY_4, PAY_5, PAY_6."
+  ],
+  "requires_research_owner_review": [
+    "issue_d: approval month vs feature vs time-index only; do not set split cutoffs until reviewed.",
+    "experience_c: TIMING_UNVERIFIED construction using current-obligation credit date.",
+    "dti_n: depositor application-time claim vs 'Monthly information' wording.",
+    "Target Default: documentation conflict between charged-off mapping and 'Fully Paid or Default' filter sentence.",
+    "Selection bias: dataset contains originated and resolved loans only.",
+    "UCI role remains GENERALIZATION_OF_METHOD, not DIRECT_DOMAIN_TRANSFER; do not merge.",
+    "UCI EDUCATION/MARRIAGE/PAY_* codes include values not defined in UCI Additional Variable Information; do not recode without a protocol.",
+    "purpose/title/desc may later feed decision-support; no Shariah certification is implied."
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "experiment_id": "stage9_4_uci_generalization_v1",
+  "amendment_id": "AMENDMENT-STAGE9-4-AUTHORIZATION",
+  "amendment_status": "APPROVED",
+  "started": "2026-09-15T19:07:00+00:00",
+  "execution_timestamp": "2026-09-15T19:08:36+00:00",
+  "git_commit": null,
+  "status": "PASS",
+  "issues": [],
+  "models_trained": true,
+  "calibrators_fitted": true,
+  "test_used_for_selection": false,
+  "thresholds_searched": false,
+  "uci_test_evaluated": true,
+  "lendingclub_models_retrained": false,
+  "lendingclub_calibration_refit": false,
+  "lendingclub_thresholds_changed": false,
+  "stage7_8_modified": false,
+  "stage9_1_3_modified": false,
+  "shariah_evaluation_on_uci": false,
+  "l2_fusion_on_uci": false,
+  "merged_with_lendingclub": false,
+  "invented_temporal_structure": false,
+  "shap_vs_ebm": "skipped",
+  "selected_family": "xgboost",
+  "selected_calibrator": "isotonic",
+  "split_verify": {
+    "zip_sha256": "56c885f84457f6680f8438f02bfcdac9579323d8a94465ee5f26e32baa727602",
+    "assignment_sha256": "9ffe70867b953f0266486f510c6ea7b0f191a4964d6105fd5c7507c8acdd32f6",
+    "manifest_sha256": "7224695063cde933235fbe1f1d4d3f10683a9cbdf6549c97245b6a4af9c57f86",
+    "split_hashes": {
+      "train": "70b1819de66fdae6793691e83224b5dc4e1956c021b582ffcf0a89791c9ac2f1",
+      "validation": "76a91b4b6fefbfd111d6a7c536ad222330c3bcf0f4358c259e40d4814382bcd4",
+      "test": "0783db42ac57a277f79379e0a62ef00f2a2b189f868ed993cebdf16def404126"
+    },
+    "split_counts": {
+      "train": 20999,
+      "validation": 4499,
+      "test": 4502
+    },
+    "summary_prevalence": {
+      "train": 0.22120100957188438,
+      "validation": 0.22116025783507445,
+      "test": 0.22123500666370502
+    },
+    "target_column": "default payment next month",
+    "time_index": null,
+    "merged_with_lendingclub": false,
+    "recode_applied": false
+  },
+  "split_prevalence": {
+    "train": {
+      "n": 20999,
+      "n_positive": 4645,
+      "prevalence": 0.22120100957188438
+    },
+    "validation": {
+      "n": 4499,
+      "n_positive": 995,
+      "prevalence": 0.22116025783507445
+    },
+    "test": {
+      "n": 4502,
+      "n_positive": 996,
+      "prevalence": 0.22123500666370502
+    }
+  },
+  "family_selection": {
+    "selected_family": "xgboost",
+    "reason": "Primary criterion is mean UCI validation PR-AUC. Best PR-AUC is 0.534172. Candidates within 0.005: ['xgboost']. Among those, lowest mean Brier then simplicity selected `xgboost` (PR-AUC=0.534172, Brier=0.178710).",
+    "candidates": [
+      "xgboost"
+    ],
+    "declared_before_test": true,
+    "test_metrics_not_consulted": true,
+    "primary_criterion": "mean validation PR-AUC across frozen UCI seeds",
+    "pr_auc_tie": 0.005,
+    "simplicity_order": [
+      "logistic_regression",
+      "explainable_boosting_machine",
+      "xgboost"
+    ]
+  },
+  "calibrator_selection": {
+    "selected_method": "isotonic",
+    "reason": "Primary criterion is UCI validation Brier. Best Brier=0.134862. Methods within 0.001 (practically indistinguishable): ['isotonic']. Among those, simplicity order ['raw', 'platt', 'isotonic'] selected `isotonic` (Brier=0.134862, log_loss=0.428378, ECE=0.000000).",
+    "candidates": [
+      "isotonic"
+    ],
+    "best_brier": 0.13486223480216478,
+    "declared_before_test": true,
+    "indistinguishable_brier": 0.001,
+    "simplicity_order": [
+      "raw",
+      "platt",
+      "isotonic"
+    ],
+    "test_metrics_not_consulted": true,
+    "platt": {
+      "method": "platt",
+      "form": "sigmoid(a * logit(p_raw) + b)",
+      "a": 0.9373939123374948,
+      "b": -1.1820132758454134,
+      "solver": "lbfgs",
+      "penalty": "none (C=np.inf)",
+      "max_iter": 1000,
+      "n_iter": 6,
+      "converged": true,
+      "fit_split": "validation"
+    },
+    "isotonic": {
+      "method": "isotonic",
+      "y_min": 0.0,
+      "y_max": 1.0,
+      "out_of_bounds": "clip",
+      "increasing": true,
+      "n_thresholds": 57,
+      "clipping": "predictions outside the fitted raw-probability range are clipped to the boundary calibrated value",
+      "random_seed": null,
+      "fit_split": "validation"
+    }
+  },
+  "uci_test_selected": {
+    "method": "isotonic",
+    "split": "test",
+    "seed": 42,
+    "brier": 0.1368528550434721,
+    "log_loss": 0.449533259034068,
+    "ece": 0.01744321566180452,
+    "mce": 0.25380150883328856,
+    "roc_auc": 0.7708780071798891,
+    "pr_auc": 0.5224208622925242,
+    "n": 4502.0,
+    "n_positive": 996.0,
+    "prevalence": 0.22123500666370502,
+    "brier_ci_lower": 0.1310527481329279,
+    "brier_ci_upper": 0.14344032425798647,
+    "log_loss_ci_lower": 0.42655938495778317,
+    "log_loss_ci_upper": 0.4757599303657999,
+    "ece_ci_lower": 0.011303979436886883,
+    "ece_ci_upper": 0.02949027754971977,
+    "mce_ci_lower": 0.07536595896219019,
+    "mce_ci_upper": 0.7570839211208057,
+    "roc_auc_ci_lower": 0.7530540780431771,
+    "roc_auc_ci_upper": 0.787669663567809,
+    "pr_auc_ci_lower": 0.4897095202841427,
+    "pr_auc_ci_upper": 0.5536041047825101
+  },
+  "lendingclub_test_citation": {
+    "dataset": "LendingClub granting extract",
+    "target": "Default (1 = Charged Off, 0 = Fully Paid)",
+    "source": "results/calibration/metrics/stage5_test_metrics.json",
+    "source_sha256": "a6c8ab44676d62109c1a346dbcf14a12a745b761f13b9fda6a9002853fc326e3",
+    "split": "LC TEST",
+    "n": 208886,
+    "method": "platt",
+    "family": "explainable_boosting_machine",
+    "roc_auc": 0.6776693941139847,
+    "pr_auc": 0.35096314719303284,
+    "brier": 0.15616920271522994,
+    "log_loss": 0.48357015583149326,
+    "ece": 0.020267295489117824,
+    "note": "Cited from frozen Stage 5 artifacts. Not recomputed. Not merged with UCI rows."
+  },
+  "protected_hashes_before": {
+    "C:\\Users\\User\\research-project\\results\\decision\\frozen_policy.json": "4d3da6a9e5bac2b38b546c7a5a60e870bf83f30adcadf67f067f99951e32f0c4",
+    "C:\\Users\\User\\research-project\\results\\decision\\v2\\frozen_policy.json": "b874782326a8f20ed9bb7df1aa5ed1c75f883d8b6cba76b68991181d50b1604b",
+    "C:\\Users\\User\\research-project\\results\\decision\\v2\\tables\\table3_test_decision_outcomes.csv": "90759eb72f1173b40b5b9363c21b0ef3d6f1cde5042748eb57871d49fb73d5ee",
+    "C:\\Users\\User\\research-project\\results\\calibration\\test\\ebm_seed42_calibrated.csv": "e15ddd2f85a6c3fc9d0a79eecb578f7a94ded8a7efc63d9d114212728b2469eb",
+    "C:\\Users\\User\\research-project\\results\\calibration\\metrics\\stage5_test_metrics.json": "a6c8ab44676d62109c1a346dbcf14a12a745b761f13b9fda6a9002853fc326e3",
+    "C:\\Users\\User\\research-project\\results\\metrics\\stage4b_test_metrics.json": "960c01643a671805daa1c692e9034454a94d6088651c6336076433b3e8bdc612",
+    "C:\\Users\\User\\research-project\\experiments\\stage5_calibration\\selected_calibration.json": "126065e1b25b0d77b1875c6ed2a1d488ea59222653edd4b4fbd65792e2349c41",
+    "C:\\Users\\User\\research-project\\docs\\STAGE_7_SHARIAH_GOVERNANCE_REPORT_V2.md": "6d8185de96f7b27f3a037129c36b489752b886babfb9bd620f76bb1359ef6db0",
+    "C:\\Users\\User\\research-project\\docs\\STAGE_8_DECISION_FUSION_REPORT_V2.md": "211337df3f4e1d2600198e645f4ed6ad50a2f3824b1073fcd397d9ac4c98a36d",
+    "C:\\Users\\User\\research-project\\docs\\STAGE_9_1_ABLATION_REPORT.md": "4d6f227503e282b1b79048fe7012d85f6ad8d90f53e424d689c170d56c9c23fe",
+    "C:\\Users\\User\\research-project\\docs\\STAGE_9_2_COST_SENSITIVITY_REPORT.md": "5ec4712abcfd5934dcb11d50b4780b798ae80fe3cdb4291b46c958ade31d58ba",
+    "C:\\Users\\User\\research-project\\docs\\STAGE_9_3_GOVERNANCE_SENSITIVITY_REPORT.md": "6172fcb9038b45af9b0224f431cfeaece6a50e961ac8efad84c6c3928a6ff5ed",
+    "C:\\Users\\User\\research-project\\audit\\stage9_0_experimental_freeze.json": "cc351f8f577ff4ee313fbb31f3e9f6b7e3cd1d360c63c1de88c880a5379c3fb6",
+    "C:\\Users\\User\\research-project\\audit\\stage9_1_ablation_run.json": "8f93bf371844fa5ba8f2014c8d1b1a4ccc5b919f90fd148005de82f9d6a7704b",
+    "C:\\Users\\User\\research-project\\audit\\stage9_2_cost_sensitivity_run.json": "ba69bd35ea899717d4435ff755a786c36e1251033162de7da96ebd073d51f889",
+    "C:\\Users\\User\\research-project\\audit\\stage9_3_governance_sensitivity_run.json": "91a84ca8fb2c986322f6db98745a8fc7c8ea464bde83172faa6a746936a6c75f",
+    "C:\\Users\\User\\research-project\\configs\\stage8_decision_policy.yaml": "d1f20fd8a0fd2ffde1ba93db36b4029af0f11a0c38215c9aba0a09a58087dfaf"
+  },
+  "protected_hashes_after": {
+    "C:\\Users\\User\\research-project\\results\\decision\\frozen_policy.json": "4d3da6a9e5bac2b38b546c7a5a60e870bf83f30adcadf67f067f99951e32f0c4",
+    "C:\\Users\\User\\research-project\\results\\decision\\v2\\frozen_policy.json": "b874782326a8f20ed9bb7df1aa5ed1c75f883d8b6cba76b68991181d50b1604b",
+    "C:\\Users\\User\\research-project\\results\\decision\\v2\\tables\\table3_test_decision_outcomes.csv": "90759eb72f1173b40b5b9363c21b0ef3d6f1cde5042748eb57871d49fb73d5ee",
+    "C:\\Users\\User\\research-project\\results\\calibration\\test\\ebm_seed42_calibrated.csv": "e15ddd2f85a6c3fc9d0a79eecb578f7a94ded8a7efc63d9d114212728b2469eb",
+    "C:\\Users\\User\\research-project\\results\\calibration\\metrics\\stage5_test_metrics.json": "a6c8ab44676d62109c1a346dbcf14a12a745b761f13b9fda6a9002853fc326e3",
+    "C:\\Users\\User\\research-project\\results\\metrics\\stage4b_test_metrics.json": "960c01643a671805daa1c692e9034454a94d6088651c6336076433b3e8bdc612",
+    "C:\\Users\\User\\research-project\\experiments\\stage5_calibration\\selected_calibration.json": "126065e1b25b0d77b1875c6ed2a1d488ea59222653edd4b4fbd65792e2349c41",
+    "C:\\Users\\User\\research-project\\docs\\STAGE_7_SHARIAH_GOVERNANCE_REPORT_V2.md": "6d8185de96f7b27f3a037129c36b489752b886babfb9bd620f76bb1359ef6db0",
+    "C:\\Users\\User\\research-project\\docs\\STAGE_8_DECISION_FUSION_REPORT_V2.md": "211337df3f4e1d2600198e645f4ed6ad50a2f3824b1073fcd397d9ac4c98a36d",
+    "C:\\Users\\User\\research-project\\docs\\STAGE_9_1_ABLATION_REPORT.md": "4d6f227503e282b1b79048fe7012d85f6ad8d90f53e424d689c170d56c9c23fe",
+    "C:\\Users\\User\\research-project\\docs\\STAGE_9_2_COST_SENSITIVITY_REPORT.md": "5ec4712abcfd5934dcb11d50b4780b798ae80fe3cdb4291b46c958ade31d58ba",
+    "C:\\Users\\User\\research-project\\docs\\STAGE_9_3_GOVERNANCE_SENSITIVITY_REPORT.md": "6172fcb9038b45af9b0224f431cfeaece6a50e961ac8efad84c6c3928a6ff5ed",
+    "C:\\Users\\User\\research-project\\audit\\stage9_0_experimental_freeze.json": "cc351f8f577ff4ee313fbb31f3e9f6b7e3cd1d360c63c1de88c880a5379c3fb6",
+    "C:\\Users\\User\\research-project\\audit\\stage9_1_ablation_run.json": "8f93bf371844fa5ba8f2014c8d1b1a4ccc5b919f90fd148005de82f9d6a7704b",
+    "C:\\Users\\User\\research-project\\audit\\stage9_2_cost_sensitivity_run.json": "ba69bd35ea899717d4435ff755a786c36e1251033162de7da96ebd073d51f889",
+    "C:\\Users\\User\\research-project\\audit\\stage9_3_governance_sensitivity_run.json": "91a84ca8fb2c986322f6db98745a8fc7c8ea464bde83172faa6a746936a6c75f",
+    "C:\\Users\\User\\research-project\\configs\\stage8_decision_policy.yaml": "d1f20fd8a0fd2ffde1ba93db36b4029af0f11a0c38215c9aba0a09a58087dfaf"
+  },
+  "protected_hashes_unchanged": true,
+  "config_sha256": "89085da7ba98c3876c04f3b510f8fe30a8a17b840fdf407c08fc20e4959dbc36",
+  "report_sha256": "60bd9db04b9b19845ace97a20f6af2dd03ffc70177a2f8fbc415dcb4328e953b",
+  "runner_did_not_edit_authorization": true,
+  "pytest_exit_code": 0,
+  "test_command": "python -m pytest tests/test_stage9_4_uci.py -q --tb=short",
+  "test_summary": "14 passed in 2.45s",
+  "software": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "pandas": "3.0.5",
+    "numpy": "2.5.2"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "dataset_hash": "207d65b2712f775a91404496ab27c786ac0da6b0f977f849e6d5d8149e925acc",
+  "split_manifest_hash": "d4db2099199258ae5ca4f5a85a7ce8e7dde2943a0bf7b9239212cce1e44d0e70",
+  "feature_policy_hash": "ad2319d55ba545733340dd42e9d4be91fe3bfe59c8d63c4e934bb5192546960b",
+  "preprocessing_policy_hash": "3435a985086eccdfb548b6dff88c4fadaa6c060250237dcc759be3db64b44fd9",
+  "python_version": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "library_versions": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "pandas": "3.0.5",
+    "numpy": "2.5.2",
+    "sklearn": "1.9.0",
+    "joblib": "1.6.0"
+  },
+  "git_commit": null,
+  "run_timestamp": "2026-09-14T16:36:52+00:00",
+  "script_version": "stage4a-0.1.0",
+  "n_features_out": 1023
+}

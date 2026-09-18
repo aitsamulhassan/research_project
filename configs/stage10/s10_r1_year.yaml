@@ -1,0 +1,14 @@
+experiment_id: s10_r1_year_v1
+amendment_id: AMENDMENT-STAGE10-AUTHORIZATION
+classification: EXPLORATORY / DESCRIPTIVE POST-HOC REANALYSIS — NON-CONFIRMATORY
+confirmatory_experiment: false
+models_trained: false
+calibration_refit: false
+thresholds_searched: false
+year_specific_threshold: false
+year_column: stored year in results/calibration/test/ebm_seed42_calibrated.csv
+allowed_years: [2017, 2018]
+inputs:
+  - results/calibration/test/ebm_seed42_calibrated.csv
+  - results/stage10/v1/metrics/s10_i1_identity.json
+  - results/calibration/metrics/stage5_temporal.json

@@ -1,0 +1,8 @@
+item,monolithic,evidence_separated,note
+predictive_scores,same frozen Platt-calibrated EBM probabilities,same frozen Platt-calibrated EBM probabilities,Architecture does not change ROC-AUC/PR-AUC/Brier
+threshold,single t=0.16,"t_low=0.06, t_high=0.69 (two_threshold)",Both selected on validation only
+governance,absent,INSUFFICIENT_INFORMATION,Not converted to a score
+test_approval_rate,0.2961184569573835,0.0,Fused APPROVE requires governance PASS
+test_review_rate,0.0,0.9998707428932527,Monolithic has no review band
+test_rejection_rate,0.7038815430426165,0.00012925710674722098,
+test_expected_normalized_cost,0.663859712953477,0.2500299206265619,Fused cost uses C_REVIEW; monolithic uses C_REVIEW=0. Not a claim of superior accuracy.

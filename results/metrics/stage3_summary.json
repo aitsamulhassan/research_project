@@ -1,0 +1,19 @@
+{
+  "stage": "3",
+  "status": "COMPLETE",
+  "modeling_started": false,
+  "preprocessing_fit": false,
+  "lendingclub_primary_predictor_count": 9,
+  "lendingclub_primary_predictors": [
+    "revenue",
+    "dti_n",
+    "loan_amnt",
+    "fico_n",
+    "emp_length",
+    "purpose",
+    "home_ownership_n",
+    "addr_state",
+    "zip_code"
+  ],
+  "integrity_errors": []
+}

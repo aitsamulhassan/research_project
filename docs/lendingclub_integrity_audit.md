@@ -1,0 +1,26 @@
+# LendingClub Integrity Audit
+
+Outliers were not deleted. No rows were dropped.
+
+| check | n_affected | pct_affected | severity | note |
+| --- | --- | --- | --- | --- |
+| duplicate_rows | 0 | 0.0 | info | Exact full-row duplicates. |
+| duplicate_id_values | 0 | 0.0 | info | Repeated loan identifiers. |
+| null_id | 0 | 0.0 | info | Missing loan identifiers. |
+| target_not_in_0_1 | 0 | 0.0 | info | Default values other than 0 or 1. |
+| target_missing | 0 | 0.0 | info | Missing Default. |
+| fico_below_300 | 0 | 0.0 | warning | Below documented 300-850 range. |
+| fico_above_850 | 0 | 0.0 | warning | Above documented 300-850 range. |
+| loan_amnt_non_positive | 0 | 0.0 | warning | Requested amount <= 0. |
+| revenue_negative | 0 | 0.0 | warning | Negative self-declared income. |
+| revenue_zero | 0 | 0.0 | info | Zero income; may be legitimate or a sentinel. Not deleted. |
+| dti_negative | 0 | 0.0 | warning | Negative DTI. |
+| dti_ge_100 | 535 | 0.039698 | info | Extreme DTI >= 100; not deleted. |
+| dti_eq_999 | 38 | 0.00282 | info | DTI equal to 999 (possible sentinel in some LC extracts). |
+| experience_c_not_binary | 0 | 0.0 | warning | Values other than 0/1. |
+| issue_d_malformed_unparseable | 0 | 0.0 | warning | Non-null issue_d values that did not parse. |
+| issue_d_missing | 0 | 0.0 | info | Missing issue_d. |
+| home_ownership_unexpected_categories | 0 | 0.0 | info | Observed values not in documented {mortgage, rent, own, other} after case-normalisation: none |
+| purpose_missing | 0 | 0.0 | info | Missing purpose. |
+
+Machine-readable copy: `results/tables/lendingclub_integrity_findings.csv`.

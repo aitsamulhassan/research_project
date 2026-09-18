@@ -1,0 +1,18 @@
+{
+  "explainability_not_used_for_rulings": true,
+  "credit_model_not_called": true,
+  "experiment_id": "stage7-shariah-gov-v1",
+  "engine_version": "stage7-shariah-engine-v1",
+  "catalog_version": "stage7-shariah-catalog-v1",
+  "synthetic_case_version": "stage7-synthetic-cases-v1",
+  "fixed_timestamp": "2026-09-15T00:00:00+00:00",
+  "git_commit": null,
+  "execution_timestamp": "2026-09-14T19:46:07+00:00",
+  "status": "PASS",
+  "mismatches": [],
+  "software_library_versions": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]"
+  },
+  "status_reason": "Authoritative source verification completed for implemented rules; no invented AAOIFI clauses; tests passed.",
+  "pytest_exit_code": 0
+}

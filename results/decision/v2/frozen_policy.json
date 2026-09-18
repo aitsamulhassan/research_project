@@ -1,0 +1,41 @@
+{
+  "experiment_id": "stage8-lc-decision-v2",
+  "policy_version": "stage8-v2",
+  "audit_schema_version": "2.0",
+  "frozen_before_test": true,
+  "thresholds_reselected": false,
+  "thresholds_source": "results/decision/frozen_policy.json",
+  "t_low": 0.06,
+  "t_high": 0.69,
+  "policy_type": "two_threshold",
+  "selection_split": "validation",
+  "cost_scenario": {
+    "label": "ASSUMED RELATIVE COST SCENARIO",
+    "name": "FN:FP=5:1",
+    "fn_fp_ratio": 5.0,
+    "c_fp": 1.0,
+    "c_fn": 5.0,
+    "c_review_over_fp": 0.25,
+    "c_review": 0.25,
+    "assumption": "Researcher sensitivity scenario, not a real operational cost."
+  },
+  "platt": {
+    "method": "platt",
+    "form": "sigmoid(a * logit(p_raw) + b)",
+    "a": 1.1988263209549705,
+    "b": 0.6697765046966161,
+    "solver": "lbfgs",
+    "penalty": "none (C=np.inf)",
+    "max_iter": 1000,
+    "n_iter": 10,
+    "converged": true,
+    "fit_split": "validation"
+  },
+  "l1_status": "INSUFFICIENT_SCHEMA_FOR_APPLICANT_DETERMINATION",
+  "l1_is_applicant_level_ruling": false,
+  "l2_evaluation_mode": "PER_APPLICATION",
+  "amendment_id": "AMENDMENT-SHARIAH-001",
+  "l1l2_version": "stage7-l1l2-v2",
+  "monolithic_t": 0.16,
+  "timestamp": "2026-09-15T14:19:18+00:00"
+}

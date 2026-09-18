@@ -1,0 +1,16 @@
+{
+  "selected_family": "xgboost",
+  "reason": "Primary criterion is mean UCI validation PR-AUC. Best PR-AUC is 0.534172. Candidates within 0.005: ['xgboost']. Among those, lowest mean Brier then simplicity selected `xgboost` (PR-AUC=0.534172, Brier=0.178710).",
+  "candidates": [
+    "xgboost"
+  ],
+  "declared_before_test": true,
+  "test_metrics_not_consulted": true,
+  "primary_criterion": "mean validation PR-AUC across frozen UCI seeds",
+  "pr_auc_tie": 0.005,
+  "simplicity_order": [
+    "logistic_regression",
+    "explainable_boosting_machine",
+    "xgboost"
+  ]
+}

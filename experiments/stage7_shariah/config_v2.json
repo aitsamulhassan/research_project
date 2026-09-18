@@ -1,0 +1,9 @@
+{
+  "explainability_experiment_not_used": true,
+  "shariah_experiment_id": "stage7-shariah-gov-v2",
+  "engine_version": "stage7-shariah-engine-v1",
+  "l1l2_version": "stage7-l1l2-v2",
+  "catalog_version": "stage7-shariah-catalog-v1",
+  "amendment_id": "AMENDMENT-SHARIAH-001",
+  "note": "Stage 7 v2 L1/L2 remediation. Stage 8 and Stage 9 are not started. Credit, calibration, and SHAP outputs are not inputs to this layer."
+}

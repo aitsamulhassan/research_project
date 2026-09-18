@@ -1,0 +1,118 @@
+policy_version: stage8-v1
+audit_schema_version: "1.0"
+experiment_id: stage8-lc-decision-v1
+random_seed: 42
+
+model_reference:
+  family: explainable_boosting_machine
+  experiment_id: stage4b-lc-granting-v1
+  seed: 42
+  artifact: results/calibration/artifacts/ebm_train_only_seed42.joblib
+  note: TRAIN-only EBM used by Stage 5 calibration. Not refit in Stage 8.
+
+calibrator_reference:
+  method: platt
+  experiment_id: stage5-lc-ebm-calibration-v1
+  artifact: results/calibration/artifacts/platt_calibrator.joblib
+  selection: experiments/stage5_calibration/selected_calibration.json
+  fit_split: validation
+  note: Frozen Platt parameters are loaded from the Stage 5 artifact. Not refit.
+
+explainability_reference:
+  experiment_id: stage6-lc-ebm-explain-v1
+  global_table: results/explainability/tables/table1_global_attribution.csv
+  note: Local SHAP is not an approval criterion. Audit records attach the frozen global top features.
+
+governance_reference:
+  experiment_id: stage7-shariah-gov-v1
+  engine_version: stage7-shariah-engine-v1
+  catalog_version: stage7-shariah-catalog-v1
+  lendingclub_profile:
+    contract_type: unknown
+    institution_class: lendingclub_application
+    synthetic: false
+    note: Real LendingClub rows are not given fabricated contract fields.
+
+cost_scenarios:
+  label: ASSUMED RELATIVE COST SCENARIO
+  c_fp: 1.0
+  c_review_over_fp: 0.25
+  fn_fp_ratios: [1, 2, 5, 10]
+  primary_fn_fp_ratio: 5
+  note: >
+    These are researcher sensitivity scenarios, not LendingClub, bank, IFI, or regulator costs.
+    C_FP is the unit cost of auto-rejecting a non-default. C_FN is the relative cost of
+    auto-approving a default. C_REVIEW = 0.25 * C_FP is an assumed per-application cost of
+    placing a case in the simulated review band. No human-review outcomes exist.
+
+threshold_grid:
+  start: 0.02
+  stop: 0.80
+  step: 0.01
+  note: Deterministic inclusive grid on calibrated probability. Selected on VALIDATION only. Matches the pre-declared range 0.02–0.80 with step 0.01.
+
+review_policy:
+  credit_bands:
+    LOW: p < t_low
+    MEDIUM: t_low <= p < t_high
+    HIGH: p >= t_high
+  on_threshold: values equal to t_low enter MEDIUM; values equal to t_high enter HIGH
+  empty_medium_when_t_low_equals_t_high: true
+
+selection_rule:
+  split: validation
+  objective: minimize expected_normalized_cost
+  tie_break:
+    - lower_review_rate
+    - lower_fnr_among_defaults
+    - smaller_band_width
+    - lower_t_low
+    - lower_t_high
+    - prefer_single_threshold
+  cost_epsilon: 1.0e-12
+  compare_single_and_two_threshold: true
+  note: Test predictions are not loaded until after this rule freezes thresholds.
+
+governance_policy:
+  ordering:
+    - governance_hard_stop
+    - evidence_insufficiency_and_governance_review
+    - credit_risk_band
+  hard_stop_statuses: [NOT_STRUCTURABLE_WITHOUT_REDESIGN]
+  unknown_status_treated_as: INSUFFICIENT_INFORMATION
+  layer_a_partial_does_not_create_pass: true
+  matrix:
+    - {governance: NOT_STRUCTURABLE_WITHOUT_REDESIGN, credit_band: LOW, decision: REJECT}
+    - {governance: NOT_STRUCTURABLE_WITHOUT_REDESIGN, credit_band: MEDIUM, decision: REJECT}
+    - {governance: NOT_STRUCTURABLE_WITHOUT_REDESIGN, credit_band: HIGH, decision: REJECT}
+    - {governance: INSUFFICIENT_INFORMATION, credit_band: LOW, decision: HUMAN_REVIEW}
+    - {governance: INSUFFICIENT_INFORMATION, credit_band: MEDIUM, decision: HUMAN_REVIEW}
+    - {governance: INSUFFICIENT_INFORMATION, credit_band: HIGH, decision: REJECT}
+    - {governance: REVIEW, credit_band: LOW, decision: HUMAN_REVIEW}
+    - {governance: REVIEW, credit_band: MEDIUM, decision: HUMAN_REVIEW}
+    - {governance: REVIEW, credit_band: HIGH, decision: REJECT}
+    - {governance: PASS, credit_band: LOW, decision: APPROVE}
+    - {governance: PASS, credit_band: MEDIUM, decision: HUMAN_REVIEW}
+    - {governance: PASS, credit_band: HIGH, decision: REJECT}
+  rationale: >
+    Hard-stop redesign conditions cannot be overridden by a low default probability.
+    Incomplete or REVIEW governance cannot produce APPROVE, because missing contractual
+    evidence is not compliance. High calibrated default probability produces REJECT even
+    when governance is incomplete, because the credit-risk layer independently supports
+    withholding automatic approval. APPROVE requires both governance PASS and a LOW
+    credit-risk band. This mapping is a researcher policy assumption, not a religious ruling.
+
+monolithic_baseline:
+  name: credit_threshold_only
+  uses_governance: false
+  uses_review_band: false
+  uses_explainability_as_criterion: false
+  threshold_type: single
+  cost_uses_review: false
+  note: >
+    Calibrated EBM probability compared to a single validation-selected threshold.
+    p < t APPROVE; p >= t REJECT. No Shariah layer, no review band, no audit fusion.
+
+perturbation:
+  c_review_over_fp_values: [0.10, 0.25, 0.50]
+  note: Experiment G. Still validation-only.

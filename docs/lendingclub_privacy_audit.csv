@@ -1,0 +1,16 @@
+column,classification,reason,evidence_source
+id,DIRECT_IDENTIFIER,Unique loan identifier documented by the depositor.,Zenodo record 10.5281/zenodo.11295916 version 0.1 dataset description (publication_date 2024-05-25; retrieved from official Zenodo API JSON).
+issue_d,NON_IDENTIFYING,Approval month/year; not a personal name or contact field.,Zenodo record 10.5281/zenodo.11295916 version 0.1 dataset description (publication_date 2024-05-25; retrieved from official Zenodo API JSON).
+revenue,QUASI_IDENTIFIER,Income can contribute to re-identification in combination with geography.,Zenodo record 10.5281/zenodo.11295916 version 0.1 dataset description (publication_date 2024-05-25; retrieved from official Zenodo API JSON).
+dti_n,NON_IDENTIFYING,Debt ratio; not a direct identifier.,Zenodo record 10.5281/zenodo.11295916 version 0.1 dataset description (publication_date 2024-05-25; retrieved from official Zenodo API JSON).
+loan_amnt,NON_IDENTIFYING,Requested loan amount.,Zenodo record 10.5281/zenodo.11295916 version 0.1 dataset description (publication_date 2024-05-25; retrieved from official Zenodo API JSON).
+fico_n,NON_IDENTIFYING,Credit score aggregate; not a direct identifier.,Zenodo record 10.5281/zenodo.11295916 version 0.1 dataset description (publication_date 2024-05-25; retrieved from official Zenodo API JSON).
+experience_c,NON_IDENTIFYING,Binary repeat-borrower flag.,Zenodo record 10.5281/zenodo.11295916 version 0.1 dataset description (publication_date 2024-05-25; retrieved from official Zenodo API JSON).
+emp_length,NON_IDENTIFYING,"Binned employment length, not employer name. Employer name is not in this release.",Zenodo record 10.5281/zenodo.11295916 version 0.1 dataset description (publication_date 2024-05-25; retrieved from official Zenodo API JSON).
+purpose,NON_IDENTIFYING,Coarse financing-purpose category.,Zenodo record 10.5281/zenodo.11295916 version 0.1 dataset description (publication_date 2024-05-25; retrieved from official Zenodo API JSON).
+home_ownership_n,NON_IDENTIFYING,Coarse housing status.,Zenodo record 10.5281/zenodo.11295916 version 0.1 dataset description (publication_date 2024-05-25; retrieved from official Zenodo API JSON).
+addr_state,QUASI_IDENTIFIER,US state of residence.,Zenodo record 10.5281/zenodo.11295916 version 0.1 dataset description (publication_date 2024-05-25; retrieved from official Zenodo API JSON).
+zip_code,QUASI_IDENTIFIER,Residence zip code; samples in this release are 3-digit prefixes with xx.,Zenodo record 10.5281/zenodo.11295916 version 0.1 dataset description (publication_date 2024-05-25; retrieved from official Zenodo API JSON).
+Default,NON_IDENTIFYING,Outcome label.,Zenodo record 10.5281/zenodo.11295916 version 0.1 dataset description (publication_date 2024-05-25; retrieved from official Zenodo API JSON).
+title,FREE_TEXT,Borrower-provided free text; may incidentally contain identifying phrases. Raw values are not published in reports.,Zenodo record 10.5281/zenodo.11295916 version 0.1 dataset description (publication_date 2024-05-25; retrieved from official Zenodo API JSON).
+desc,FREE_TEXT,Borrower-provided free text; may incidentally contain identifying phrases. Raw values are not published in reports.,Zenodo record 10.5281/zenodo.11295916 version 0.1 dataset description (publication_date 2024-05-25; retrieved from official Zenodo API JSON).

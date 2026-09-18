@@ -1,0 +1,16 @@
+column,dtype,non_null_count,null_count,null_percentage,unique_count,sample_values
+id,int64,1347681,0,0.0,1347681,<REDACTED_IDENTIFIER> | <REDACTED_IDENTIFIER> | <REDACTED_IDENTIFIER> | <REDACTED_IDENTIFIER> | <REDACTED_IDENTIFIER>
+issue_d,str,1347681,0,0.0,139,Dec-2015 | Nov-2015 | Oct-2015 | Sep-2015 | Aug-2015
+revenue,float64,1347681,0,0.0,65608,55000.0 | 65000.0 | 71000.0 | 104433.0 | 34000.0
+dti_n,float64,1347681,0,0.0,7068,5.91 | 16.06 | 13.85 | 25.37 | 10.2
+loan_amnt,int64,1347681,0,0.0,1560,3600 | 24700 | 20000 | 10400 | 11950
+fico_n,float64,1347681,0,0.0,48,677.0 | 717.0 | 697.0 | 692.0 | 682.0
+experience_c,int64,1347681,0,0.0,2,1 | 0
+emp_length,str,1347681,0,0.0,12,10+ years | 3 years | 4 years | 6 years | 7 years
+purpose,str,1347681,0,0.0,14,debt_consolidation | small_business | home_improvement | major_purchase | credit_card
+home_ownership_n,str,1347681,0,0.0,4,MORTGAGE | RENT | OWN | OTHER
+addr_state,str,1347681,0,0.0,51,PA | SD | IL | GA | MN
+zip_code,str,1347680,1,7.4e-05,945,190xx | 577xx | 605xx | 174xx | 300xx
+Default,int64,1347681,0,0.0,2,0 | 1
+title,str,1331024,16657,1.235975,61451,<REDACTED_FREE_TEXT n_chars=18> | <REDACTED_FREE_TEXT n_chars=8> | <REDACTED_FREE_TEXT n_chars=14> | <REDACTED_FREE_TEXT n_chars=23> | <REDACTED_FREE_TEXT n_chars=16>
+desc,str,119099,1228582,91.162671,109539,<REDACTED_FREE_TEXT n_chars=268> | <REDACTED_FREE_TEXT n_chars=299> | <REDACTED_FREE_TEXT n_chars=358> | <REDACTED_FREE_TEXT n_chars=252> | <REDACTED_FREE_TEXT n_chars=235>

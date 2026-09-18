@@ -1,0 +1,558 @@
+{
+  "experiment_id": "s10_r1_year_v1",
+  "classification": "EXPLORATORY / DESCRIPTIVE POST-HOC REANALYSIS \u2014 NON-CONFIRMATORY",
+  "status": "COMPLETED \u2014 exploratory/descriptive post-hoc reanalysis",
+  "confirmatory_experiment": false,
+  "issues": [],
+  "documentation_limitations": [
+    "HIGH credit-band n is 27 on pooled TEST; year-wise HIGH default rates are descriptive counts only.",
+    "S10-R1 is post-hoc grouping of already-unblinded LendingClub TEST outputs. It is not confirmatory.",
+    "git_commit is null (no usable .git / git). Recorded, not fabricated. Stage 10 protocol \u00a714: not by itself a scientific abort."
+  ],
+  "s10_i1_status": "PASS WITH DOCUMENTATION LIMITATION",
+  "n": 208886,
+  "n_by_year": {
+    "2017": 152726,
+    "2018": 56160
+  },
+  "unique_row_ref": 208886,
+  "probability_file": "C:/Users/User/research-project/results/calibration/test/ebm_seed42_calibrated.csv",
+  "year_derivation": {
+    "used_in_this_run": "stored column `year` in results/calibration/test/ebm_seed42_calibrated.csv",
+    "not_recomputed": true,
+    "not_parsed_here": [
+      "issue_d",
+      "issue_month"
+    ],
+    "historical_stage5_source": "Stage 5 stored year as int(issue_month[0:4]); S10-R1 reads the stored column only.",
+    "allowed_years": [
+      2017,
+      2018
+    ],
+    "stage5_temporal_n_citation": {
+      "2017": 152726,
+      "2018": 56160
+    }
+  },
+  "thresholds": {
+    "t_low": 0.06,
+    "t_high": 0.69,
+    "t_star": 0.16,
+    "year_specific_threshold": false,
+    "thresholds_searched": false
+  },
+  "hashes": {
+    "results/decision/frozen_policy.json": "4d3da6a9e5bac2b38b546c7a5a60e870bf83f30adcadf67f067f99951e32f0c4",
+    "results/decision/v2/frozen_policy.json": "b874782326a8f20ed9bb7df1aa5ed1c75f883d8b6cba76b68991181d50b1604b",
+    "results/decision/v2/tables/table3_test_decision_outcomes.csv": "90759eb72f1173b40b5b9363c21b0ef3d6f1cde5042748eb57871d49fb73d5ee",
+    "results/calibration/test/ebm_seed42_calibrated.csv": "e15ddd2f85a6c3fc9d0a79eecb578f7a94ded8a7efc63d9d114212728b2469eb"
+  },
+  "expected_test_cal_sha256": "e15ddd2f85a6c3fc9d0a79eecb578f7a94ded8a7efc63d9d114212728b2469eb",
+  "by_year": {
+    "2017": {
+      "year": 2017,
+      "composition": {
+        "n": 152726,
+        "n_default": 35394,
+        "count": 35394,
+        "rate": 0.2317483598077603,
+        "percentage": 23.174835980776027,
+        "wilson_ci_lower": 0.22963890857518868,
+        "wilson_ci_upper": 0.2338713056591983,
+        "ci_method": "wilson_95"
+      },
+      "A0": {
+        "n": 152726,
+        "APPROVE": {
+          "count": 3339,
+          "rate": 0.021862682189018243,
+          "percentage": 2.1862682189018243,
+          "wilson_ci_lower": 0.021141201943655246,
+          "wilson_ci_upper": 0.022608215524476265,
+          "ci_method": "wilson_95"
+        },
+        "HUMAN_REVIEW": {
+          "count": 149366,
+          "rate": 0.9779998166651389,
+          "percentage": 97.79998166651389,
+          "wilson_ci_lower": 0.977252036159182,
+          "wilson_ci_upper": 0.9787235509981086,
+          "ci_method": "wilson_95"
+        },
+        "REJECT": {
+          "count": 21,
+          "rate": 0.000137501145842882,
+          "percentage": 0.013750114584288202,
+          "wilson_ci_lower": 8.993963759909947e-05,
+          "wilson_ci_upper": 0.0002102086472400828,
+          "ci_method": "wilson_95"
+        }
+      },
+      "A1": {
+        "n": 152726,
+        "APPROVE": {
+          "count": 0,
+          "rate": 0.0,
+          "percentage": 0.0,
+          "wilson_ci_lower": 0.0,
+          "wilson_ci_upper": 2.5152910261382734e-05,
+          "ci_method": "wilson_95"
+        },
+        "HUMAN_REVIEW": {
+          "count": 152705,
+          "rate": 0.9998624988541571,
+          "percentage": 99.98624988541572,
+          "wilson_ci_lower": 0.9997897913527599,
+          "wilson_ci_upper": 0.9999100603624008,
+          "ci_method": "wilson_95"
+        },
+        "REJECT": {
+          "count": 21,
+          "rate": 0.000137501145842882,
+          "percentage": 0.013750114584288202,
+          "wilson_ci_lower": 8.993963759909947e-05,
+          "wilson_ci_upper": 0.0002102086472400828,
+          "ci_method": "wilson_95"
+        }
+      },
+      "A3_A4": {
+        "n": 152726,
+        "APPROVE": {
+          "count": 42443,
+          "rate": 0.2779029110956877,
+          "percentage": 27.79029110956877,
+          "wilson_ci_lower": 0.2756618247822051,
+          "wilson_ci_upper": 0.2801551701854634,
+          "ci_method": "wilson_95"
+        },
+        "HUMAN_REVIEW": {
+          "count": 0,
+          "rate": 0.0,
+          "percentage": 0.0,
+          "wilson_ci_lower": 0.0,
+          "wilson_ci_upper": 2.5152910261382734e-05,
+          "ci_method": "wilson_95"
+        },
+        "REJECT": {
+          "count": 110283,
+          "rate": 0.7220970889043123,
+          "percentage": 72.20970889043123,
+          "wilson_ci_lower": 0.7198448298145367,
+          "wilson_ci_upper": 0.724338175217795,
+          "ci_method": "wilson_95"
+        }
+      },
+      "credit_bands": {
+        "n": 152726,
+        "LOW": {
+          "count": 3339,
+          "rate": 0.021862682189018243,
+          "percentage": 2.1862682189018243,
+          "wilson_ci_lower": 0.021141201943655246,
+          "wilson_ci_upper": 0.022608215524476265,
+          "n_default": 145,
+          "default_rate": 0.0434261755016472,
+          "default_rate_wilson_ci_lower": 0.037021690169095324,
+          "default_rate_wilson_ci_upper": 0.050880051869773645,
+          "ci_method": "wilson_95"
+        },
+        "MEDIUM": {
+          "count": 149366,
+          "rate": 0.9779998166651389,
+          "percentage": 97.79998166651389,
+          "wilson_ci_lower": 0.977252036159182,
+          "wilson_ci_upper": 0.9787235509981086,
+          "n_default": 35238,
+          "default_rate": 0.23591714312494141,
+          "default_rate_wilson_ci_lower": 0.23377077278114788,
+          "default_rate_wilson_ci_upper": 0.23807709721083575,
+          "ci_method": "wilson_95"
+        },
+        "HIGH": {
+          "count": 21,
+          "rate": 0.000137501145842882,
+          "percentage": 0.013750114584288202,
+          "wilson_ci_lower": 8.993963759909947e-05,
+          "wilson_ci_upper": 0.0002102086472400828,
+          "n_default": 11,
+          "default_rate": 0.5238095238095238,
+          "default_rate_wilson_ci_lower": 0.32369217900266756,
+          "default_rate_wilson_ci_upper": 0.7165628770323705,
+          "ci_method": "wilson_95"
+        }
+      },
+      "delta_review_rate_A1_minus_A0": 0.021862682189018212,
+      "delta_review_equals_LOW_rate": true,
+      "a3_human_review_count": 0,
+      "a1_approve_count": 0
+    },
+    "2018": {
+      "year": 2018,
+      "composition": {
+        "n": 56160,
+        "n_default": 8846,
+        "count": 8846,
+        "rate": 0.15751424501424502,
+        "percentage": 15.751424501424502,
+        "wilson_ci_lower": 0.15452478986698417,
+        "wilson_ci_upper": 0.16055055213027694,
+        "ci_method": "wilson_95"
+      },
+      "A0": {
+        "n": 56160,
+        "APPROVE": {
+          "count": 1893,
+          "rate": 0.033707264957264955,
+          "percentage": 3.3707264957264957,
+          "wilson_ci_lower": 0.032246217410362404,
+          "wilson_ci_upper": 0.03523210123798304,
+          "ci_method": "wilson_95"
+        },
+        "HUMAN_REVIEW": {
+          "count": 54261,
+          "rate": 0.9661858974358974,
+          "percentage": 96.61858974358975,
+          "wilson_ci_lower": 0.9646587882035971,
+          "wilson_ci_upper": 0.9676492325497412,
+          "ci_method": "wilson_95"
+        },
+        "REJECT": {
+          "count": 6,
+          "rate": 0.00010683760683760684,
+          "percentage": 0.010683760683760684,
+          "wilson_ci_lower": 4.896485568136337e-05,
+          "wilson_ci_upper": 0.00023309562217597746,
+          "ci_method": "wilson_95"
+        }
+      },
+      "A1": {
+        "n": 56160,
+        "APPROVE": {
+          "count": 0,
+          "rate": 0.0,
+          "percentage": 0.0,
+          "wilson_ci_lower": 0.0,
+          "wilson_ci_upper": 6.839987954100347e-05,
+          "ci_method": "wilson_95"
+        },
+        "HUMAN_REVIEW": {
+          "count": 56154,
+          "rate": 0.9998931623931624,
+          "percentage": 99.98931623931624,
+          "wilson_ci_lower": 0.999766904377824,
+          "wilson_ci_upper": 0.9999510351443187,
+          "ci_method": "wilson_95"
+        },
+        "REJECT": {
+          "count": 6,
+          "rate": 0.00010683760683760684,
+          "percentage": 0.010683760683760684,
+          "wilson_ci_lower": 4.896485568136337e-05,
+          "wilson_ci_upper": 0.00023309562217597746,
+          "ci_method": "wilson_95"
+        }
+      },
+      "A3_A4": {
+        "n": 56160,
+        "APPROVE": {
+          "count": 19412,
+          "rate": 0.34565527065527063,
+          "percentage": 34.565527065527064,
+          "wilson_ci_lower": 0.3417325544722554,
+          "wilson_ci_upper": 0.3495991011600758,
+          "ci_method": "wilson_95"
+        },
+        "HUMAN_REVIEW": {
+          "count": 0,
+          "rate": 0.0,
+          "percentage": 0.0,
+          "wilson_ci_lower": 0.0,
+          "wilson_ci_upper": 6.839987954100347e-05,
+          "ci_method": "wilson_95"
+        },
+        "REJECT": {
+          "count": 36748,
+          "rate": 0.6543447293447293,
+          "percentage": 65.43447293447294,
+          "wilson_ci_lower": 0.6504008988399242,
+          "wilson_ci_upper": 0.6582674455277445,
+          "ci_method": "wilson_95"
+        }
+      },
+      "credit_bands": {
+        "n": 56160,
+        "LOW": {
+          "count": 1893,
+          "rate": 0.033707264957264955,
+          "percentage": 3.3707264957264957,
+          "wilson_ci_lower": 0.032246217410362404,
+          "wilson_ci_upper": 0.03523210123798304,
+          "n_default": 51,
+          "default_rate": 0.02694136291600634,
+          "default_rate_wilson_ci_lower": 0.020550200082284628,
+          "default_rate_wilson_ci_upper": 0.035248660507866916,
+          "ci_method": "wilson_95"
+        },
+        "MEDIUM": {
+          "count": 54261,
+          "rate": 0.9661858974358974,
+          "percentage": 96.61858974358975,
+          "wilson_ci_lower": 0.9646587882035971,
+          "wilson_ci_upper": 0.9676492325497412,
+          "n_default": 8792,
+          "default_rate": 0.1620316617828643,
+          "default_rate_wilson_ci_lower": 0.1589551466860832,
+          "default_rate_wilson_ci_upper": 0.16515602882686617,
+          "ci_method": "wilson_95"
+        },
+        "HIGH": {
+          "count": 6,
+          "rate": 0.00010683760683760684,
+          "percentage": 0.010683760683760684,
+          "wilson_ci_lower": 4.896485568136337e-05,
+          "wilson_ci_upper": 0.00023309562217597746,
+          "n_default": 3,
+          "default_rate": 0.5,
+          "default_rate_wilson_ci_lower": 0.18761280689940868,
+          "default_rate_wilson_ci_upper": 0.8123871931005913,
+          "ci_method": "wilson_95"
+        }
+      },
+      "delta_review_rate_A1_minus_A0": 0.03370726495726495,
+      "delta_review_equals_LOW_rate": true,
+      "a3_human_review_count": 0,
+      "a1_approve_count": 0
+    }
+  },
+  "decision_mix_rows": [
+    {
+      "year": 2017,
+      "architecture": "A0",
+      "n": 152726,
+      "n_default": 35394,
+      "default_rate": 0.2317483598077603,
+      "n_approve": 3339,
+      "n_review": 149366,
+      "n_reject": 21,
+      "approval_rate": 0.021862682189018243,
+      "review_rate": 0.9779998166651389,
+      "rejection_rate": 0.000137501145842882,
+      "approval_rate_ci_lower": 0.021141201943655246,
+      "approval_rate_ci_upper": 0.022608215524476265,
+      "review_rate_ci_lower": 0.977252036159182,
+      "review_rate_ci_upper": 0.9787235509981086,
+      "rejection_rate_ci_lower": 8.993963759909947e-05,
+      "rejection_rate_ci_upper": 0.0002102086472400828,
+      "ci_method": "wilson_95"
+    },
+    {
+      "year": 2017,
+      "architecture": "A1",
+      "n": 152726,
+      "n_default": 35394,
+      "default_rate": 0.2317483598077603,
+      "n_approve": 0,
+      "n_review": 152705,
+      "n_reject": 21,
+      "approval_rate": 0.0,
+      "review_rate": 0.9998624988541571,
+      "rejection_rate": 0.000137501145842882,
+      "approval_rate_ci_lower": 0.0,
+      "approval_rate_ci_upper": 2.5152910261382734e-05,
+      "review_rate_ci_lower": 0.9997897913527599,
+      "review_rate_ci_upper": 0.9999100603624008,
+      "rejection_rate_ci_lower": 8.993963759909947e-05,
+      "rejection_rate_ci_upper": 0.0002102086472400828,
+      "ci_method": "wilson_95"
+    },
+    {
+      "year": 2017,
+      "architecture": "A3_A4",
+      "n": 152726,
+      "n_default": 35394,
+      "default_rate": 0.2317483598077603,
+      "n_approve": 42443,
+      "n_review": 0,
+      "n_reject": 110283,
+      "approval_rate": 0.2779029110956877,
+      "review_rate": 0.0,
+      "rejection_rate": 0.7220970889043123,
+      "approval_rate_ci_lower": 0.2756618247822051,
+      "approval_rate_ci_upper": 0.2801551701854634,
+      "review_rate_ci_lower": 0.0,
+      "review_rate_ci_upper": 2.5152910261382734e-05,
+      "rejection_rate_ci_lower": 0.7198448298145367,
+      "rejection_rate_ci_upper": 0.724338175217795,
+      "ci_method": "wilson_95"
+    },
+    {
+      "year": 2018,
+      "architecture": "A0",
+      "n": 56160,
+      "n_default": 8846,
+      "default_rate": 0.15751424501424502,
+      "n_approve": 1893,
+      "n_review": 54261,
+      "n_reject": 6,
+      "approval_rate": 0.033707264957264955,
+      "review_rate": 0.9661858974358974,
+      "rejection_rate": 0.00010683760683760684,
+      "approval_rate_ci_lower": 0.032246217410362404,
+      "approval_rate_ci_upper": 0.03523210123798304,
+      "review_rate_ci_lower": 0.9646587882035971,
+      "review_rate_ci_upper": 0.9676492325497412,
+      "rejection_rate_ci_lower": 4.896485568136337e-05,
+      "rejection_rate_ci_upper": 0.00023309562217597746,
+      "ci_method": "wilson_95"
+    },
+    {
+      "year": 2018,
+      "architecture": "A1",
+      "n": 56160,
+      "n_default": 8846,
+      "default_rate": 0.15751424501424502,
+      "n_approve": 0,
+      "n_review": 56154,
+      "n_reject": 6,
+      "approval_rate": 0.0,
+      "review_rate": 0.9998931623931624,
+      "rejection_rate": 0.00010683760683760684,
+      "approval_rate_ci_lower": 0.0,
+      "approval_rate_ci_upper": 6.839987954100347e-05,
+      "review_rate_ci_lower": 0.999766904377824,
+      "review_rate_ci_upper": 0.9999510351443187,
+      "rejection_rate_ci_lower": 4.896485568136337e-05,
+      "rejection_rate_ci_upper": 0.00023309562217597746,
+      "ci_method": "wilson_95"
+    },
+    {
+      "year": 2018,
+      "architecture": "A3_A4",
+      "n": 56160,
+      "n_default": 8846,
+      "default_rate": 0.15751424501424502,
+      "n_approve": 19412,
+      "n_review": 0,
+      "n_reject": 36748,
+      "approval_rate": 0.34565527065527063,
+      "review_rate": 0.0,
+      "rejection_rate": 0.6543447293447293,
+      "approval_rate_ci_lower": 0.3417325544722554,
+      "approval_rate_ci_upper": 0.3495991011600758,
+      "review_rate_ci_lower": 0.0,
+      "review_rate_ci_upper": 6.839987954100347e-05,
+      "rejection_rate_ci_lower": 0.6504008988399242,
+      "rejection_rate_ci_upper": 0.6582674455277445,
+      "ci_method": "wilson_95"
+    }
+  ],
+  "credit_band_rows": [
+    {
+      "year": 2017,
+      "band": "LOW",
+      "n_year": 152726,
+      "n_band": 3339,
+      "band_rate": 0.021862682189018243,
+      "n_default": 145,
+      "default_rate": 0.0434261755016472,
+      "default_rate_ci_lower": 0.037021690169095324,
+      "default_rate_ci_upper": 0.050880051869773645,
+      "t_low": 0.06,
+      "t_high": 0.69,
+      "ci_method": "wilson_95"
+    },
+    {
+      "year": 2017,
+      "band": "MEDIUM",
+      "n_year": 152726,
+      "n_band": 149366,
+      "band_rate": 0.9779998166651389,
+      "n_default": 35238,
+      "default_rate": 0.23591714312494141,
+      "default_rate_ci_lower": 0.23377077278114788,
+      "default_rate_ci_upper": 0.23807709721083575,
+      "t_low": 0.06,
+      "t_high": 0.69,
+      "ci_method": "wilson_95"
+    },
+    {
+      "year": 2017,
+      "band": "HIGH",
+      "n_year": 152726,
+      "n_band": 21,
+      "band_rate": 0.000137501145842882,
+      "n_default": 11,
+      "default_rate": 0.5238095238095238,
+      "default_rate_ci_lower": 0.32369217900266756,
+      "default_rate_ci_upper": 0.7165628770323705,
+      "t_low": 0.06,
+      "t_high": 0.69,
+      "ci_method": "wilson_95"
+    },
+    {
+      "year": 2018,
+      "band": "LOW",
+      "n_year": 56160,
+      "n_band": 1893,
+      "band_rate": 0.033707264957264955,
+      "n_default": 51,
+      "default_rate": 0.02694136291600634,
+      "default_rate_ci_lower": 0.020550200082284628,
+      "default_rate_ci_upper": 0.035248660507866916,
+      "t_low": 0.06,
+      "t_high": 0.69,
+      "ci_method": "wilson_95"
+    },
+    {
+      "year": 2018,
+      "band": "MEDIUM",
+      "n_year": 56160,
+      "n_band": 54261,
+      "band_rate": 0.9661858974358974,
+      "n_default": 8792,
+      "default_rate": 0.1620316617828643,
+      "default_rate_ci_lower": 0.1589551466860832,
+      "default_rate_ci_upper": 0.16515602882686617,
+      "t_low": 0.06,
+      "t_high": 0.69,
+      "ci_method": "wilson_95"
+    },
+    {
+      "year": 2018,
+      "band": "HIGH",
+      "n_year": 56160,
+      "n_band": 6,
+      "band_rate": 0.00010683760683760684,
+      "n_default": 3,
+      "default_rate": 0.5,
+      "default_rate_ci_lower": 0.18761280689940868,
+      "default_rate_ci_upper": 0.8123871931005913,
+      "t_low": 0.06,
+      "t_high": 0.69,
+      "ci_method": "wilson_95"
+    }
+  ],
+  "descriptive_notes": [
+    "TEST composition: 2017 n=152726, 2018 n=56160. This is the stored year split, not a sampling design.",
+    "Observed difference in default prevalence: 2017 0.231748 (35394/152726) vs 2018 0.157514 (8846/56160). This is a descriptive temporal difference, not a causal effect, not concept drift inference, and not a generalization-failure test.",
+    "A0 year-specific decision allocation: 2017 APPROVE/REVIEW/REJECT = 3339/149366/21 vs 2018 1893/54261/6. Reported as a post-hoc temporal pattern under frozen maps, not as policy failure.",
+    "A1 year-specific decision allocation: 2017 APPROVE/REVIEW/REJECT = 0/152705/21 vs 2018 0/56154/6. Reported as a post-hoc temporal pattern under frozen maps, not as policy failure.",
+    "A3_A4 year-specific decision allocation: 2017 APPROVE/REVIEW/REJECT = 42443/0/110283 vs 2018 19412/0/36748. Reported as a post-hoc temporal pattern under frozen maps, not as policy failure.",
+    "HIGH credit band remains n=27 overall. Year-wise HIGH rates are descriptive counts only and do not support inference beyond those counts.",
+    "No p-test of 2017 vs 2018 equality was computed.",
+    "Year was not used to select a threshold, calibrator, or policy."
+  ],
+  "models_trained": false,
+  "models_loaded_for_scoring": false,
+  "calibration_refit": false,
+  "thresholds_searched": false,
+  "year_specific_calibrator": false,
+  "uci_opened": false,
+  "stage8_9_results_modified": false,
+  "s10_i1_modified": false,
+  "s10_a1_gap_executed": false,
+  "s10_a4_executed": false,
+  "random_seed_used": null,
+  "stored_prediction_seed": 42,
+  "git_commit": null
+}

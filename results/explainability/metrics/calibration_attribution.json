@@ -1,0 +1,10 @@
+{
+  "experiment_id": "stage6-lc-ebm-explain-v1",
+  "platt_a": 1.1988263209549705,
+  "platt_b": 0.6697765046966161,
+  "logit_calibrated_shap": "a * raw_logit_shap because logit(p_cal)=a*decision+b",
+  "rank_spearman_raw_vs_scaled": 1.0,
+  "top3_overlap_raw_vs_scaled": 1.0,
+  "top5_overlap_raw_vs_scaled": 1.0,
+  "ebm_parameters_unchanged_by_calibration": true
+}

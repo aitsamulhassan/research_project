@@ -1,0 +1,20 @@
+{
+  "experiment_id": "stage6-lc-ebm-explain-v1",
+  "model_id": "ebm_train_only_seed42",
+  "model_path": "results/explainability/artifacts/ebm_train_only_seed42.joblib",
+  "stage5_model_path": "results/calibration/artifacts/ebm_train_only_seed42.joblib",
+  "seed": 42,
+  "n_explained": 5000,
+  "features": [
+    "revenue",
+    "dti_n",
+    "loan_amnt",
+    "fico_n",
+    "emp_length",
+    "purpose",
+    "home_ownership_n",
+    "addr_state",
+    "zip_code"
+  ],
+  "output_space": "ebm_decision_function_logit_link"
+}

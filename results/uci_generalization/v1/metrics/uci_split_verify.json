@@ -1,0 +1,24 @@
+{
+  "zip_sha256": "56c885f84457f6680f8438f02bfcdac9579323d8a94465ee5f26e32baa727602",
+  "assignment_sha256": "9ffe70867b953f0266486f510c6ea7b0f191a4964d6105fd5c7507c8acdd32f6",
+  "manifest_sha256": "7224695063cde933235fbe1f1d4d3f10683a9cbdf6549c97245b6a4af9c57f86",
+  "split_hashes": {
+    "train": "70b1819de66fdae6793691e83224b5dc4e1956c021b582ffcf0a89791c9ac2f1",
+    "validation": "76a91b4b6fefbfd111d6a7c536ad222330c3bcf0f4358c259e40d4814382bcd4",
+    "test": "0783db42ac57a277f79379e0a62ef00f2a2b189f868ed993cebdf16def404126"
+  },
+  "split_counts": {
+    "train": 20999,
+    "validation": 4499,
+    "test": 4502
+  },
+  "summary_prevalence": {
+    "train": 0.22120100957188438,
+    "validation": 0.22116025783507445,
+    "test": 0.22123500666370502
+  },
+  "target_column": "default payment next month",
+  "time_index": null,
+  "merged_with_lendingclub": false,
+  "recode_applied": false
+}

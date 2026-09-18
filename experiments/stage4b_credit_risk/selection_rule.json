@@ -1,0 +1,13 @@
+{
+  "declared_before_test": true,
+  "primary_criterion": "mean validation PR-AUC across frozen seeds",
+  "secondary": "among families within 0.005 mean PR-AUC of the best, prefer lower mean Brier",
+  "tie_break": [
+    "logistic_regression",
+    "explainable_boosting_machine",
+    "random_forest",
+    "xgboost"
+  ],
+  "test_metrics_not_consulted": true,
+  "timestamp": "2026-09-14T17:06:15+00:00"
+}

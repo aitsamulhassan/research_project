@@ -1,0 +1,138 @@
+{
+  "experiment_id": "stage9_3_governance_sensitivity_lc_v1",
+  "used_for_selection": false,
+  "models_trained": false,
+  "models_loaded": false,
+  "calibration_refit": false,
+  "new_shariah_rules_added": false,
+  "expert_validation": "NONE_EXPERT_VALIDATED",
+  "certification_claim": false,
+  "observed_l2": "INSUFFICIENT_INFORMATION",
+  "g_unsafe_status": "NOT_EXECUTED \u2014 NOT_AUTHORIZED",
+  "integrity": {
+    "v1_freeze_sha256": "4d3da6a9e5bac2b38b546c7a5a60e870bf83f30adcadf67f067f99951e32f0c4",
+    "v2_freeze_sha256": "b874782326a8f20ed9bb7df1aa5ed1c75f883d8b6cba76b68991181d50b1604b",
+    "platt_record_sha256": "9ca39188c961e5d1222346a7fba14902cb58dc24b78a0de2136b6437de01f44c",
+    "ebm_joblib_sha256": "8d373df1b576ca74f498d2bfcc54653cbf43d37b0af69400a26e20ab98a3a0c4",
+    "platt_joblib_sha256": "7f05d116676fcf5160e91b46bf2c587a974a9489360bae140c49c5ff40ed1a12",
+    "t_low": 0.06,
+    "t_high": 0.69,
+    "t_star": 0.16,
+    "platt_a": 1.1988263209549705,
+    "platt_b": 0.6697765046966161,
+    "test_cal_sha256": "e15ddd2f85a6c3fc9d0a79eecb578f7a94ded8a7efc63d9d114212728b2469eb"
+  },
+  "published": {
+    "n": 208886,
+    "band_counts": {
+      "HIGH": 27,
+      "LOW": 5232,
+      "MEDIUM": 203627
+    },
+    "gov_counts": {
+      "INSUFFICIENT_INFORMATION": 208886
+    },
+    "g0_fused_stored": {
+      "APPROVE": 0,
+      "HUMAN_REVIEW": 208859,
+      "REJECT": 27
+    },
+    "l1_status": "INSUFFICIENT_SCHEMA_FOR_APPLICANT_DETERMINATION",
+    "l2_evaluation_mode": "PER_APPLICATION",
+    "any_expert_validated": false,
+    "certification_claim_policy": false,
+    "stage7_v2": "stage7-l1l2-v2",
+    "t_low": 0.06,
+    "t_high": 0.69
+  },
+  "scenarios": {
+    "G0": {
+      "scenario": "G0",
+      "governance_status_input": "INSUFFICIENT_INFORMATION",
+      "n": 208886,
+      "APPROVE": 0,
+      "HUMAN_REVIEW": 208859,
+      "REJECT": 27,
+      "approval_rate": 0.0,
+      "review_rate": 0.9998707428932527,
+      "rejection_rate": 0.00012925710674722098,
+      "by_band": {
+        "LOW": {
+          "n": 5232,
+          "decision": "HUMAN_REVIEW"
+        },
+        "MEDIUM": {
+          "n": 203627,
+          "decision": "HUMAN_REVIEW"
+        },
+        "HIGH": {
+          "n": 27,
+          "decision": "REJECT"
+        }
+      },
+      "label": "Frozen Stage 8 matrix (primary / observed)",
+      "role": "observed_data_supported",
+      "definition": "Frozen Stage 8 matrix treatment of INSUFFICIENT_INFORMATION: LOW/MEDIUM \u2192 HUMAN_REVIEW; HIGH \u2192 REJECT. Primary observed LendingClub evidence state.",
+      "source": "stored Stage 8 v2 fused counts; algebra from published band counts confirms"
+    },
+    "G1": {
+      "scenario": "G1",
+      "governance_status_input": "INSUFFICIENT_INFORMATION",
+      "n": 208886,
+      "APPROVE": 0,
+      "HUMAN_REVIEW": 0,
+      "REJECT": 208886,
+      "approval_rate": 0.0,
+      "review_rate": 0.0,
+      "rejection_rate": 1.0,
+      "by_band": {
+        "LOW": {
+          "n": 5232,
+          "decision": "REJECT"
+        },
+        "MEDIUM": {
+          "n": 203627,
+          "decision": "REJECT"
+        },
+        "HIGH": {
+          "n": 27,
+          "decision": "REJECT"
+        }
+      },
+      "label": "Conservative REJECT",
+      "role": "hypothetical_engineering_scenario",
+      "definition": "Conservative REJECT: treatment of INSUFFICIENT_INFORMATION maps all credit bands (LOW, MEDIUM, HIGH) to REJECT. Hypothetical engineering scenario. Protocol \u00a75.2.",
+      "source": "derived commentary from published Stage 8 v2 band counts; not a new TEST evaluation"
+    },
+    "G3": {
+      "scenario": "G3",
+      "governance_status_input": "INSUFFICIENT_INFORMATION",
+      "n": 208886,
+      "APPROVE": 0,
+      "HUMAN_REVIEW": 208886,
+      "REJECT": 0,
+      "approval_rate": 0.0,
+      "review_rate": 1.0,
+      "rejection_rate": 0.0,
+      "by_band": {
+        "LOW": {
+          "n": 5232,
+          "decision": "HUMAN_REVIEW"
+        },
+        "MEDIUM": {
+          "n": 203627,
+          "decision": "HUMAN_REVIEW"
+        },
+        "HIGH": {
+          "n": 27,
+          "decision": "HUMAN_REVIEW"
+        }
+      },
+      "label": "Governance-gated REVIEW",
+      "role": "hypothetical_engineering_scenario",
+      "definition": "Governance-gated REVIEW: treatment of INSUFFICIENT_INFORMATION maps all credit bands (LOW, MEDIUM, HIGH) to HUMAN_REVIEW, including HIGH. Hypothetical engineering scenario. Protocol \u00a75.2.",
+      "source": "derived commentary from published Stage 8 v2 band counts; not a new TEST evaluation"
+    }
+  },
+  "other_governance_statuses_unchanged": true
+}

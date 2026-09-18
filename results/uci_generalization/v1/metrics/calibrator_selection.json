@@ -1,0 +1,39 @@
+{
+  "selected_method": "isotonic",
+  "reason": "Primary criterion is UCI validation Brier. Best Brier=0.134862. Methods within 0.001 (practically indistinguishable): ['isotonic']. Among those, simplicity order ['raw', 'platt', 'isotonic'] selected `isotonic` (Brier=0.134862, log_loss=0.428378, ECE=0.000000).",
+  "candidates": [
+    "isotonic"
+  ],
+  "best_brier": 0.13486223480216478,
+  "declared_before_test": true,
+  "indistinguishable_brier": 0.001,
+  "simplicity_order": [
+    "raw",
+    "platt",
+    "isotonic"
+  ],
+  "test_metrics_not_consulted": true,
+  "platt": {
+    "method": "platt",
+    "form": "sigmoid(a * logit(p_raw) + b)",
+    "a": 0.9373939123374948,
+    "b": -1.1820132758454134,
+    "solver": "lbfgs",
+    "penalty": "none (C=np.inf)",
+    "max_iter": 1000,
+    "n_iter": 6,
+    "converged": true,
+    "fit_split": "validation"
+  },
+  "isotonic": {
+    "method": "isotonic",
+    "y_min": 0.0,
+    "y_max": 1.0,
+    "out_of_bounds": "clip",
+    "increasing": true,
+    "n_thresholds": 57,
+    "clipping": "predictions outside the fitted raw-probability range are clipped to the boundary calibrated value",
+    "random_seed": null,
+    "fit_split": "validation"
+  }
+}

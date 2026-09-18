@@ -1,0 +1,11 @@
+{
+  "method": "isotonic",
+  "y_min": 0.0,
+  "y_max": 1.0,
+  "out_of_bounds": "clip",
+  "increasing": true,
+  "n_thresholds": 186,
+  "clipping": "predictions outside the fitted raw-probability range are clipped to the boundary calibrated value",
+  "random_seed": null,
+  "fit_split": "validation"
+}

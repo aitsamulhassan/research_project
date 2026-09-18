@@ -1,0 +1,17 @@
+{
+  "run_id": "894198d9-f636-4874-a300-e43aeee44a64",
+  "timestamp": "2026-09-14T11:24:13+00:00",
+  "git_commit": null,
+  "python_version": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "operating_system": "Windows 11 (10.0.26200)",
+  "dataset_files": [
+    "data\\raw\\LC_loans_granting_model_dataset.csv",
+    "data\\raw\\default+of+credit+card+clients.zip"
+  ],
+  "dataset_hashes": {
+    "LC_loans_granting_model_dataset.csv": "207d65b2712f775a91404496ab27c786ac0da6b0f977f849e6d5d8149e925acc",
+    "default+of+credit+card+clients.zip": "56c885f84457f6680f8438f02bfcdac9579323d8a94465ee5f26e32baa727602"
+  },
+  "script_version": "stage2-0.1.0",
+  "raw_files_unmodified": true
+}

@@ -1,0 +1,42 @@
+experiment_id: stage9_1_ablation_lc_v1
+stage: "9.1"
+amendment_id: AMENDMENT-SHARIAH-001
+random_seed: 42
+
+scope:
+  authorized: [A0, A1, A3, A4]
+  a3_identical_to_a4: true
+  out_of_scope:
+    - A2-D
+    - stage9.2_cost_sensitivity
+    - stage9.3_governance_sensitivity
+    - stage9.4_temporal
+    - stage9.5_uci
+    - stage9.6_clean_room
+
+frozen:
+  t_low: 0.06
+  t_high: 0.69
+  t_star: 0.16
+  platt_a: 1.1988263209549705
+  platt_b: 0.6697765046966161
+  v1_freeze: results/decision/frozen_policy.json
+  v1_freeze_sha256: 4d3da6a9e5bac2b38b546c7a5a60e870bf83f30adcadf67f067f99951e32f0c4
+  source_table: results/decision/v2/tables/table3_test_decision_outcomes.csv
+  test_cal: results/calibration/test/ebm_seed42_calibrated.csv
+  test_cal_sha256: e15ddd2f85a6c3fc9d0a79eecb578f7a94ded8a7efc63d9d114212728b2469eb
+
+policy:
+  A0: credit-only three-way on p_selected with t_low=0.06 t_high=0.69
+  A1: evidence-separated G0 fusion; HUMAN_REVIEW retained
+  A3: binary p_selected < 0.16 APPROVE else REJECT
+  A4: identical to A3 under Stage 9.0 freeze
+
+test_protection: >
+  LendingClub TEST was already exposed during Stages 4B–8. Stage 9.1 does not use
+  TEST data for model or policy selection. Consistency checks re-apply frozen maps
+  to stored p_selected and are labeled descriptive re-analysis.
+
+retraining: forbidden
+threshold_search: forbidden
+overwrite_stage8: forbidden

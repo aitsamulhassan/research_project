@@ -1,0 +1,4 @@
+system,credit_policy,governance,n,n_approve,n_human_review,n_reject,approval_rate,review_rate,rejection_rate,review_burden,notes
+A0,"t_low=0.06, t_high=0.69",none,208886,5232,203627,27,0.025047154907461486,0.9748235879857913,0.00012925710674722098,0.9748235879857913,credit-only; HUMAN_REVIEW is the MEDIUM credit band
+A1,"t_low=0.06, t_high=0.69",G0 / L2 INSUFFICIENT_INFORMATION,208886,0,208859,27,0.0,0.9998707428932527,0.00012925710674722098,0.9998707428932527,proposed architecture; HUMAN_REVIEW retained
+A3_A4,t*=0.16,none,208886,61855,0,147031,0.2961184569573835,0.0,0.7038815430426165,0.0,A3 and A4 collapse to the same frozen binary comparator

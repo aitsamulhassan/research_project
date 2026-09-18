@@ -1,0 +1,23 @@
+{
+  "calibration_experiment_id": "stage5-lc-ebm-calibration-v1",
+  "base_model_experiment_id": "stage4b-lc-granting-v1",
+  "selected_family": "explainable_boosting_machine",
+  "final_seed": 42,
+  "seeds": [42, 123, 2024, 3407, 9999],
+  "protocol": "validation_only_calibration",
+  "primary_selection_criterion": "validation Brier score",
+  "indistinguishable_brier": 0.001,
+  "simplicity_order": ["raw", "platt", "isotonic"],
+  "ece": {
+    "n_bins": 10,
+    "binning": "equal_width",
+    "empty_bins": "exclude_from_ece_and_mce"
+  },
+  "bootstrap": {
+    "n_bootstrap": 1000,
+    "confidence_level": 0.95,
+    "seed": 42,
+    "method": "percentile_bootstrap_rows_with_replacement"
+  },
+  "notes": "Calibrators are fit on TRAIN-only EBM validation probabilities. No calibrator refit on TRAIN+VALIDATION. Test is unused until after method freeze."
+}

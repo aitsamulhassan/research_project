@@ -1,0 +1,56 @@
+experiment_id: stage9_2_cost_sensitivity_lc_v1
+stage: "9.2"
+amendment_id: AMENDMENT-SHARIAH-001
+random_seed: 42
+
+scope:
+  authorized: [A0, A1, A3, A4]
+  a3_identical_to_a4: true
+  analysis_type: fixed_decisions_varying_cost_function
+  out_of_scope:
+    - A2-D
+    - stage9.3_governance_sensitivity
+    - stage9.4_temporal
+    - stage9.5_uci
+    - stage9.6_clean_room
+    - threshold_reselection
+    - monetary_valuation
+
+frozen:
+  t_low: 0.06
+  t_high: 0.69
+  t_star: 0.16
+  v1_freeze: results/decision/frozen_policy.json
+  v1_freeze_sha256: 4d3da6a9e5bac2b38b546c7a5a60e870bf83f30adcadf67f067f99951e32f0c4
+  source_table: results/decision/v2/tables/table3_test_decision_outcomes.csv
+  primary_fn_fp_ratio: 5
+
+cost:
+  unit: "C_FP = 1 (relative analytical unit, not currency)"
+  formula: "Cost_total = C_FN * FN + C_FP * FP + C_REVIEW * n_review"
+  normalization: "Cost_normalized = Cost_total / n"
+  c_fp: 1.0
+  c_review_over_fp_three_way: 0.25
+  c_review_over_fp_binary: 0.0
+  fn_fp_ratios: [1, 2, 5, 10]
+  labels: ["FN:FP=1:1", "FN:FP=2:1", "FN:FP=5:1", "FN:FP=10:1"]
+  freeze_controlling_notation: "FN:FP = r:1 with r in {1,2,5,10} (Stage 8 table2 / Stage 9.0 freeze)"
+  authorization_text_listed: ["1:1", "1:2", "1:5", "1:10"]
+  inverted_reading_not_used: true
+
+experiment_g:
+  definition: "validation-only c_review_over_fp in {0.10, 0.25, 0.50} under FN:FP=5:1"
+  artifact: results/decision/tables/experiment_g_review_cost_perturbation.csv
+  action: cite_existing_do_not_rerun
+  promote_thresholds_into_stage8: false
+
+test_protection: >
+  LendingClub TEST was already exposed during Stages 4B–8. Stage 9.2 does not use
+  TEST data for model or policy selection. Cost values are recomputed from stored
+  Stage 8 v2 confusion counts under alternative assumed C_FN/C_FP ratios.
+  Decisions are not changed.
+
+retraining: forbidden
+threshold_search: forbidden
+overwrite_stage8: forbidden
+overwrite_stage9_1: forbidden

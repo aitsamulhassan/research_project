@@ -1,0 +1,379 @@
+{
+  "indices": {
+    "high_risk": 4523,
+    "low_risk": 578,
+    "median_risk": 4496,
+    "disagreement": 26,
+    "disagreement_spearman": 1.0
+  },
+  "cases": {
+    "high_risk": {
+      "sample_position": 4523,
+      "row_ref": "d0179a8a5a2b76b0",
+      "p_raw": 0.5186777326308969,
+      "p_calibrated": 0.6812198983158844,
+      "top_positive_shap": [
+        "dti_n",
+        "fico_n",
+        "zip_code"
+      ],
+      "top_negative_shap": [
+        "loan_amnt"
+      ],
+      "local_rank_spearman": 1.0,
+      "features": [
+        {
+          "feature": "revenue",
+          "value": 29747.0,
+          "shap": 0.22348551287877225,
+          "ebm_term": 0.22348551287877227,
+          "shap_abs_rank": 5,
+          "ebm_abs_rank": 5
+        },
+        {
+          "feature": "dti_n",
+          "value": 34.14,
+          "shap": 0.36494401883664657,
+          "ebm_term": 0.36494401883664657,
+          "shap_abs_rank": 1,
+          "ebm_abs_rank": 1
+        },
+        {
+          "feature": "loan_amnt",
+          "value": 10400.0,
+          "shap": -0.024662079674733467,
+          "ebm_term": -0.024662079674733405,
+          "shap_abs_rank": 8,
+          "ebm_abs_rank": 8
+        },
+        {
+          "feature": "fico_n",
+          "value": 662.0,
+          "shap": 0.358966884342381,
+          "ebm_term": 0.358966884342381,
+          "shap_abs_rank": 2,
+          "ebm_abs_rank": 2
+        },
+        {
+          "feature": "emp_length",
+          "value": "NI",
+          "shap": 0.2299626026528774,
+          "ebm_term": 0.2299626026528774,
+          "shap_abs_rank": 4,
+          "ebm_abs_rank": 4
+        },
+        {
+          "feature": "purpose",
+          "value": "debt_consolidation",
+          "shap": 0.03033435387970918,
+          "ebm_term": 0.030334353879709182,
+          "shap_abs_rank": 7,
+          "ebm_abs_rank": 7
+        },
+        {
+          "feature": "home_ownership_n",
+          "value": "RENT",
+          "shap": 0.15147577450947486,
+          "ebm_term": 0.15147577450947486,
+          "shap_abs_rank": 6,
+          "ebm_abs_rank": 6
+        },
+        {
+          "feature": "addr_state",
+          "value": "AL",
+          "shap": 0.010596181896407215,
+          "ebm_term": 0.010596181896407215,
+          "shap_abs_rank": 9,
+          "ebm_abs_rank": 9
+        },
+        {
+          "feature": "zip_code",
+          "value": "362xx",
+          "shap": 0.2866986833122173,
+          "ebm_term": 0.2866986833122173,
+          "shap_abs_rank": 3,
+          "ebm_abs_rank": 3
+        }
+      ],
+      "y_true_descriptive_only": 0,
+      "experiment_id": "stage6-lc-ebm-explain-v1"
+    },
+    "low_risk": {
+      "sample_position": 578,
+      "row_ref": "773b6c4766fba9b4",
+      "p_raw": 0.023737166764542704,
+      "p_calibrated": 0.022185326280049197,
+      "top_positive_shap": [
+        "addr_state"
+      ],
+      "top_negative_shap": [
+        "fico_n",
+        "loan_amnt",
+        "revenue"
+      ],
+      "local_rank_spearman": 1.0,
+      "features": [
+        {
+          "feature": "revenue",
+          "value": 135000.0,
+          "shap": -0.24405339710619398,
+          "ebm_term": -0.24405339710619395,
+          "shap_abs_rank": 3,
+          "ebm_abs_rank": 3
+        },
+        {
+          "feature": "dti_n",
+          "value": 2.84,
+          "shap": -0.23706777443303642,
+          "ebm_term": -0.23706777443303645,
+          "shap_abs_rank": 4,
+          "ebm_abs_rank": 4
+        },
+        {
+          "feature": "loan_amnt",
+          "value": 2500.0,
+          "shap": -0.45620553607809916,
+          "ebm_term": -0.4562055360780991,
+          "shap_abs_rank": 2,
+          "ebm_abs_rank": 2
+        },
+        {
+          "feature": "fico_n",
+          "value": 797.0,
+          "shap": -0.8631477346628375,
+          "ebm_term": -0.8631477346628375,
+          "shap_abs_rank": 1,
+          "ebm_abs_rank": 1
+        },
+        {
+          "feature": "emp_length",
+          "value": "2 years",
+          "shap": -0.02915484411100227,
+          "ebm_term": -0.029154844111002266,
+          "shap_abs_rank": 7,
+          "ebm_abs_rank": 7
+        },
+        {
+          "feature": "purpose",
+          "value": "credit_card",
+          "shap": -0.20635533072238316,
+          "ebm_term": -0.20635533072238316,
+          "shap_abs_rank": 5,
+          "ebm_abs_rank": 5
+        },
+        {
+          "feature": "home_ownership_n",
+          "value": "MORTGAGE",
+          "shap": -0.1270128095966336,
+          "ebm_term": -0.1270128095966336,
+          "shap_abs_rank": 6,
+          "ebm_abs_rank": 6
+        },
+        {
+          "feature": "addr_state",
+          "value": "NC",
+          "shap": 0.011096444378020981,
+          "ebm_term": 0.011096444378020981,
+          "shap_abs_rank": 8,
+          "ebm_abs_rank": 8
+        },
+        {
+          "feature": "zip_code",
+          "value": "280xx",
+          "shap": -0.007732604815849779,
+          "ebm_term": -0.007732604815849779,
+          "shap_abs_rank": 9,
+          "ebm_abs_rank": 9
+        }
+      ],
+      "y_true_descriptive_only": 0,
+      "experiment_id": "stage6-lc-ebm-explain-v1"
+    },
+    "median_risk": {
+      "sample_position": 4496,
+      "row_ref": "12fc7fd557a986ab",
+      "p_raw": 0.16161389915891483,
+      "p_calibrated": 0.21352389325615775,
+      "top_positive_shap": [
+        "fico_n",
+        "emp_length",
+        "purpose"
+      ],
+      "top_negative_shap": [
+        "loan_amnt",
+        "home_ownership_n",
+        "zip_code"
+      ],
+      "local_rank_spearman": 1.0,
+      "features": [
+        {
+          "feature": "revenue",
+          "value": 65000.0,
+          "shap": 0.02277415996809202,
+          "ebm_term": 0.022774159968092036,
+          "shap_abs_rank": 8,
+          "ebm_abs_rank": 8
+        },
+        {
+          "feature": "dti_n",
+          "value": 17.54,
+          "shap": -0.03863731681842886,
+          "ebm_term": -0.03863731681842888,
+          "shap_abs_rank": 6,
+          "ebm_abs_rank": 6
+        },
+        {
+          "feature": "loan_amnt",
+          "value": 8000.0,
+          "shap": -0.3277546753926993,
+          "ebm_term": -0.32775467539269926,
+          "shap_abs_rank": 1,
+          "ebm_abs_rank": 1
+        },
+        {
+          "feature": "fico_n",
+          "value": 677.0,
+          "shap": 0.23803690272040187,
+          "ebm_term": 0.23803690272040187,
+          "shap_abs_rank": 2,
+          "ebm_abs_rank": 2
+        },
+        {
+          "feature": "emp_length",
+          "value": "NI",
+          "shap": 0.2299626026528774,
+          "ebm_term": 0.2299626026528774,
+          "shap_abs_rank": 3,
+          "ebm_abs_rank": 3
+        },
+        {
+          "feature": "purpose",
+          "value": "debt_consolidation",
+          "shap": 0.03033435387970918,
+          "ebm_term": 0.030334353879709182,
+          "shap_abs_rank": 7,
+          "ebm_abs_rank": 7
+        },
+        {
+          "feature": "home_ownership_n",
+          "value": "MORTGAGE",
+          "shap": -0.1270128095966336,
+          "ebm_term": -0.1270128095966336,
+          "shap_abs_rank": 4,
+          "ebm_abs_rank": 4
+        },
+        {
+          "feature": "addr_state",
+          "value": "CA",
+          "shap": -0.007091991266236863,
+          "ebm_term": -0.007091991266236863,
+          "shap_abs_rank": 9,
+          "ebm_abs_rank": 9
+        },
+        {
+          "feature": "zip_code",
+          "value": "945xx",
+          "shap": -0.10982358767154633,
+          "ebm_term": -0.10982358767154633,
+          "shap_abs_rank": 5,
+          "ebm_abs_rank": 5
+        }
+      ],
+      "y_true_descriptive_only": 0,
+      "experiment_id": "stage6-lc-ebm-explain-v1"
+    },
+    "disagreement": {
+      "sample_position": 26,
+      "row_ref": "001549eaf95c9c9e",
+      "p_raw": 0.32965541016923583,
+      "p_calibrated": 0.45485248282814866,
+      "top_positive_shap": [
+        "loan_amnt",
+        "dti_n",
+        "zip_code"
+      ],
+      "top_negative_shap": [
+        "revenue",
+        "purpose",
+        "home_ownership_n"
+      ],
+      "local_rank_spearman": 1.0,
+      "features": [
+        {
+          "feature": "revenue",
+          "value": 130000.0,
+          "shap": -0.23815588290014342,
+          "ebm_term": -0.2381558829001434,
+          "shap_abs_rank": 5,
+          "ebm_abs_rank": 5
+        },
+        {
+          "feature": "dti_n",
+          "value": 33.09,
+          "shap": 0.34211216662516797,
+          "ebm_term": 0.34211216662516797,
+          "shap_abs_rank": 2,
+          "ebm_abs_rank": 2
+        },
+        {
+          "feature": "loan_amnt",
+          "value": 35000.0,
+          "shap": 0.49003817190931626,
+          "ebm_term": 0.4900381719093163,
+          "shap_abs_rank": 1,
+          "ebm_abs_rank": 1
+        },
+        {
+          "feature": "fico_n",
+          "value": 672.0,
+          "shap": 0.2886269140034796,
+          "ebm_term": 0.2886269140034796,
+          "shap_abs_rank": 4,
+          "ebm_abs_rank": 4
+        },
+        {
+          "feature": "emp_length",
+          "value": "2 years",
+          "shap": -0.02915484411100227,
+          "ebm_term": -0.029154844111002266,
+          "shap_abs_rank": 8,
+          "ebm_abs_rank": 8
+        },
+        {
+          "feature": "purpose",
+          "value": "credit_card",
+          "shap": -0.20635533072238316,
+          "ebm_term": -0.20635533072238316,
+          "shap_abs_rank": 6,
+          "ebm_abs_rank": 6
+        },
+        {
+          "feature": "home_ownership_n",
+          "value": "MORTGAGE",
+          "shap": -0.1270128095966336,
+          "ebm_term": -0.1270128095966336,
+          "shap_abs_rank": 7,
+          "ebm_abs_rank": 7
+        },
+        {
+          "feature": "addr_state",
+          "value": "TN",
+          "shap": -0.0016409813815900613,
+          "ebm_term": -0.0016409813815900613,
+          "shap_abs_rank": 9,
+          "ebm_abs_rank": 9
+        },
+        {
+          "feature": "zip_code",
+          "value": "374xx",
+          "shap": 0.328854821780102,
+          "ebm_term": 0.328854821780102,
+          "shap_abs_rank": 3,
+          "ebm_abs_rank": 3
+        }
+      ],
+      "y_true_descriptive_only": 0,
+      "experiment_id": "stage6-lc-ebm-explain-v1"
+    }
+  }
+}

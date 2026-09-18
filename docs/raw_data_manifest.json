@@ -1,0 +1,27 @@
+[
+  {
+    "dataset_name": "Lending Club loan dataset for granting models",
+    "source": "https://zenodo.org/records/11295916",
+    "doi_or_official_url": "https://doi.org/10.5281/zenodo.11295916",
+    "download_date": "2026-09-14T10:27:27+00:00",
+    "filename": "LC_loans_granting_model_dataset.csv",
+    "file_size_bytes": 167468415,
+    "sha256": "207d65b2712f775a91404496ab27c786ac0da6b0f977f849e6d5d8149e925acc",
+    "license": "cc-by-4.0",
+    "version_if_available": "0.1",
+    "md5": "b019384d6bc65bf2a3e839362e4ff502",
+    "role": "PRIMARY_CREDIT_RISK_DATASET"
+  },
+  {
+    "dataset_name": "Default of Credit Card Clients",
+    "source": "https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients",
+    "doi_or_official_url": "https://doi.org/10.24432/C55S3H",
+    "download_date": "2026-09-14T10:18:21+00:00",
+    "filename": "default+of+credit+card+clients.zip",
+    "file_size_bytes": 5539494,
+    "sha256": "56c885f84457f6680f8438f02bfcdac9579323d8a94465ee5f26e32baa727602",
+    "license": "CC BY 4.0",
+    "version_if_available": null,
+    "role": "SECONDARY_GENERALIZATION_DATASET"
+  }
+]
