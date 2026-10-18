@@ -24,9 +24,9 @@ The title does not describe the system as Shariah-compliant, certified, or produ
 
 This study presents a research prototype for Shariah-oriented governance and evidence traceability in credit-risk decision mapping. Credit-risk scoring, additive explainability, and governance evidence are treated as separate objects and fused only at a final decision map. The prototype is not Shariah certification, a fatwa, an automated Shariah-compliance verdict, expert-validated Shariah decisioning, or a production credit engine. It reports no fraud-detection performance.
 
-The primary executed dataset is a Zenodo LendingClub granting-model extract of originated-and-resolved loans (1,347,681 rows). Stage 2 records this extract as US P2P 2007–2018, not an Islamic-finance sample. A chronological split by issue month yields TRAIN \(n=941{,}267\), VALIDATION \(n=197{,}528\), and TEST \(n=208{,}886\). Four LendingClub model families—logistic regression, random forest, XGBoost, and an additive Explainable Boosting Machine (EBM) with no interactions—were trained under a validation freeze and evaluated once on TEST after a TRAIN+VALIDATION refit (context **M-4B**). The **validation-selected** M-4B family is the EBM. Downstream probabilities used by later stages come from a distinct **TRAIN-only** EBM with Platt scaling fitted on validation scores only (context **M-5**). On the frozen TEST set, M-5 raw and Platt ROC-AUC are both \(0.6776693941139847\); Platt Brier is \(0.15616920271522994\) and expected calibration error (ECE) is \(0.020267295489117824\). TEST was not used to fit calibration.
+The revised manuscript objective, adopted at writing time and not prospectively registered, is to characterize predictive performance, additive explanation identity, documentary-evidence abstention, and decision-routing consequences of a modular research prototype using frozen artifacts. It does not establish greater transparency, institutional defensibility, or predictive superiority relative to a monolithic classifier. The primary executed dataset is a Zenodo LendingClub granting-model extract of originated-and-resolved loans (1,347,681 rows). Rejected applicants are absent, so the extract is not an applicant funnel. Stage 2 records this extract as US P2P 2007–2018, not an Islamic-finance contract sample. A chronological split by issue month yields TRAIN \(n=941{,}267\), VALIDATION \(n=197{,}528\), and TEST \(n=208{,}886\). Four LendingClub model families were evaluated once on TEST after a TRAIN+VALIDATION refit (context **M-4B**). The additive EBM was retained by a validation PR-AUC tie window plus a Brier/simplicity rule, not because it had the highest PR-AUC. LendingClub XGBoost has higher stored TEST ROC-AUC. Downstream probabilities come from a distinct **TRAIN-only** EBM with Platt scaling fitted on validation scores only (context **M-5**). Pooled M-5 raw and Platt ROC-AUC are both \(0.6776693941139847\); Platt Brier is \(0.15616920271522994\) and ECE is \(0.020267295489117824\). On the 2018 slice the same frozen Platt map worsens Brier, ECE, and log loss relative to raw. TEST was not used to fit or replace the calibrator.
 
-Explainability uses the additive M-5 EBM. Attributions are an exact additive SHAP-style decomposition on the logit scale; TreeSHAP was not used. The LendingClub extract does not contain contract-level Shariah fields. Dataset-level schema status is `INSUFFICIENT_SCHEMA_FOR_APPLICANT_DETERMINATION`. Per-application status is `INSUFFICIENT_INFORMATION` on all 208,886 TEST rows. That status is an evidence/schema limitation, not a finding that applicants or contracts are Shariah non-compliant. Under the frozen G0 fusion map, credit-only bands (A0) yield 5,232 APPROVE / 203,627 HUMAN_REVIEW / 27 REJECT; fused evidence-separated decisions (A1) yield 0 / 208,859 / 27; a single-threshold credit map (A3/A4) yields 61,855 / 0 / 147,031. Predictive scores are identical across these maps. Those APPROVE / HUMAN_REVIEW / REJECT counts are research policy-map assignments on frozen TEST scores; they are not production origination outcomes.
+Explainability uses an exact additive logit decomposition of the M-5 EBM on 5,000 rows. That identity is not a demonstrated human benefit. TreeSHAP was not used. The LendingClub extract does not contain contract-level Shariah fields and contains no expert-labeled Shariah benchmark. Dataset-level schema status is `INSUFFICIENT_SCHEMA_FOR_APPLICANT_DETERMINATION`. Per-application status under stored engine `stage7-shariah-engine-v1` is `INSUFFICIENT_INFORMATION` on all 208,886 TEST rows. The live scope-gated screen did not regenerate that result. Under the frozen G0 map, A0 yields 5,232 APPROVE / 203,627 HUMAN_REVIEW / 27 REJECT; A1 yields 0 / 208,859 / 27; A3/A4 yields 61,855 / 0 / 147,031. The 27 fused rejects are the HIGH credit band, not established Shariah violations. `HUMAN_REVIEW` is simulated routing, not a measured workload. Identical scores make predictive invariance true by construction.
 
 An independent UCI Default of Credit Card Clients analysis (context **M-9.4-AE**) reports logistic regression and EBM TEST metrics as methodology context. It does not validate the LendingClub architecture or the governance layer. An execution-time UCI XGBoost analysis (context **M-9.4-X**) is exploratory and is not presented as the primary validated model or as proof of overall superiority. Stage 4B LendingClub XGBoost and Stage 9.4 UCI XGBoost are not merged.
 
@@ -59,10 +59,10 @@ No new scientific figures requiring scoring, metric recomputation, calibration r
 | Table IX | G0 fusion matrix | `docs/STAGE_8_DECISION_FUSION_REPORT_V2.md` §B | None (copy) |
 | Table X | S10-R1 year mix (post-hoc) | `results/stage10/v1/tables/s10_r1_year_decision_mix.csv` | None |
 | Table XI | S10-A1 evidence-gap crosstab (descriptive) | `results/stage10/v1/tables/s10_a1_gap_crosstab.csv` | None |
-| Fig. 1 | Evidence-separated layers (text schematic) | Instantiated in §7.1 from Stage 7 v2 / Stage 8 v2 layer descriptions; **no stored image file** | None |
+| Fig. 1 | Evidence-separated layers (text schematic) | Instantiated in §7.1 from the Stage 7 report labeled v2 (engine `stage7-shariah-engine-v1`) and the Stage 8 decision-policy v2 description; **no stored image file** | None |
 | Fig. 2 | G0 matrix (identical to Table IX) | Instantiated in §7.10 as a captioned copy of Stage 8 v2 G0; **no stored image file** | None (copy) |
 
-The Stage 5 calibration report names validation and TEST reliability-diagram paths: `results/figures/calibration/figure1_validation_reliability` and `figure2_test_reliability` (TEST diagrams for RAW, Platt, and isotonic, reporting only). Those paths are historical report references. The corresponding image files are **not retained** in the current repository: no PNG, PDF, or SVG exists under `results/figures/calibration/` (that image directory is absent), and no reliability-diagram image file is present under `results/`. The visual artifacts are therefore omitted from the reproducible manuscript package. They are not regenerated from scores.
+The Stage 5 calibration report names validation and TEST reliability-diagram paths: `results/figures/calibration/figure1_validation_reliability` and `figure2_test_reliability` (TEST diagrams for RAW, Platt, and isotonic, reporting only). Those PDF and PNG files are retained and tracked at HEAD and at parent commit `d49f39a68b740ae464f32f0d7a963b8e7e9938db`. The same tracked directory also contains `figure5_temporal.pdf` (SHA-256 `65471d614eb6efd7b02c5d86f49c3621ed27796f56999cb91805235900c37b5f`) and `figure5_temporal.png` (SHA-256 `41f62501714d2b9261f618048210ba17eeeeebeb377e5ce787f413f443d97bc6`). The reliability diagrams are cited and are not inserted in the results narrative. The temporal figure is included with the calibration results. None of these files was regenerated from scores in this manuscript step.
 
 Optional exploratory displays (9.2 cost curves; 9.3 G1/G3 allocations) are omitted from the main-text figure list because they are class-C sensitivity analyses. If later included, captions must retain the exploratory label and must copy stored files only.
 
@@ -76,15 +76,19 @@ Two further literatures motivate the design of this prototype, without validatin
 
 A third motivation is governance and auditability rather than predictive gain. US adverse-action rules require specific principal reasons, including when complex algorithms are used [32]–[34]. Those instruments apply to US creditors; this repository is a research prototype and is not presented as an Equal Credit Opportunity Act (ECOA) originator or as a compliance guarantee. In Islamic finance, official Shariah governance frameworks for Islamic banking institutions in Pakistan and related documentary-evidence circulars describe board-level product approval and contract-level evidence requirements [24]–[26]. Separately, IFSB-10 records guiding principles for Shariah governance systems of institutions offering Islamic financial services [31]; it is cited as identity/FAQ context, not as a Pakistan IBI circular and not as a ruling on this extract. Securities regulation in Pakistan further states that a security shall not be called Shariah compliant unless a Commission certificate is granted [27]. Those instruments do not license this software to certify loans in the executed LendingClub extract.
 
-The executed design question, recorded in the Stage 9.1 ablation report, is:
+The historical design question, recorded in the Stage 9.1 ablation report and preserved here without rewriting that protocol text, is:
 
 > Does separating credit-risk scoring, explainability, and Shariah-oriented governance into independently validated and auditable evidence layers, fused only at the final decision stage, provide a more transparent and defensible digital-financing pipeline than a monolithic end-to-end classifier without materially sacrificing predictive performance?
 
-This draft treats that sentence as a **design question**, not as a proven operational-superiority result. Stage 9.1 shows that, on frozen calibrated probabilities, decision counts differ across maps while predictive scores remain identical. Governance is not claimed to improve ROC-AUC.
+The transparency and institutional-defensibility components of that historical question were not tested. No user study, qualified expert review, adverse-action reason study, or operational-efficiency evaluation was executed. This draft does not treat the historical question as answered.
+
+The revised manuscript objective, adopted while writing and not a prospectively registered question, is to characterize the predictive performance, additive explanation identity, documentary-evidence abstention behavior, and decision-routing consequences of a modular credit-risk and governance research prototype using frozen evaluation artifacts.
+
+Stage 9.1 shows that decision counts differ across maps while every map reads the same frozen scores. Predictive invariance across those maps is therefore true by construction. It is not evidence that governance improves predictive performance.
 
 The evaluation examines two executed datasets only: the Zenodo LendingClub granting-model extract as the primary setting [20], and the UCI Default of Credit Card Clients table as an independent credit/calibration methodology context [4], [21]. German Credit and Australian Credit Approval are common literature benchmarks [22], [23] and were **not** executed. No fraud-detection experiment was executed; fraud detection is a distinct statistical task [19] and is not reported as a performance result of this study.
 
-The remainder of the paper is organized as follows. Section 5 reviews related work from the verified literature package. Section 6 states research-gap and contribution boundaries. Section 7 describes methods. Section 8 records the experimental protocol and authorization classes. Section 9 transcribes stored results. Sections 10–12 discuss, limit, and conclude. Section 13 lists references from the literature package only.
+The remainder of the paper is organized as follows. Section 5 reviews related work from the verified literature package. Section 6 states research-gap and contribution boundaries. Section 7 describes methods. Section 8 records the experimental protocol and authorization classes. Section 9 transcribes stored results. Sections 10–12 discuss, limit, and conclude. Section 13 lists the literature-package references, with reference [20] supplemented by a later official Zenodo reading.
 
 ---
 
@@ -130,29 +134,29 @@ No verified real-time loan-engine latency paper is in the literature package. Th
 
 ### 5.7 Shariah governance instruments (identity and scope)
 
-Pakistan’s Islamic Finance Policy Department issued a Shariah Governance Framework for Islamic banking institutions under IFPD Circular No. 08 of 2024 [24]. The SGF text effective 1 January 2025 describes prior Shariah Board approval of products and review of process flows [25]. The official SBP annex PDF was recorded as HTTP 403 in the project register; the literature package uses a PICG-hosted public republication for the text [25]. SBP IBD Circular No. 01 of 2012 specifies invoice and alternative documentary evidence for Murabaha transactions of Islamic banking institutions [26]. That circular illustrates contract-level evidence that the LendingClub extract does not contain. It is not a rule for the executed LendingClub extract and is not an applicant-level ruling engine.
+This study cites IFPD Circular No. 08 of 2024 as the State Bank of Pakistan instrument associated with a Shariah Governance Framework for Islamic banking institutions [24]. The descriptive wording for prior Shariah Board product approval and process-flow review is taken from a PICG-hosted third-party PDF [25]. The local digest of that PDF matches the source-register digest. That match identifies the registered third-party bytes. It does not independently authenticate an official SBP original. A public HTTPS request for the official circular page on 2026-10-18 returned HTTP 403, and the official annex bytes were not obtained. SBP IBD Circular No. 01 of 2012 is identified at its official-domain URL and is cited for invoice and alternative documentary evidence described for Murabaha transactions of Islamic banking institutions [26]. The 2026-10-18 request to that URL returned HTTP 403, so this acquisition did not preserve authenticated official response bytes. The citation marks contract-level evidence that the LendingClub extract does not contain. It is not an applicant-level ruling on that extract.
 
-SECP Shariah Governance Regulations 2023 provide that no security shall be called Shariah compliant unless a Commission certificate is granted [27]. That instrument supports **prohibiting** certification language for this prototype. It excludes SBP banking companies and does not apply as a certificate authority for the executed LendingClub extract.
+The SECP Shariah Governance Regulations 2023 are represented by a MUFAP-hosted third-party PDF [27] whose local digest matches the source register. That copy states that no security shall be called Shariah compliant unless a Commission certificate is granted. The official SECP document page returned HTTP 403 on 2026-10-18, so the official PDF was not obtained. The hosted copy supports keeping certification language out of this prototype. It is not treated as an authenticated regulator original or as a certificate authority for the LendingClub extract. A catalog mapping treats SBP-regulated banking companies as outside that security-claim predicate. That mapping is not an authenticated applicability determination, and no qualified expert review is established.
 
-AAOIFI Shariah Standard (8) Murabahah and Standard (9) Ijarah exist as named standards [28], [29]. Operative clauses were not retrieved (password-protected / access-controlled viewer). Years for those identity pages are recorded as UNVERIFIED in the literature package and are not filled here. AAOIFI also lists governance standards, including a 2024 Shariah Governance Framework listing [30]; clause text was not retrieved. IFSB-10 sets guiding principles for Shariah governance systems of institutions offering Islamic financial services [31]; the literature package verified a FAQ PDF rather than a complete re-parse of the full standard body. None of these instruments is implemented as an automated fatwa engine, and none certifies this software.
+AAOIFI Shariah Standard (8) Murabahah and Standard (9) Ijarah exist as named standards [28], [29]. Operative clauses were not retrieved (password-protected / access-controlled viewer) and are not implemented as source-verified substantive tests. The software identity gates do not supply those unretrieved clauses. Years for those identity pages are recorded as UNVERIFIED in the literature package and are not filled here. AAOIFI also lists governance standards, including a 2024 Shariah Governance Framework listing [30]; clause text was not retrieved. IFSB-10 sets guiding principles for Shariah governance systems of institutions offering Islamic financial services [31]; the literature package verified a FAQ PDF rather than a complete re-parse of the full standard body. None of these instruments is implemented as an automated fatwa engine, and none certifies this software.
 
 ---
 
 ## 6. Research Gap and Contributions
 
-Prior work benchmarks classifiers [2], [3], studies P2P risk and SHAP granting models [5]–[7], and documents calibration and additive explanations [9]–[16]. Official Shariah governance texts for Islamic banking institutions describe board-level product approval and contract-level documentation [24]–[26]. SECP securities regulation prohibits calling a security Shariah compliant without a Commission certificate [27]. IFSB-10 is cited as identity/FAQ context for IIFS governance principles [31], not as a Pakistan IBI circular. The literature package does **not** contain a verified end-to-end study that, on the hashed Zenodo LendingClub extract, (i) keeps credit scores, additive explanations, and Shariah-oriented evidence objects separate, (ii) fuses them only at a frozen decision map, and (iii) reports an independent UCI methodology context without treating UCI as architecture or Shariah validation.
+Prior work benchmarks classifiers [2], [3], studies P2P risk and SHAP granting models [5]–[7], and documents calibration and additive explanations [9]–[16]. Cited Shariah governance materials identify board-level product approval and contract-level documentation [24]–[26], with official primary-byte authentication still unresolved. The MUFAP-hosted SECP copy states that a security shall not be called Shariah compliant without a Commission certificate [27]. IFSB-10 is cited as identity/FAQ context for IIFS governance principles [31], not as a Pakistan IBI circular. Within the recorded literature package, no verified source was identified that, on this hashed Zenodo LendingClub extract, (i) keeps credit scores, additive explanations, and Shariah-oriented evidence objects separate, (ii) fuses them only at a frozen decision map, and (iii) reports an independent UCI credit-methodology context without treating UCI as architecture or Shariah validation. That sentence describes the package used for this draft. It does not prove that comparable work is absent from the wider literature. A 2023–2026 systematic comparison remains an open follow-up and is not supplied here. This draft does not call the architecture novel. It does not present a new predictive algorithm, a regulatory certification, or a demonstrated improvement in human interpretability.
 
-That observation is a **gap relative to the recorded literature package**, not a claim of absolute historical novelty. This draft does not call the architecture “novel.”
+What the frozen artifacts support is an engineering integration and auditability case study, a software evidence-separation design demonstration, and a documented fixed-score routing experiment.
 
-The study develops a research prototype with the following contribution boundaries.
+The study records the following contribution boundaries.
 
 1. **Evidence-separated pipeline on LendingClub.** Credit-risk scoring, additive explanation, and governance evidence are separate objects. Fusion is a decision map on frozen calibrated probabilities `p_selected`, not a single end-to-end Shariah score.
 
-2. **Chronological evaluation with frozen exclusions.** LendingClub uses a frozen issue-month split, train-only preprocessing for the downstream EBM, validation-only calibration selection, and one TEST report after freeze. Stage 3 recorded no newly discovered leakage beyond the frozen Stage 2/owner exclusions. Hashes are recorded in split manifests. This is a documented split and feature-policy design, not a proof that every possible leakage path is absent.
+2. **Chronological evaluation with frozen exclusions.** LendingClub uses a frozen issue-month split, train-only preprocessing for the downstream EBM, validation-only calibration selection, and one TEST report after freeze. Stage 3 recorded no additional column beyond the frozen Stage 2/owner exclusions as leakage. That record does not establish that every predictor was known at a pre-origination decision time. Hashes are recorded in split manifests.
 
-3. **Transparent additive EBM reference.** The explainable reference is an EBM with `interactions=0` and an exact additive logit-scale SHAP-style decomposition of **that** model. TreeSHAP was not used. Attributions are not causal and are not an approval criterion.
+3. **Additive EBM reference.** The explainable reference is an EBM with `interactions=0` and an exact additive logit-scale SHAP-style decomposition of **that** model. TreeSHAP was not used. The additive form was a design motivation. The decomposition is a mathematical identity of this model. It is not an empirically proven human benefit, and it is not an approval criterion.
 
-4. **Governance / evidence-gap prototype.** Implemented predicates record schema insufficiency on LendingClub. They do not determine applicant-level Shariah compliance. No rule is `EXPERT_VALIDATED`. AAOIFI operative clauses are unimplemented.
+4. **Governance / evidence-gap prototype.** Implemented predicates record schema insufficiency on LendingClub. They do not determine applicant-level Shariah compliance. No rule is `EXPERT_VALIDATED`. AAOIFI operative clauses are unimplemented. Passing software tests is not qualified Shariah expert review.
 
 5. **Independent UCI methodology context.** Logistic regression and EBM are reported on UCI Default of Credit Card Clients as a separate credit/calibration methodology analysis. UCI XGBoost is an execution-time exploratory expansion (`DEVIATION-001`) and is not a primary validated model.
 
@@ -177,7 +181,7 @@ M-4B LendingClub XGBoost and M-9.4-X UCI XGBoost are distinct executions on diff
 
 ### 7.1 Research Architecture
 
-The prototype has four documented layers (Fig. 1). These layers are transcribed from Stage 7 v2 and Stage 8 v2; they are not a reconstructed FYP architecture and are not a stored image file.
+The prototype has four documented layers (Fig. 1). These layers are transcribed from the Stage 7 report labeled v2, which records engine `stage7-shariah-engine-v1`, and from Stage 8 decision-policy v2. That policy label is not governance-engine v2. The layers are not a reconstructed FYP architecture and are not a stored image file.
 
 1. **Credit-risk scoring.** A frozen probability of default. Downstream LendingClub decisions use M-5 `p_selected` (Platt-calibrated TRAIN-only EBM). They do not use the M-4B TRAIN+VALIDATION TEST EBM dump.
 
@@ -187,7 +191,7 @@ The prototype has four documented layers (Fig. 1). These layers are transcribed 
 
 4. **Decision fusion.** A frozen map from credit band \(\times\) L2 status to `{APPROVE, HUMAN_REVIEW, REJECT}` (G0; Table IX / Fig. 2). Fusion does not retrain models, refit Platt, or search thresholds.
 
-**Figure 1.** Evidence-separated research-prototype layers (text schematic; no new numbers). Source: Stage 7 v2 report; Stage 8 v2 fusion report. Not a stored PNG/PDF.
+**Figure 1.** Evidence-separated research-prototype layers (text schematic; no new numbers). Source: Stage 7 report labeled v2, which records engine `stage7-shariah-engine-v1`; Stage 8 decision-policy v2 fusion report. Not a stored PNG/PDF. Not the live governance-engine snapshot.
 
 | Layer | Documented object | Not |
 | --- | --- | --- |
@@ -200,11 +204,11 @@ The system is a research prototype for Shariah-oriented governance and evidence 
 
 ### 7.2 LendingClub Dataset
 
-The primary executed dataset is the LendingClub granting-model extract `LC_loans_granting_model_dataset.csv`, Zenodo DOI `10.5281/zenodo.11295916`, version 0.1, licence CC-BY-4.0 [20]. Creator names are **UNVERIFIED** in the literature package (Zenodo HTML fetch timed out) and are not invented here. File SHA-256 is `207d65b2712f775a91404496ab27c786ac0da6b0f977f849e6d5d8149e925acc`. Stage 2 records 1,347,681 rows \(\times\) 15 columns.
+The primary executed dataset is the LendingClub granting-model extract `LC_loans_granting_model_dataset.csv`, Zenodo DOI `10.5281/zenodo.11295916`, version 0.1, licence CC-BY-4.0 [20]. The historical literature package did not verify the creator names because an earlier Zenodo HTML fetch timed out. A later reading of the official record at https://zenodo.org/records/11295916 lists Miller Janny Ariza-Garzón and Mario Sanz-Guerrero as data curators, Javier Arroyo Gallardo as project leader, and Lending Club as data collector. That later reading does not mean the historical experiment manifests recorded those names. File SHA-256 is `207d65b2712f775a91404496ab27c786ac0da6b0f977f849e6d5d8149e925acc`. Stage 2 records 1,347,681 rows \(\times\) 15 columns.
 
-The extract is depositor-filtered from a parent Kaggle Lending Club file. Kaggle is not a third executed dataset. The file contains originated-and-resolved loans; rejected applicants are absent (selection bias). Stage 2 records the extract as US P2P 2007–2018. It is **not** Islamic-finance data and does **not** contain contract-level Shariah evidence fields sufficient for applicant-level Shariah compliance determination.
+The extract is depositor-filtered from a parent Kaggle Lending Club file. Kaggle is not a third executed dataset. The file contains originated-and-resolved loans. Rejected applicants are absent, so the extract does not support generalization to the full applicant funnel. Stage 2 records the population as US peer-to-peer consumer credit, 2007–2018. It is not Islamic-finance contract data, it does not contain contract-level Shariah fields sufficient for applicant-level determination, and the executed study contains no expert-labeled Shariah benchmark. Transfer to a Pakistani Islamic banking institution is not evidenced.
 
-Target column: `Default`. Stage 3 freeze: `1` = Charged Off, `0` = Fully Paid. Stage 2 recorded a Zenodo target-documentation conflict; the Stage 3 freeze controls coding.
+Target column: `Default`. The Stage 3 freeze coding used for every stored metric is `1` = Charged Off and `0` = Fully Paid. `results/metrics/lendingclub_target_audit.json` records `TARGET_DEFINITION_DOCUMENTATION_CONFLICT` and `original_loan_status_mapping_verified: false`. The depositor text states that Default = 1 corresponds to charged off, that Default = 0 corresponds to fully paid, and that transitory `loan_status` values were removed. A later sentence says the release keeps loans that are either Fully Paid or Default and does not mention Charged Off in that filter sentence. Original Lending Club `loan_status` also contains a rare Default category distinct from Charged Off. The freeze coding controls the reported metrics. It does not reconcile that documentation conflict.
 
 Time index used for splitting: `issue_month` derived from `issue_d`. Split hashes (`audit/lendingclub_split_manifest.json`):
 
@@ -212,7 +216,7 @@ Time index used for splitting: `issue_month` derived from `issue_d`. Split hashe
 - VALIDATION `n=197528`, hash `d1585d22e101c717bf52426e8e625da960c975aa35db703a435bc4a7f8b3df91`
 - TEST `n=208886`, hash `4dfedb1ad7785fa3833047135b1883676f3e1b49aca9c87fcdb346e64fd489c6`
 
-`git_commit` is recorded as `null` in the split manifest.
+`git_commit` is recorded as `null` in the historical split manifest. That null value remains the manifest record. It is not replaced by the later safety-snapshot commit `583ad0b30e8007a5f3f0bb13ede7b010fdad5fec`, which did not generate the Stage 4B–8 experiments.
 
 Stage 4B report notes prevalence differences by split (train 18.7%, validation 24.9%, test 21.2%) as descriptive context; M-5 TEST stored prevalence is \(0.2117901630554465\) with \(n_{\text{positive}}=44240\).
 
@@ -252,7 +256,7 @@ LendingClub primary predictors (both LC EBMs; `docs/lendingclub_feature_policy.c
 
 Excluded from the primary credit model: `id`, `issue_d`, `experience_c`, `title`, `desc`. Free-text `title` and `desc` were retained as a possible future branch; **no text model was built**. `addr_state` and `zip_code` are quasi-identifiers.
 
-Stage 4A fits the LendingClub preprocessor on TRAIN only for the downstream pipeline (`lendingclub_preprocessor.joblib`). High-cardinality `zip_code` is one-hot encoded for families that consume the expanded matrix (logistic regression, random forest, XGBoost). The EBM uses the nine imputed native columns rather than the one-hot expansion, because one-hot encoding would destroy additive per-original-feature structure. `dti_n==999` is unlabeled. Newly discovered leakage in Stage 3, beyond frozen exclusions, is recorded as none.
+Stage 4A fits the LendingClub preprocessor on TRAIN only for the downstream pipeline (`lendingclub_preprocessor.joblib`). High-cardinality `zip_code` is one-hot encoded for families that consume the expanded matrix (logistic regression, random forest, XGBoost). The EBM uses the nine imputed native columns rather than the one-hot expansion, because one-hot encoding would destroy additive per-original-feature structure. `dti_n==999` is unlabeled. Stage 3 recorded no additional leakage column beyond the frozen exclusions. That statement does not assert perfect temporal validity. The leakage audit classifies `issue_d` as an origination month rather than a demonstrated pre-decision application timestamp, and it classifies `dti_n` as application-time only at medium confidence because the source wording includes "Monthly information." Predictors must be read with that availability limit. `zip_code` remains a quasi-identifier inside the attribution table; that table is not a fairness audit and not an adverse-action reason-code study.
 
 UCI retained columns are the standard LIMIT_BAL / demographics / PAY_* / BILL_AMT* / PAY_AMT* block; `ID` is excluded (`audit/uci_split_manifest.json`).
 
@@ -283,7 +287,9 @@ Recorded configurations (seed-42 TEST JSON `config` blocks):
 - **XGBoost (LendingClub only):** `binary:logistic`, 300 estimators, learning rate 0.05, `max_depth=4`, `min_child_weight=20`, subsample 0.8, `colsample_bytree=0.8`, `scale_pos_weight` computed on fitting labels (train+validation refit 4.061108666764441). Early stopping used validation during the train/val phase only; not used on TEST. This is **not** M-9.4-X.
 - **EBM:** InterpretML EBM, `interactions=0`, `max_bins=256`, learning rate 0.02, `max_rounds=200`, `outer_bags=4`, nine native columns. No class-weight argument in EBM 0.7.8.
 
-Primary validation criterion: mean PR-AUC across the five seeds. Best mean validation PR-AUC is 0.388473. Candidates within 0.005: EBM and XGBoost. Among those, lowest mean Brier then simplicity selected **EBM** (mean validation PR-AUC \(=0.385841\), Brier \(=0.179907\)). TEST numbers were not used to choose the family. All completed families were still refit on TRAIN+VALIDATION and evaluated once on TEST after freeze.
+The frozen selection record uses mean validation PR-AUC, a practical tie of 0.005, then lowest mean Brier, then simplicity. The stored ranking places XGBoost first. The selection string states a best PR-AUC of 0.388473. EBM and XGBoost fall inside the 0.005 window. The Brier/simplicity step retained the EBM (selection-record PR-AUC 0.385841, Brier 0.179907). The EBM was not retained because it achieved the highest PR-AUC. TEST numbers were not used to choose the family, and they are not used here to reselect a winner. All completed families were still refit on TRAIN+VALIDATION and evaluated once on TEST after freeze.
+
+Logistic regression and random forest were fit with `class_weight='balanced'`. XGBoost was fit with `scale_pos_weight`. EBM 0.7.8 has no class-weight argument. Those different training objectives limit a like-for-like reading of the Brier tie-break. They do not make the stored metrics impossible to compare descriptively on the same TEST population. On that population, M-4B XGBoost ROC-AUC is 0.6854404067747387 and PR-AUC is 0.3576696570242051, both higher than the M-4B EBM values 0.6799408767429772 and 0.3534066581608194. The M-4B EBM Brier is 0.15684495750106664, lower than the XGBoost Brier 0.2136380371614269. Additive transparency was a design motivation for `interactions=0`. It is not an empirically proven human benefit.
 
 The selected M-4B EBM dump path is `results/artifacts/final_explainable_boosting_machine_seed42.joblib`. Its SHA-256 is **not recorded**. That model is **not** used from Stage 8 onward.
 
@@ -326,7 +332,7 @@ The EBM is a transparent-model **reference**, not ground truth, not causal, and 
 
 ### 7.9 Shariah-Oriented Governance Layer
 
-Controlling records: `AMENDMENT-SHARIAH-001`; `docs/shariah_methodology.md`; Stage 7 **v2** report; rule catalog and source register. Stage 7 v1 is a historical predecessor.
+Controlling historical records: `AMENDMENT-SHARIAH-001`, `docs/shariah_methodology.md`, the Stage 7 governance run, the rule catalog, and the source register. The run identified as `stage7-shariah-gov-v2` records engine `stage7-shariah-engine-v1`. That report label is not the live snapshot `stage7-shariah-engine-v2-scope-gated`.
 
 **Required description:** research prototype for Shariah-oriented governance and evidence traceability. Not certification [27]. Not a fatwa. Not an automated Shariah-compliance verdict. Not expert-validated Shariah decisioning (`EXPERT_VALIDATED` = none).
 
@@ -334,12 +340,14 @@ Four-way separation:
 
 | Layer | Treatment in this study |
 | --- | --- |
-| A. Verified source / provenance | SBP SGF 2025 via IFPD Circular 08 of 2024 [24], [25]; SBP IBD Circular 01 of 2012 [26]; SECP SGR 2023 Regulation 7 [27]; AAOIFI SS 8 / SS 9 **identity** only [28], [29]; AAOIFI GS listing [30]; IFSB-10 identity/FAQ [31] |
-| B. Implemented predicates | L1 dataset readiness vs L2 per-application evaluation; source-mapped SBP/SECP rules at `SOURCE_VERIFIED_PENDING_EXPERT_REVIEW`; AAOIFI identity/unavailability gates only (`SH-AAOIFI-SS8-GATE`, `SH-AAOIFI-SS9-GATE`); credit-feature firewall; purpose-invariance |
-| C. Evidence / schema gaps | L1 `INSUFFICIENT_SCHEMA_FOR_APPLICANT_DETERMINATION`; L2 `INSUFFICIENT_INFORMATION` on all LC TEST rows; `SH-AAOIFI-SS8-POSSESSION` `NOT_VERIFIED`; `SHR-001` `UNSUPPORTED_RETIRED` |
+| A. Source identification / authentication pending | SBP SGF 2025 via IFPD Circular 08 of 2024 [24] and a PICG-hosted third-party PDF [25] whose local digest matches the source register (official SBP bytes not obtained; HTTP 403 on 2026-10-18); SBP IBD Circular 01 of 2012 at its official-domain URL [26] (authenticated response bytes not preserved from that acquisition); SECP SGR 2023 Regulation 7 via a MUFAP-hosted third-party PDF [27] whose digest matches the register (official SECP page HTTP 403); AAOIFI SS 8 / SS 9 **identity** only, operative clauses not implemented [28], [29]; AAOIFI GS listing [30]; IFSB-10 identity/FAQ [31]. No qualified expert review or authenticated case-level applicability. |
+| B. Implemented predicates | L1 dataset readiness vs L2 per-application evaluation; source-mapped SBP/SECP rules carry the catalog label `SOURCE_VERIFIED_PENDING_EXPERT_REVIEW`, which is not official authentication or expert validation; AAOIFI identity/unavailability gates only (`SH-AAOIFI-SS8-GATE`, `SH-AAOIFI-SS9-GATE`); credit-feature firewall; purpose-invariance |
+| C. Evidence / schema gaps | L1 `INSUFFICIENT_SCHEMA_FOR_APPLICANT_DETERMINATION`; stored engine-v1 L2 `INSUFFICIENT_INFORMATION` on all LC TEST rows; `SH-AAOIFI-SS8-POSSESSION` `NOT_VERIFIED`; `SHR-001` `UNSUPPORTED_RETIRED` |
 | D. Unvalidated / unavailable | AAOIFI operative clauses not retrieved or implemented; no `EXPERT_VALIDATED` rule |
 
-The A1 `INSUFFICIENT_INFORMATION` result is an evidence/schema limitation. LendingClub does not contain invoices, possession records, or other contract-level Shariah fields contemplated by Murabaha documentary circulars [26]. `INSUFFICIENT_INFORMATION` is **not** a finding that an applicant is Shariah non-compliant, that a contract is compliant or non-compliant, or that the ML score determines Shariah compliance. The ML score does not determine Shariah compliance. Human review is not certification.
+Stored Stage 7 governance audits, including the run `stage7-shariah-gov-v2`, record engine `stage7-shariah-engine-v1`. Stored Stage 8 fused TEST counts were produced with that earlier implementation. The Stage 8 decision-policy file labeled v2 freezes \(t_{\text{low}}=0.06\) and \(t_{\text{high}}=0.69\) and does not reselect thresholds. That policy label is not governance-engine v2. A later local safety snapshot identifies the live research screen as `stage7-shariah-engine-v2-scope-gated`, with applicability component `stage7-applicability-scope-unknown-v1`. The snapshot separates diagnostic predicates from source-applicability decisions and guarded public outcomes. All six SBP/SECP source rules remain `SCOPE_UNKNOWN`. Applicable diagnostic `PASS` results and diagnostic hard stops on those rules are withheld from authoritative public outcomes while applicability is unresolved. A diagnostic `PASS` is not proof of Shariah compliance, and a diagnostic hard stop is not a legally established violation. The snapshot is a research-screen safety boundary. It does not change LendingClub predictions, does not replace the stored fused TEST counts, and is not qualified Shariah expert review.
+
+The A1 `INSUFFICIENT_INFORMATION` result reported below is the stored engine-v1 evidence/schema limitation. LendingClub does not contain invoices, possession records, or other contract-level Shariah fields, and it does not contain verified Islamic-financing contracts. `INSUFFICIENT_INFORMATION` is **not** a finding that an applicant is Shariah non-compliant, that a contract is compliant or non-compliant, or that the ML score determines Shariah compliance. The ML score does not determine Shariah compliance. Human review is not certification.
 
 ### 7.10 Decision Policies
 
@@ -349,7 +357,7 @@ Thresholds were identified on validation under a researcher cost scenario, not o
 - Two-threshold credit bands: \(t_{\text{low}}=0.06\), \(t_{\text{high}}=0.69\)
 - Monolithic single threshold: \(t^{*}=0.16\)
 
-Stage 8 v2 did not search a new grid. Credit bands on stored `p_selected`: LOW if \(p < t_{\text{low}}\); HIGH if \(p \ge t_{\text{high}}\); otherwise MEDIUM.
+Stage 8 decision-policy v2 did not search a new grid. That policy version is not governance-engine v2. Credit bands on stored `p_selected`: LOW if \(p < t_{\text{low}}\); HIGH if \(p \ge t_{\text{high}}\); otherwise MEDIUM.
 
 G0 fusion matrix (Stage 8 v2; Table IX / Fig. 2):
 
@@ -372,7 +380,7 @@ Named maps (Stage 9.1; A3 identical to A4):
 
 These are policy analyses on frozen `p_selected`, not real-world approval performance. Maps are not ranked as best / optimal / winner.
 
-v2 freeze SHA-256 (recorded): `b874782326a8f20ed9bb7df1aa5ed1c75f883d8b6cba76b68991181d50b1604b`.  
+Stage 8 decision-policy v2 freeze SHA-256 (recorded): `b874782326a8f20ed9bb7df1aa5ed1c75f883d8b6cba76b68991181d50b1604b`. This digest identifies the frozen decision-policy file. It does not identify governance-engine v2.
 v1 freeze SHA-256 (recorded): `4d3da6a9e5bac2b38b546c7a5a60e870bf83f30adcadf67f067f99951e32f0c4`.  
 table3 SHA-256 (recorded): `90759eb72f1173b40b5b9363c21b0ef3d6f1cde5042748eb57871d49fb73d5ee`.
 
@@ -403,7 +411,7 @@ The empirical program is sequential and frozen. **Stage 9 remains CLOSED. Stage 
 | S10-A1 | Algebra of A1 review | Existing L2 statuses | Analysis-only; not Shariah validation |
 | S10-A4 | Citation comparison LC vs UCI | No new AUC | Analysis-only |
 
-Metric wrappers: ROC-AUC = `sklearn.metrics.roc_auc_score`; PR-AUC, Brier, log loss as in `docs/METRIC_DEFINITIONS.md`. M-4B and M-5 TEST confidence intervals are percentile bootstrap, 1000 row resamples, seed 42, not used for tuning.
+Metric wrappers: ROC-AUC = `sklearn.metrics.roc_auc_score`; PR-AUC, Brier, log loss as in `docs/METRIC_DEFINITIONS.md`. M-4B and M-5 TEST confidence intervals are percentile bootstrap intervals from 1000 row resamples with replacement, seed 42, and were not used for tuning. Each interval is conditional on the recorded TEST cohort and the fitted model that produced the archived scores. It is not evidence of temporal transfer, it does not correct originated-and-resolved selection bias, it does not show that the validation rule would select the same family in a new population, and it does not validate Islamic-finance applicability. No stored file contains a paired bootstrap of XGBoost versus the EBM. Separate marginal intervals are not that comparison.
 
 Documentation limitations that travel with the protocol (not TEST leakage): the Stage 9 closure audit historically recorded leftover `DRAFT` wording in the live Stage 9 protocol header versus `AMENDMENT-STAGE9-4-AUTHORIZATION` (`APPROVED`, 2026-09-15); the **current** `docs/STAGE_9_EXPERIMENTAL_PROTOCOL.md` no longer contains that leftover `DRAFT` status string. Stage 9 is CLOSED. The 9.4 amendment remains APPROVED; UCI XGBoost remains exploratory under `DEVIATION-001` and is not a primary validated model. Additional documentation lag: Stage 9.4 report hash change when a provenance caveat was added (UCI TEST metric JSON **not** rewritten); constitution leftover sentence that Stage 10 is not started while closures record Stage 10 **CLOSED**; older `SHARIAH_GOVERNANCE_SCOPE.md` lag versus Stage 8 v2.
 
@@ -426,11 +434,22 @@ Context: **M-4B**. Source: `results/metrics/stage4b_test_metrics.json` (Table II
 | xgboost (LC only) | 0.6854404067747387 | 0.3576696570242051 | 0.2136380371614269 | 0.6149464126269267 |
 | explainable_boosting_machine | 0.6799408767429772 | 0.3534066581608194 | 0.15684495750106664 | 0.48493888407781477 |
 
-Percentile 95% bootstrap CIs are stored in the same JSON (1000 resamples). For the selected EBM: ROC-AUC CI \([0.6772520975812178, 0.6828319764466856]\); PR-AUC CI \([0.3492795049814313, 0.3577134296795478]\); Brier CI \([0.15586719460814155, 0.1579539606709722]\).
+Stored percentile 95% intervals for every M-4B family are transcribed below from `results/metrics/stage4b_test_metrics.json`. The JSON bootstrap object records 1000 row resamples with replacement, the percentile method, confidence level 0.95, and seed 42. These intervals were not used for tuning or for reselection. Point estimates in the M-4B table are unchanged. ECE for every Stage 4B family is NOT STORED. Bootstrap intervals for the M-4B year slices in `stage4b_temporal_metrics.json` are NOT STORED.
+
+**Stored M-4B TEST percentile bootstrap intervals (unnumbered; the point-estimate table is unchanged).**
+
+| Family | ROC-AUC 95% CI | PR-AUC 95% CI | Brier 95% CI |
+| --- | --- | --- | --- |
+| logistic regression | [0.6736705022885037, 0.6791927300226014] | [0.3369473316788946, 0.3447666609747274] | [0.2193961729466324, 0.22060412018580547] |
+| random forest | [0.6583409722918866, 0.6636583681808403] | [0.32835543187117855, 0.33652823943186394] | [0.23580210979805832, 0.23614993443338622] |
+| XGBoost | [0.6829523676767578, 0.6881788114344569] | [0.3534442344582051, 0.3620845128053052] | [0.21307540542688683, 0.21416891449307812] |
+| EBM | [0.6772520975812178, 0.6828319764466856] | [0.3492795049814313, 0.3577134296795478] | [0.15586719460814155, 0.1579539606709722] |
+
+These four rows are separate marginal intervals. The source does not store a paired XGBoost-versus-EBM contrast, so different endpoints are not a stored test of statistical superiority. XGBoost still has the higher stored TEST ROC-AUC and PR-AUC point estimates. The class-weight difference still limits a like-for-like reading of the Brier intervals. The M-4B EBM remains the TRAIN+VALIDATION refit and is not the M-5 TRAIN-only EBM.
 
 ECE is **not stored** for Stage 4B logistic regression, nor for the other Stage 4B families (random forest, XGBoost, EBM), in `results/metrics/stage4b_test_metrics.json`. The Stage 4B TEST table in `docs/STAGE_4B_MODELING_REPORT.md` records ROC-AUC, PR-AUC, Brier, and log loss only. S10-A4 `existing_test_ece` for LendingClub logistic regression is empty. No Stage 4B ECE value is calculated or inferred in this manuscript.
 
-Inconvenient stored facts (not suppressed): TEST PR-AUC is lower than validation PR-AUC for every family (Stage 4B report). Descriptive year slices of the M-4B TEST EBM (report Table F, not used to retune): 2017 ROC-AUC 0.677804, PR-AUC 0.377247, Brier 0.168236; 2018 ROC-AUC 0.675593, PR-AUC 0.276294, Brier 0.125866. These slices are descriptive.
+Inconvenient stored facts (not suppressed): TEST PR-AUC is lower than validation PR-AUC for every family (Stage 4B report). Descriptive year slices of the M-4B TEST EBM (report Table F, not used to retune): 2017 ROC-AUC 0.677804, PR-AUC 0.377247, Brier 0.168236; 2018 ROC-AUC 0.675593, PR-AUC 0.276294, Brier 0.125866. These slices are descriptive. Bootstrap intervals for those year slices are NOT STORED.
 
 M-4B LC XGBoost TEST ROC-AUC \(0.6854404067747387\) is a Stage 4B family result. It is not the Stage 8 model and is not M-9.4-X.
 
@@ -472,11 +491,27 @@ TEST (reporting only):
 
 Platt TEST ROC-AUC equals raw. Isotonic is piecewise constant and slightly changes TEST ranking (PR-AUC \(0.35096314719303284\) \(\rightarrow\) \(0.3462755761696744\)).
 
-Paired TEST differences (calibrated − raw) from the Stage 5 report, not recomputed: Platt Brier \(-0.001767\) (bootstrap CI \([-0.002005, -0.001508]\)); Platt ECE \(-0.017267\) (CI \([-0.020730, -0.014170]\)). Intervals are not interpreted as hypothesis-test \(p\)-values in the source report.
+Stored M-5 TEST percentile intervals are transcribed below from `results/calibration/metrics/stage5_test_metrics.json`. The Stage 5 report records the same 1000-row percentile procedure and seed 42. The JSON stores the endpoints and does not repeat the resample count. Validation intervals for the calibration validation table are NOT STORED. Point estimates in the TEST calibration table are unchanged. Selected Platt ROC-AUC and PR-AUC intervals equal the stored raw intervals, as expected for a strictly increasing map.
 
-Descriptive temporal slices under frozen Platt (`stage5_temporal.json`; not a new confirmatory TEST): 2017 \(n=152726\), Platt ECE \(0.005096425775164428\); 2018 \(n=56160\), Platt ECE \(0.06152417312325683\). On 2018, Platt increases Brier, log loss, and ECE relative to raw. The validation window is 2016-04 through 2017-01; the source report classifies this as temporal transfer failure, not a reason to recode the frozen calibrator.
+**Stored M-5 TEST percentile bootstrap intervals (unnumbered; the point-estimate table is unchanged).**
 
-Reliability diagrams named in `docs/STAGE_5_CALIBRATION_REPORT.md` §E (`results/figures/calibration/figure1_validation_reliability`; `figure2_test_reliability`) are historical report references. The image files are not retained in the current repository and are omitted from this manuscript package. They are not regenerated from scores.
+| Method | ROC-AUC 95% CI | PR-AUC 95% CI | Brier 95% CI | ECE 95% CI |
+| --- | --- | --- | --- | --- |
+| raw | [0.6749564127778213, 0.6805015152089869] | [0.34673702510152055, 0.3553104318096633] | [0.15692642539130555, 0.1590637555856554] | [0.03599839928499511, 0.039306979036735516] |
+| Platt (selected) | [0.6749564127778213, 0.6805015152089869] | [0.34673702510152055, 0.3553104318096633] | [0.15535197480486465, 0.1571269612775135] | [0.018602080465562932, 0.021865990817951562] |
+| isotonic (not selected) | [0.6747959399613472, 0.6803531958284472] | [0.34234020916732727, 0.3503629847709685] | [0.15538366374608523, 0.15715390500332005] | [0.01840939243053716, 0.021650557846204645] |
+
+Paired TEST differences are calibrated minus raw, transcribed from `results/calibration/metrics/stage5_paired_differences.json` and not recomputed. For selected Platt, Brier difference \(-0.0017665131094414532\) with interval \([-0.002005035391561569, -0.001507883218065545]\); ECE difference \(-0.017267209870280038\) with interval \([-0.020730233602408395, -0.014169897420753972]\). The Stage 5 report prints those two contrasts rounded as Brier \(-0.001767\) \([-0.002005, -0.001508]\) and ECE \(-0.017267\) \([-0.020730, -0.014170]\). The stored Platt MCE paired interval is \([-0.33662737867187215, 0.270316378125387]\) and includes both signs. The report does not interpret exclusion of zero as a hypothesis-test \(p\)-value. Isotonic paired intervals are stored in the same file and are not the selected contrast. Bootstrap intervals for the 2017 and 2018 slices are NOT STORED.
+
+Each of these intervals is conditional on the recorded TEST cohort and the fitted scores. It is not evidence of temporal transfer. It does not correct originated-and-resolved selection bias. It does not establish that the validation selection rule would repeat in a new population. It does not validate Islamic-finance applicability.
+
+Pooled TEST Brier and ECE are lower for frozen Platt than for raw. That aggregate improvement does not hold in every year. `docs/STAGE_5_CALIBRATION_REPORT.md` prints the 2018 slice as raw Brier 0.125840, log loss 0.410288, ECE 0.010259, and Platt Brier 0.130286, log loss 0.422546, ECE 0.061524. Those printed figures match `results/calibration/metrics/stage5_temporal.json` when rounded: raw Brier 0.1258399338907754, log loss 0.41028805133281615, ECE 0.010258720583955352; Platt Brier 0.13028635032639518, log loss 0.42254561687570114, ECE 0.06152417312325683; \(n=56160\). On 2018, frozen Platt worsens Brier, log loss, and ECE relative to raw. The 2017 slice moves in the other direction (Platt ECE 0.005096425775164428, \(n=152726\)). The validation window ends in January 2017. This is a descriptive temporal transfer failure. Bootstrap intervals for these year slices are NOT STORED. It is not a reason to refit, retune, or replace the frozen calibrator using the 2018 TEST slice.
+
+The figure below is the retained historical file `results/figures/calibration/figure5_temporal.pdf`. The Stage 5 runner writes it from the same temporal rows stored in `stage5_temporal.json`. The file title is “Temporal calibration (descriptive; not used for tuning).” This manuscript step did not recompute the figure. The 2018 group shows higher Platt and isotonic Brier, log loss, and ECE than the raw bars.
+
+![Historical Stage 5 temporal calibration comparison for 2017 and 2018. Displays raw, Platt, and isotonic Brier score, log loss, and ECE using the frozen experiment artifacts. Descriptive TEST reporting only; not used for model selection or recalibration.](../../results/figures/calibration/figure5_temporal.png)
+
+Reliability diagrams named in `docs/STAGE_5_CALIBRATION_REPORT.md` §E (`results/figures/calibration/figure1_validation_reliability`; `figure2_test_reliability`) are retained historical PDF and PNG files. This manuscript does not regenerate them and does not insert them. They are separate from the temporal bar chart above.
 
 ### 9.3 Explainability Results
 
@@ -522,7 +557,7 @@ Predictive scores are the same stored `p_selected` across maps. Governance is no
 | MEDIUM | 203627 | 44030 | 0.21622869265863565 | [0.21444596353189307, 0.2180221287671469] |
 | HIGH | 27 | 14 | 0.5185185185185185 | [0.3398532458621043, 0.6925704935029092] |
 
-HIGH band \(n=27\) is small; the interval is wide. Fused REJECT coincides with HIGH under observed L2 statuses (\(n=27\), default rate \(0.5185185185185185\)). Fused HUMAN_REVIEW \(n=208859\), default rate \(0.21175051111036633\).
+HIGH band \(n=27\) is a very small group. Its stored Wilson 95% interval, method `wilson_95` in `table3b_test_default_rates_by_band.csv`, is \([0.3398532458621043, 0.6925704935029092]\). That width leaves the default rate weakly determined. The fused REJECT row in the same file repeats this interval because it is the same 27 rows, not a second sample and not a Shariah-violation rate. All 208,886 stored LendingClub TEST rows have L2 status `INSUFFICIENT_INFORMATION` under historical governance engine `stage7-shariah-engine-v1`. The 27 fused REJECT outcomes are exactly those 27 HIGH credit-band rows under the frozen G0 map (\(p_{\mathrm{selected}}\ge 0.69\); default rate \(0.5185185185185185\)). They are not established Shariah violations. They are not an output of the later live scope-gated engine `stage7-shariah-engine-v2-scope-gated`. Fused HUMAN_REVIEW \(n=208859\), default rate \(0.21175051111036633\), is a simulated routing label. It is not a measured staffing workload and not a completed human review. Different approve / review / reject assignments across maps are routing differences on identical scores. They are not evidence that the fused map outperforms the monolithic classifier.
 
 Contingency (`table4`): every populated cell is `INSUFFICIENT_INFORMATION` \(\times\) {LOW: 5232 HUMAN_REVIEW; MEDIUM: 203627 HUMAN_REVIEW; HIGH: 27 REJECT}. PASS / REVIEW / `NOT_STRUCTURABLE_WITHOUT_REDESIGN` cells have \(n=0\). A1 HUMAN_REVIEW \(=208{,}859\) is LOW+MEDIUM \(\times\) all-TEST insufficiency under G0, **not** a Shariah score.
 
@@ -594,17 +629,17 @@ A1 review \(=208{,}859=5232+203627\). The algebra decomposes existing governance
 
 The stored artifacts show that an additive TRAIN-only EBM can be calibrated on validation, frozen, and used as a single probability stream for several decision maps without refitting on TEST. Discrimination of that downstream pipeline on LendingClub TEST is ROC-AUC \(0.6776693941139847\). M-4B family TEST after a TRAIN+VALIDATION refit is numerically nearby but is a different fit (EBM ROC-AUC \(0.6799408767429772\); LC XGBoost \(0.6854404067747387\)) and is not a licence to swap joblibs into Stage 8.
 
-Stored TEST Brier and ECE are lower under the frozen Platt map than under raw (Stage 5 paired differences). Those stored differences are a probability-mapping outcome [14], [15]; they are not a hypothesis-test claim. Stored TEST ROC-AUC did not change under Platt. 2018 ECE deterioration under frozen Platt is a descriptive temporal limitation, consistent with a validation window that ends in January 2017.
+Stored pooled TEST Brier and ECE are lower under the frozen Platt map than under raw (Stage 5 paired differences). Those stored differences are a probability-mapping outcome [14], [15]; they are not a hypothesis-test claim. Stored pooled TEST ROC-AUC did not change under Platt. The same frozen map worsens 2018 Brier, log loss, and ECE relative to raw. That reversal is part of the calibration result, not only a distant limitation. The 2018 TEST slice was not used to select a replacement calibrator.
 
 Explainability results are internally consistent with an additive GAM [9]–[12]. On the 5,000-row sample, the highest mean-absolute attributions are `fico_n` and `loan_amnt`. Perfect SHAP–EBM agreement should not be advertised as a second-model confirmation.
 
-The governance layer did what a schema-limited prototype can do: it refused to convert missing contract evidence into `PASS` or into a religious non-compliance label [26], [27]. Consequently A1 assigns APPROVE to nobody on this extract. That is an evidence-gap outcome, not a finding that LendingClub borrowers are Shariah non-compliant. A0 still yields only 5,232 TEST APPROVE assignments under \(t_{\text{low}}=0.06\), fewer than the 61,855 APPROVE assignments under the monolithic \(t^{*}=0.16\) map. Those differences are decision-map differences, not score differences.
+The stored governance evaluations, produced by `stage7-shariah-engine-v1`, refused to convert missing contract evidence into `PASS` or into a religious non-compliance label [26], [27]. Consequently A1 assigns APPROVE to nobody on this extract. The 27 A1 REJECT rows are the HIGH credit band under universal `INSUFFICIENT_INFORMATION`. They are not established Shariah violations, and the live scope-gated engine did not produce them. `HUMAN_REVIEW` counts a simulated route. A0 still yields only 5,232 TEST APPROVE assignments under \(t_{\text{low}}=0.06\), fewer than the 61,855 APPROVE assignments under the monolithic \(t^{*}=0.16\) map. Those differences are decision-map differences on identical scores. They do not show that one map outperforms the other.
 
-UCI LR/EBM TEST ROC-AUC values in Table VII (\(0.7572778277972128\) and \(0.7688563724378406\)) are not comparable as a claim that the LendingClub architecture generalizes. Targets, populations, split types, and feature sets differ [4], [21]. Exploratory UCI XGBoost must not be used to declare overall superiority [18].
+UCI LR/EBM TEST ROC-AUC values in Table VII (\(0.7572778277972128\) and \(0.7688563724378406\)) test a separate credit-classification methodology. They do not validate governance accuracy, and they are not a claim that the LendingClub architecture generalizes. Targets, populations, split types, and feature sets differ [4], [21]. Exploratory UCI XGBoost must not be used to declare overall superiority [18].
 
 Fairness processors were not run [8]. Fraud detection was not studied [19]. Production, real-time, or ECOA compliance is not evidenced [32]–[34]. Expert Shariah validation is absent.
 
-The design question in Section 4 is therefore only partially addressable with stored evidence: separation of objects is recorded in the stored layer artifacts and audit trail; “without materially sacrificing predictive performance” cannot be read as a governance-induced AUC change, because scores are identical across A0/A1/A3; operational defensibility in Islamic-finance institutions is not shown, because contract-level fields and expert review are absent.
+The historical design question in Section 4 remains unanswered on transparency and institutional defensibility. The revised descriptive objective is what the frozen artifacts address: object separation is recorded; additive explanations match the centered EBM terms on the 5,000-row sample; documentary fields are absent and the historical engine abstains; and fixed-score maps change routing counts. Predictive invariance across those maps is true by construction.
 
 ---
 
@@ -612,7 +647,7 @@ The design question in Section 4 is therefore only partially addressable with st
 
 The following limitations are recorded in the evidence inventory and stage reports. None is silently dropped.
 
-1. No `.git` repository / `git_commit` is `null` throughout recorded manifests.
+1. Historical experimental manifests record `git_commit` as null. That missing commit linkage is a reproducibility limitation of the stored Stage 4B–8 artifacts. A later software safety snapshot is commit `583ad0b30e8007a5f3f0bb13ede7b010fdad5fec`. That later commit did not generate those historical experiments and is not written back into their manifests.
 2. SHA-256 of the M-4B final EBM joblib is not recorded.
 3. Stage 8 v2 audit records lack `row_ref`; S10-I1 identity is positional.
 4. Stored pytest summaries do not independently lock every historical TEST point estimate.
@@ -624,32 +659,45 @@ The following limitations are recorded in the evidence inventory and stage repor
 10. No rule is `EXPERT_VALIDATED`.
 11. Stage 4B TRAIN+VALIDATION concatenated \(n\) is not stored as a single field.
 12. Stage 2 Zenodo target-documentation conflict (frozen in Stage 3).
-13. LendingClub originated-and-resolved selection bias; no reject inference.
+13. LendingClub is an originated-and-resolved cohort; rejected applicants are absent; applicant-funnel generalization is not supported. The `Default` versus Charged Off documentation conflict is unresolved, and `original_loan_status_mapping_verified` is false. `issue_d` is an origination month, and `dti_n` timing remains medium confidence.
 14. UCI and LendingClub targets are not equivalent; UCI undocumented codes unlabeled.
-15. Stage 5 2018 Platt ECE deterioration; no nested TRAIN calibrator.
+15. Stage 5 2018 Platt reversal: Brier, log loss, and ECE all worsen relative to raw; no nested TRAIN calibrator; the 2018 slice was not used to replace Platt.
 16. Stage 6 explanation sample \(n=5{,}000\), not full TEST.
 17. HIGH credit band \(n=27\).
-18. ECE is not stored for any Stage 4B family in `stage4b_test_metrics.json`. UCI family-raw ECE is not stored for logistic regression or EBM. The UCI family-raw CSV likewise has no ECE column for XGBoost; an exploratory selected-family **raw** ECE is stored separately in `results/uci_generalization/v1/tables/uci_test_calibration.csv` (`method=raw`) and is reported only under M-9.4-X / `DEVIATION-001`.
+18. ECE is not stored for any Stage 4B family in `stage4b_test_metrics.json`. UCI family-raw ECE is not stored for logistic regression or EBM. The UCI family-raw CSV likewise has no ECE column for XGBoost; an exploratory selected-family **raw** ECE is stored separately in `results/uci_generalization/v1/tables/uci_test_calibration.csv` (`method=raw`) and is reported only under M-9.4-X / `DEVIATION-001`. Year-slice bootstrap intervals are NOT STORED. No paired XGBoost-versus-EBM interval is stored. Exploratory UCI selected-pipeline bootstrap intervals remain outside the primary LendingClub tables.
 19. Stage 4A high-cardinality zip one-hot; `dti_n==999` unlabeled.
-20. Older `docs/shariah/SHARIAH_GOVERNANCE_SCOPE.md` still says Stage 8 fusion is not implemented; Stage 8 v2 is the later controlling record (documentation lag).
+20. Older `docs/shariah/SHARIAH_GOVERNANCE_SCOPE.md` still says Stage 8 fusion is not implemented; Stage 8 decision-policy v2 is the later controlling fusion record (documentation lag). That policy label is not governance-engine v2.
 21. Stage 6 report opening language (“frozen Stage 4B model”) versus TRAIN-only metadata: documentation/provenance limitation; historical Stage 6 files were not rewritten.
 22. Historical Stage 9 documentation lag: the Stage 9 closure audit recorded leftover `DRAFT` wording in the protocol header while `AMENDMENT-STAGE9-4-AUTHORIZATION` was already `APPROVED` (2026-09-15). The current Stage 9 protocol file does not contain that leftover `DRAFT` status. Stage 9 is CLOSED. UCI XGBoost remains exploratory (`DEVIATION-001`) and is not upgraded by this documentation history.
 23. Stage 9.4 report hash changed when a provenance caveat was added; UCI TEST metric JSON was not rewritten.
 24. LendingClub lacks contract-level Shariah fields; S10-A1 does not validate compliance; `INSUFFICIENT_INFORMATION` is not a Shariah ruling.
-25. Literature package: Platt 1999 has no verified DOI/URL [14]; Zenodo creator names unverified [20]; no 2023–2026 systematic ML-credit review; no real-time latency paper; IFSB-10 full body not re-parsed [31]; AAOIFI SS 8/9 years UNVERIFIED [28], [29].
+25. Literature package: Platt 1999 has no verified DOI/URL [14]; the historical literature package left Zenodo creator names unverified, and the names and roles in [20] come from a later reading of the official Zenodo record; no 2023–2026 systematic ML-credit review was executed, so absence from this package is not absence from the literature; no real-time latency paper; IFSB-10 full body not re-parsed [31]; AAOIFI SS 8/9 years UNVERIFIED and operative clauses not retrieved from the access-controlled viewer [28], [29].
 26. Fairness not empirically evaluated [8].
 27. No fraud experiment [19].
 28. Thresholds \(0.06/0.69/0.16\) are researcher-scenario identifications, not official operational costs.
 29. The constitution still contains a leftover sentence that Stage 10 is not started; controlling status is Stage 10 **CLOSED**.
-30. Stage 5 reliability-diagram image files named in `docs/STAGE_5_CALIBRATION_REPORT.md` §E are not retained in the repository and are omitted from the manuscript package (not regenerated).
+30. Calibration reliability diagrams named in `docs/STAGE_5_CALIBRATION_REPORT.md` §E are retained as tracked PDF and PNG files under `results/figures/calibration/` (`figure1_validation_reliability`, `figure2_test_reliability`). This manuscript does not regenerate them and does not insert them. The separate temporal comparison `figure5_temporal.pdf` is the retained Stage 5 figure shown with the calibration results. Redrawing any of these figures still requires the gitignored calibrated TEST score file.
+31. Official SBP and SECP primary bytes were not obtained on 2026-10-18 (HTTP 403). The PICG and MUFAP copies match the recorded source-register digests and remain unauthenticated as regulator originals. Stored governance outputs remain `stage7-shariah-engine-v1`. The live scope-gated screen was not used to regenerate those outputs or the LendingClub TEST counts.
 
 ---
 
 ## 12. Conclusion
 
-This study presents a research prototype that separates credit-risk scoring, additive explainability, and Shariah-oriented governance evidence, and fuses them only at a frozen decision map. On a hashed chronological LendingClub extract, a TRAIN-only EBM with validation-only Platt calibration yields frozen TEST ROC-AUC \(0.6776693941139847\). Research policy maps applied to the same `p_selected` change APPROVE / REVIEW / REJECT counts (A0: 5232 / 203627 / 27; A1: 0 / 208859 / 27; A3/A4: 61855 / 0 / 147031) without changing predictive scores. Those counts are not production origination outcomes. A1’s all-review-but-27-reject pattern follows from `INSUFFICIENT_INFORMATION` on every TEST row—an evidence/schema limitation of the executed LendingClub extract that lacks contract-level Shariah fields—not from a finding of applicant non-compliance.
+The historical design question asked whether evidence separation is more transparent and more institutionally defensible than a monolithic classifier without a material predictive cost. The stored experiments do not establish that comparison. The revised objective of this manuscript is descriptive: to characterize predictive performance, additive explanation identity, documentary-evidence abstention, and decision-routing consequences from frozen artifacts.
 
-An independent UCI logistic-regression / EBM analysis provides methodology context only. Exploratory UCI XGBoost is not a primary validated model. The prototype is not Shariah certification, a fatwa, an automated compliance verdict, or a substitute for Shariah experts. It is not a production credit engine and reports no fraud-detection performance.
+On a hashed chronological LendingClub extract of originated-and-resolved loans, a TRAIN-only EBM with validation-only Platt calibration has pooled TEST ROC-AUC \(0.6776693941139847\). The same frozen Platt map improves pooled Brier and ECE and worsens all three of Brier, log loss, and ECE on the 2018 slice. The M-4B EBM was retained by a validation tie rule, not by the highest PR-AUC. LendingClub XGBoost has higher stored TEST discrimination. Research policy maps applied to the same `p_selected` change APPROVE / HUMAN_REVIEW / REJECT counts (A0: 5232 / 203627 / 27; A1: 0 / 208859 / 27; A3/A4: 61855 / 0 / 147031). Predictive invariance across those maps is true by construction. All 208,886 TEST rows are `INSUFFICIENT_INFORMATION` under `stage7-shariah-engine-v1`. The 27 A1 rejects are the HIGH credit band, not established Shariah violations and not a result of the live scope-gated engine. `HUMAN_REVIEW` is simulated routing. UCI tests a separate credit methodology. The prototype is not Shariah certification, a fatwa, an automated compliance verdict, a new predictive algorithm, or a demonstrated human-interpretability improvement.
+
+## Data and Code Availability
+
+The LendingClub granting-model extract is public Zenodo record 11295916, DOI `10.5281/zenodo.11295916`, version 0.1, license CC-BY-4.0 [20]. The UCI Default of Credit Card Clients table is dataset 350, DOI `10.24432/C55S3H` [21].
+
+On 2026-10-18, https://github.com/aitsamulhassan/research_project was publicly readable. The GitHub API returned `visibility=public` and a null license field. `git ls-remote` reported remote HEAD `20140d7bc5628cf8cd99fc377e967cc8787c6276`. Local `main` was one commit ahead, at `583ad0b30e8007a5f3f0bb13ede7b010fdad5fec`, and that commit had not been pushed. The manuscript wording in this file was uncommitted working-tree text. This paper cites no code-archive DOI and no GitHub release, and this writing step created neither.
+
+Raw inputs under `data/raw/` and the calibrated TEST file `results/calibration/test/ebm_seed42_calibrated.csv` are gitignored. A clean checkout of the public remote does not contain those bytes and does not recreate every historical metric. Historical split manifests record `git_commit` as null. The later local safety snapshot did not generate the Stage 4B–8 experiments. The M-4B final EBM joblib digest is not recorded.
+
+Tracked historical calibration figures under `results/figures/calibration/` are in the Git tree at HEAD and at `d49f39a68b740ae464f32f0d7a963b8e7e9938db`, which is `origin/main`. That set includes `figure5_temporal.pdf` (SHA-256 `65471d614eb6efd7b02c5d86f49c3621ed27796f56999cb91805235900c37b5f`) and `figure5_temporal.png` (SHA-256 `41f62501714d2b9261f618048210ba17eeeeebeb377e5ce787f413f443d97bc6`), together with `figure1_validation_reliability` and `figure2_test_reliability`. A checkout of that tree can display those files. The same checkout lacks the gitignored raw inputs and calibrated TEST scores, so it cannot regenerate the figures. Retained figures do not make the Stage 4B–8 experiments fully reproducible.
+
+AAOIFI SS 8 and SS 9 operative clauses were not retrieved from the access-controlled viewer [28], [29]. Official SBP and SECP instrument bytes were not obtained on 2026-10-18 (HTTP 403). The PICG and MUFAP PDFs remain unauthenticated third-party copies.
 
 ---
 
@@ -695,7 +743,7 @@ Bibliographic fields are copied from `docs/literature/LITERATURE_SOURCE_REGISTER
 
 [19] R. J. Bolton and D. J. Hand, “Statistical fraud detection: A review,” *Statistical Science*, vol. 17, no. 3, pp. 235–255, 2002, doi: 10.1214/ss/1042727940.
 
-[20] “Lending Club loan dataset for granting models,” Zenodo, record 11295916, version 0.1, 2024, doi: 10.5281/zenodo.11295916. [Creator names: UNVERIFIED_ZENODO_CREATOR_METADATA in the literature package.]
+[20] M. J. Ariza-Garzón, M. Sanz-Guerrero, and J. Arroyo Gallardo, “Lending Club loan dataset for granting models,” Zenodo, record 11295916, version 0.1, May 2024, doi: 10.5281/zenodo.11295916. [Online]. Available: https://zenodo.org/records/11295916. [The historical literature package left the creator names unverified after a timed-out HTML fetch. A later reading of that official record lists Miller Janny Ariza-Garzón and Mario Sanz-Guerrero as data curators, Javier Arroyo Gallardo as project leader, and Lending Club as data collector. That reading is not a claim that the historical experiment recorded the names.]
 
 [21] I. Yeh, “Default of Credit Card Clients,” UCI Machine Learning Repository, dataset 350, 2009, doi: 10.24432/C55S3H. [Dataset citation as recorded on the UCI page.]
 
@@ -703,17 +751,17 @@ Bibliographic fields are copied from `docs/literature/LITERATURE_SOURCE_REGISTER
 
 [23] R. Quinlan, “Statlog (Australian Credit Approval),” UCI Machine Learning Repository, dataset 143, 1987, doi: 10.24432/C59012. [Literature-context dataset only; **not executed** in this project.]
 
-[24] State Bank of Pakistan, Islamic Finance Policy Department, “IFPD Circular No. 08 of 2024: Shariah Governance Framework for Islamic Banking Institutions,” 2024. [Online]. Available: https://www.sbp.org.pk/ifpd/2024/C8.htm
+[24] State Bank of Pakistan, Islamic Finance Policy Department, “IFPD Circular No. 08 of 2024: Shariah Governance Framework for Islamic Banking Institutions,” 2024. [Official-domain identity URL. The 2026-10-18 public request returned HTTP 403. Not a newly authenticated byte archive.] [Online]. Available: https://www.sbp.org.pk/ifpd/2024/C8.htm
 
-[25] State Bank of Pakistan, Islamic Finance Policy Department, “Shariah Governance Framework for Islamic Banking Institutions (Effective from: January 01 2025).” [Text via PICG-hosted public republication recorded in the literature package; official SBP annex PDF was HTTP 403.] [Online]. Available: https://picg.org.pk/wp-content/uploads/2025/03/Shariah-Governance-Framework-for-Islamic-Banking-Institutions.pdf
+[25] State Bank of Pakistan, Islamic Finance Policy Department, “Shariah Governance Framework for Islamic Banking Institutions (Effective from: January 01 2025).” [PICG-hosted third-party PDF. Local digest matches the source register. Not independently authenticated as official SBP bytes. Official annex retrieval was HTTP 403.] [Online]. Available: https://picg.org.pk/wp-content/uploads/2025/03/Shariah-Governance-Framework-for-Islamic-Banking-Institutions.pdf
 
-[26] State Bank of Pakistan, Islamic Banking Department, “IBD Circular No. 01 of 2012: Invoice of Murabaha Transactions,” 2012. [Online]. Available: https://www.sbp.org.pk/ibd/2012/C1.htm
+[26] State Bank of Pakistan, Islamic Banking Department, “IBD Circular No. 01 of 2012: Invoice of Murabaha Transactions,” 2012. [Official-domain identity URL. The 2026-10-18 public request returned HTTP 403. Authenticated official response bytes were not preserved from that acquisition.] [Online]. Available: https://www.sbp.org.pk/ibd/2012/C1.htm
 
-[27] Securities and Exchange Commission of Pakistan, “Shariah Governance Regulations 2023 (S.R.O. 1314 (I)/2023),” 2023. [Online]. Available: https://www.mufap.com.pk/Upload/WebDoc/Regulations/Shariah-Governance-Regulations-20231177.pdf
+[27] Securities and Exchange Commission of Pakistan, “Shariah Governance Regulations 2023 (S.R.O. 1314 (I)/2023),” 2023. [MUFAP-hosted third-party PDF. Local digest matches the source register. Official SECP page returned HTTP 403 on 2026-10-18. Not an authenticated official original.] [Online]. Available: https://www.mufap.com.pk/Upload/WebDoc/Regulations/Shariah-Governance-Regulations-20231177.pdf
 
-[28] Accounting and Auditing Organization for Islamic Financial Institutions, “SS (8) Murabahah.” [Identity page only; operative clauses not retrieved. Year: UNVERIFIED in the literature package.] [Online]. Available: https://aaoifi.com/ss-8-murabahah/?lang=en
+[28] Accounting and Auditing Organization for Islamic Financial Institutions, “SS (8) Murabahah.” [Identity page only; operative clauses not retrieved and not implemented. Year: UNVERIFIED in the literature package.] [Online]. Available: https://aaoifi.com/ss-8-murabahah/?lang=en
 
-[29] Accounting and Auditing Organization for Islamic Financial Institutions, “SS (9) Ijarah and Ijarah Muntahia Bittamleek.” [Identity page only; operative clauses not retrieved. Year: UNVERIFIED. URL status UNVERIFIED in the literature package (not re-fetched).] [Online]. Available: https://aaoifi.com/ss-9-ijarah-and-ijarah-muntahia-bittamleek/?lang=en
+[29] Accounting and Auditing Organization for Islamic Financial Institutions, “SS (9) Ijarah and Ijarah Muntahia Bittamleek.” [Identity page only; operative clauses not retrieved and not implemented. Year: UNVERIFIED. URL status UNVERIFIED in the literature package (not re-fetched).] [Online]. Available: https://aaoifi.com/ss-9-ijarah-and-ijarah-muntahia-bittamleek/?lang=en
 
 [30] Accounting and Auditing Organization for Islamic Financial Institutions, “Issued governance standards listing including GS 1 (Revised 2024) Shari'ah Governance Framework,” 2024. [Listing only; clause text not retrieved.] [Online]. Available: https://aaoifi.com/issued-standards-2/?lang=en
 
@@ -733,7 +781,7 @@ Register source `SRC-AAOIFI-SS-INDEX` is unused in this draft (redundant identit
 
 ```text
 DRAFT_STATUS = INTEGRITY_GATE_PROSE_NARROWED
-SECTIONS_COMPLETED = Title, Abstract, Keywords, Introduction, Related Work, Research Gap and Contributions, Methodology 7.1–7.10, Experimental Protocol, Results 9.1–9.6, Discussion, Limitations, Conclusion, References
+SECTIONS_COMPLETED = Title, Abstract, Keywords, Introduction, Related Work, Research Gap and Contributions, Methodology 7.1–7.10, Experimental Protocol, Results 9.1–9.6, Discussion, Limitations, Conclusion, Data and Code Availability, References
 NEW_EXPERIMENTS_RUN = NO
 EXISTING_RESULTS_MODIFIED = NO
 EXISTING_MODELS_MODIFIED = NO
