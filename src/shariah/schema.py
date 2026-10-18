@@ -96,7 +96,7 @@ class FinancingEvidence:
     payment_channel: str | None = None
     shariah_advisor_agent_payment_approval: TRI = None
     agent_payment_reasons_recorded: TRI = None
-    claims_shariah_compliant_security: TRI = False
+    claims_shariah_compliant_security: TRI = None
     secp_shariah_compliance_certificate: TRI = None
     underlying_asset_identified: TRI = None
     ownership_or_possession_evidence: TRI = None

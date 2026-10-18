@@ -12,6 +12,11 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
+from decision.config_load import load_policy_config  # noqa: E402
+from decision.decision_engine import fuse_decision  # noqa: E402
+from decision.policy_matrix import build_matrix  # noqa: E402
+from decision.stage8_v2 import EXPECTED_T_HIGH, EXPECTED_T_LOW  # noqa: E402
+from shariah.applicability import APPLICABILITY_VERSION  # noqa: E402
 from shariah.engine import AMENDMENT_ID, ENGINE_VERSION, evaluate, from_mapping  # noqa: E402
 from shariah.l1 import L1_LC_STATUS, assess_dataset_readiness  # noqa: E402
 from shariah.l2 import (  # noqa: E402
@@ -39,6 +44,33 @@ ISLAMIC_CONTRACTS = {
     "Salam",
     "Istisna",
 }
+LIVE_ENGINE = "stage7-shariah-engine-v2-scope-gated"
+HISTORICAL_ENGINE = "stage7-shariah-engine-v1"
+MATRIX = build_matrix(load_policy_config()["governance_policy"]["matrix"])
+SCOPE_GATED_HARD_STOPS = {
+    "SYN-MUR-PAY-CUSTOMER-001": {
+        "rule_id": "SH-SBP-MUR-PAY-001",
+        "diagnostic_reason": (
+            "Payment to the customer rather than the supplier/escrow/approved-agent path "
+            "does not meet IBD Circular 01 of 2012 paragraph 4."
+        ),
+    },
+    "SYN-MUR-NO-SB-001": {
+        "rule_id": "SH-SBP-SGF-002",
+        "diagnostic_reason": (
+            "SGF Section 3.B.ii requires prior Shariah Board approval before an IBI "
+            "offers or launches a product or service."
+        ),
+    },
+    "SYN-SECP-CLAIM-NO-CERT-001": {
+        "rule_id": "SH-SECP-SGR-SEC-001",
+        "diagnostic_reason": (
+            "SGR 2023 Regulation 7(2) states that no security shall be called a Shariah "
+            "compliant security unless a Shariah compliance certificate has been granted "
+            "by the Commission."
+        ),
+    },
+}
 
 
 def _fixture(key: str) -> dict:
@@ -49,6 +81,32 @@ def _case(case_id: str) -> dict:
     row = next(c for c in CASES["cases"] if c["case_id"] == case_id)
     skip = {"expected_layer_a", "expected_status", "note"}
     return {k: v for k, v in row.items() if k not in skip}
+
+
+def _fuse_low(status: str) -> str:
+    return fuse_decision(0.05, status, EXPECTED_T_LOW, EXPECTED_T_HIGH, MATRIX)["final_decision"]
+
+
+def _assert_live_scope_gated_hard_stop(case_row: dict, result: dict) -> None:
+    spec = SCOPE_GATED_HARD_STOPS[case_row["case_id"]]
+    assert case_row["expected_status"] == "NOT_STRUCTURABLE_WITHOUT_REDESIGN"
+    assert result["engine_version"] == LIVE_ENGINE
+    assert result["applicability_version"] == APPLICABILITY_VERSION
+    assert result["overall_governance_status"] == "REVIEW"
+    assert result["overall_governance_status"] != case_row["expected_status"]
+    assert result["certification_claim"] is False
+    assert result["layer_a_completeness"]["layer_a"] == case_row["expected_layer_a"]
+    assert _fuse_low(result["overall_governance_status"]) == "HUMAN_REVIEW"
+    rule = next(row for row in result["rule_evaluations"] if row["rule_id"] == spec["rule_id"])
+    assert rule["diagnostic_predicate_applicable"] is True
+    assert rule["diagnostic_predicate_result"] == "NOT_STRUCTURABLE_WITHOUT_REDESIGN"
+    assert rule["diagnostic_predicate_reason"] == spec["diagnostic_reason"]
+    assert rule["rule_result"] == "REVIEW"
+    assert rule["reason"] != rule["diagnostic_predicate_reason"]
+    assert "SCOPE_UNKNOWN" in rule["reason"]
+    assert rule["applicability_decision"]["status"] == "SCOPE_UNKNOWN"
+    assert rule["source_digest_verified"] is False
+    assert rule["validation_status"] != "EXPERT_VALIDATED"
 
 
 def test_a_lendingclub_l1_insufficient_schema() -> None:
@@ -160,9 +218,12 @@ def test_h_synthetic_evidence_sensitive_cases_preserved() -> None:
     assert CASES["version"].startswith("stage7-synthetic")
     for row in CASES["cases"]:
         result = evaluate(from_mapping(_case(row["case_id"])), timestamp=TS)
-        assert result["overall_governance_status"] == row["expected_status"], row["case_id"]
         assert result["layer_a_completeness"]["layer_a"] == row["expected_layer_a"], row["case_id"]
         assert result["synthetic"] is True
+        if row["case_id"] in SCOPE_GATED_HARD_STOPS:
+            _assert_live_scope_gated_hard_stop(row, result)
+            continue
+        assert result["overall_governance_status"] == row["expected_status"], row["case_id"]
 
 
 def test_cache_keeps_per_row_identity() -> None:
@@ -197,7 +258,17 @@ def test_no_expert_validated_and_no_new_aaoifi_clause_engine() -> None:
     assert possession["executable"] is False
     result = evaluate_lendingclub_application(_fixture("lc-unit-001"), timestamp=TS)
     assert result["any_expert_validated"] is False
-    assert ENGINE_VERSION == "stage7-shariah-engine-v1"
+    assert result["overall_governance_status"] == "INSUFFICIENT_INFORMATION"
+    assert ENGINE_VERSION == LIVE_ENGINE
+    assert APPLICABILITY_VERSION == "stage7-applicability-scope-unknown-v1"
+    assert result["engine_version"] == LIVE_ENGINE
+    assert result["applicability_version"] == APPLICABILITY_VERSION
+    historical = json.loads(
+        (ROOT / "results" / "shariah" / "v2" / "l2_fixture_evaluations.json").read_text(encoding="utf-8")
+    )
+    assert historical["experiment_id"] == "stage7-shariah-gov-v2"
+    historical_versions = {row["engine_version"] for row in historical["evaluations"]}
+    assert historical_versions == {HISTORICAL_ENGINE}
     assert result["amendment_id"] == AMENDMENT_ID
 
 

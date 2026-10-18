@@ -32,7 +32,8 @@ def required_fields_for(evidence: FinancingEvidence) -> list[str]:
             fields.extend(["alternative_purchase_documents_present", "shariah_advisor_invoice_exception_approval"])
         if evidence.payment_channel == "agent":
             fields.extend(["shariah_advisor_agent_payment_approval", "agent_payment_reasons_recorded"])
-    if evidence.claims_shariah_compliant_security:
+    claim = evidence.claims_shariah_compliant_security
+    if evidence.institution_class != "IBI" and type(claim) is bool and claim is True:
         fields.append("secp_shariah_compliance_certificate")
     return fields
 
